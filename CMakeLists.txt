@@ -40,7 +40,6 @@ IF(ENABLE_ASAN)
 	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fno-omit-frame-pointer")
 ENDIF(ENABLE_ASAN)
 
-
 #
 # Add sources
 #
