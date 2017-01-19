@@ -31,3 +31,5 @@
 # Shine
 _logs
 Bin/tmp
+Build
+*.bat
