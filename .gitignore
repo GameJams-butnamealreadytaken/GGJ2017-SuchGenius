@@ -27,3 +27,7 @@
 *.exe
 *.out
 *.app
+
+# Shine
+_logs
+Bin/tmp
