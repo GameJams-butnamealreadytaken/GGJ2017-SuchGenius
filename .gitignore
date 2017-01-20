@@ -31,6 +31,6 @@
 # Shine
 _logs
 Bin/tmp
-Bin/Generic\Resources\SpritesTemp
+Bin/Generic/Resources/SpritesTemp/*
 Build
 *.bat
