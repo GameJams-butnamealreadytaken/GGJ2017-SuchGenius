@@ -19,11 +19,7 @@ GameStateGame::~GameStateGame(void)
 */
 void GameStateGame::init(void)
 {
-	//
-	// Load level
-	CShIdentifier levelIdentifier("ggj17_game");
-	bool loading = ShLevel::Load(levelIdentifier);
-	SH_ASSERT(loading);
+
 }
 
 /**
@@ -38,7 +34,11 @@ void GameStateGame::release(void)
 */
 void GameStateGame::entered(void)
 {
-
+	//
+	// Load level
+	CShIdentifier levelIdentifier("ggj17_game");
+	bool loading = ShLevel::Load(levelIdentifier);
+	SH_ASSERT(loading);
 }
 
 /**

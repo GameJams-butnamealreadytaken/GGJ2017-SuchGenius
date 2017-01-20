@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "application.h"
 
 #if SH_PC
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
@@ -6,6 +7,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
 int main(int argc, char ** argv)
 #endif
 {
+	ShApplication::SetOnPreInitialize(OnPreInitialize);
+	ShApplication::SetOnPostInitialize(OnPostInitialize);
+	ShApplication::SetOnPreUpdate(OnPreUpdate);
+	ShApplication::SetOnPostUpdate(OnPostUpdate);
+	ShApplication::SetOnPreRelease(OnPreRelease);
+	ShApplication::SetOnPostRelease(OnPostRelease);
+
 	ShDisplayProperties displayProperties;
 
 	displayProperties.m_bLandscape = true;

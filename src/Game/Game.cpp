@@ -27,6 +27,8 @@ void Game::initialize(void)
 	m_aStates[GAME_LEVEL] = new GameStateGame();
 	SH_ASSERT(shNULL != m_aStates[GAME_LEVEL]);
 	m_aStates[GAME_LEVEL]->init();
+	 
+	push(MAIN_MENU);
 }
 
 /**
