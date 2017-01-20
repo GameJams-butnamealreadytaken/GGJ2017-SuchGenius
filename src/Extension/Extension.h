@@ -1,7 +1,7 @@
 #pragma once
 
 #if defined(_WIN32)
-#	if defined(Extension_EXPORTS)
+#	if defined(ExtGGJ2017_EXPORTS)
 #		define EXTENSION_EXPORT __declspec(dllexport)
 #	else
 #		define EXTENSION_EXPORT __declspec(dllimport)
