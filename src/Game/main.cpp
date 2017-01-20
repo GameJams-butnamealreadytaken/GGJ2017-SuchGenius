@@ -24,5 +24,3 @@ int main(int argc, char ** argv)
 	return(ShMain(argc, argv, displayProperties));
 #endif
 }
-
-

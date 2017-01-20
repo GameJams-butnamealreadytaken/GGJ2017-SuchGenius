@@ -21,6 +21,9 @@ Game::Game(void) : m_iCurrentState(-1)
 void Game::initialize(void)
 {
 	// TODO : init game states
+	m_aStates[MAIN_MENU] = new GameStateMainMenu();
+	SH_ASSERT(shNULL != m_aStates[MAIN_MENU]);
+	m_aStates[MAIN_MENU]->init();
 }
 
 /**
