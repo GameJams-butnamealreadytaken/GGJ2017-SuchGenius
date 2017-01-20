@@ -2,6 +2,7 @@
 
 #include "State.h"
 #include "GameStateMainMenu.h"
+#include "GameStateGame.h"
 
 class Game
 {
@@ -11,13 +12,14 @@ public:
 	enum EState
 	{
 		MAIN_MENU,
+		GAME_LEVEL,
 
 		MAX_GAME_STATES
 	};
 
 	static Game & instance (void)
 	{
-		if (nullptr == instance_)
+		if (shNULL == instance_)
 		{
 			instance_ = new Game();
 		}
@@ -45,6 +47,12 @@ public:
 			case MAIN_MENU:
 			{
 				return(m_aStates[MAIN_MENU]);
+			}
+			break;
+
+			case GAME_LEVEL:
+			{
+				return(m_aStates[GAME_LEVEL]);
 			}
 			break;
 

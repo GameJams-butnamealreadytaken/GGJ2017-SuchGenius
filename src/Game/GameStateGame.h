@@ -2,13 +2,13 @@
 
 #include "State.h"
 
-class GameStateMainMenu : public State
+class GameStateGame : public State
 {
 
 public:
 
-	explicit	GameStateMainMenu	(void);
-	virtual		~GameStateMainMenu	(void);
+	explicit	GameStateGame		(void);
+	virtual		~GameStateGame		(void);
 
 	void		init				(void) SH_ATTRIBUTE_OVERRIDE;
 	void		release				(void) SH_ATTRIBUTE_OVERRIDE;
@@ -27,5 +27,4 @@ public:
 
 private:
 
-	ShEntity2 * pButtonPlay;
 };

@@ -11,7 +11,7 @@ Game::Game(void) : m_iCurrentState(-1)
 {
 	for (int i = 0; i < MAX_GAME_STATES; ++i)
 	{
-		m_aStates[i] = nullptr;
+		m_aStates[i] = shNULL;
 	}
 }
 
@@ -20,10 +20,13 @@ Game::Game(void) : m_iCurrentState(-1)
  */
 void Game::initialize(void)
 {
-	// TODO : init game states
 	m_aStates[MAIN_MENU] = new GameStateMainMenu();
 	SH_ASSERT(shNULL != m_aStates[MAIN_MENU]);
 	m_aStates[MAIN_MENU]->init();
+
+	m_aStates[GAME_LEVEL] = new GameStateGame();
+	SH_ASSERT(shNULL != m_aStates[GAME_LEVEL]);
+	m_aStates[GAME_LEVEL]->init();
 }
 
 /**
@@ -31,7 +34,7 @@ void Game::initialize(void)
  */
 void Game::release(void)
 {
-	// TODO : release game states
+	m_aStates[m_iCurrentState]->release();
 }
 
 /**

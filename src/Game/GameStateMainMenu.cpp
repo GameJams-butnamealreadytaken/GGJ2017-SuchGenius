@@ -1,43 +1,45 @@
 #include "GameStateMainMenu.h"
 
 /**
-* @brief Game::Constructor
+* @brief GameStateMainMenu::Constructor
 */
 GameStateMainMenu::GameStateMainMenu(void)
+: pButtonPlay(shNULL)
 {
 }
 
 /**
-* @brief Game::Destructor
+* @brief GameStateMainMenu::Destructor
 */
 GameStateMainMenu::~GameStateMainMenu(void)
 {
 }
 
 /**
-* @brief Game::Initialize
+* @brief GameStateMainMenu::Initialize
 */
 void GameStateMainMenu::init(void)
 {
 	//
 	// Load level
-	CShIdentifier levelIdentifier("ggj17_main_menu");
+	CShIdentifier levelIdentifier("ggj17_menu_main");
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 
-
+	ShEntity2::Find(levelIdentifier, CShIdentifier("sprite_ggj17_main_menu_button_play_001"));
+	SH_ASSERT(shNULL != pButtonPlay);
 }
 
 /**
-* @brief Game::Release
+* @brief GameStateMainMenu::Release
 */
 void GameStateMainMenu::release(void)
 {
-
+	pButtonPlay = shNULL;
 }
 
 /**
-* @brief Game::entered
+* @brief GameStateMainMenu::entered
 */
 void GameStateMainMenu::entered(void)
 {
@@ -45,7 +47,7 @@ void GameStateMainMenu::entered(void)
 }
 
 /**
-* @brief Game::exiting
+* @brief GameStateMainMenu::exiting
 */
 void GameStateMainMenu::exiting(void)
 {
@@ -53,7 +55,7 @@ void GameStateMainMenu::exiting(void)
 }
 
 /**
-* @brief Game::obscuring
+* @brief GameStateMainMenu::obscuring
 */
 void GameStateMainMenu::obscuring(void)
 {
@@ -61,7 +63,7 @@ void GameStateMainMenu::obscuring(void)
 }
 
 /**
-* @brief Game::obscuring
+* @brief GameStateMainMenu::obscuring
 */
 void GameStateMainMenu::revealed(void)
 {
@@ -69,7 +71,7 @@ void GameStateMainMenu::revealed(void)
 }
 
 /**
-* @brief Game::Release
+* @brief GameStateMainMenu::Release
 */
 void GameStateMainMenu::update(float dt)
 {
@@ -77,15 +79,19 @@ void GameStateMainMenu::update(float dt)
 }
 
 /**
-* @brief Game::Release
+* @brief GameStateMainMenu::Release
 */
 void GameStateMainMenu::touchBegin(const CShVector2 & pos)
 {
 	// Generate wave
+	if (ShEntity2::Includes(pButtonPlay, pos))
+	{
+		// launch the game
+	}
 }
 
 /**
-* @brief Game::Release
+* @brief GameStateMainMenu::Release
 */
 void GameStateMainMenu::touchEnd(const CShVector2 & pos)
 {
@@ -93,7 +99,7 @@ void GameStateMainMenu::touchEnd(const CShVector2 & pos)
 }
 
 /**
-* @brief Game::Release
+* @brief GameStateMainMenu::Release
 */
 void GameStateMainMenu::touchMove(const CShVector2 & pos)
 {
