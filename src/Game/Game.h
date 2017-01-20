@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.h"
+#include "GameStateMainMenu.h"
 
 class Game
 {
@@ -9,7 +10,8 @@ public:
 
 	enum EState
 	{
-		MENU,
+		MAIN_MENU,
+
 		MAX_GAME_STATES
 	};
 
@@ -31,7 +33,7 @@ public:
 	void		touchBegin		(const CShVector2 & pos);
 	void		touchEnd		(const CShVector2 & pos);
 	void		touchMove		(const CShVector2 & pos);
-
+ 
 	void		push			(EState state);
 	void		pop				(void);
 
@@ -40,9 +42,9 @@ public:
 	{
 		switch (state)
 		{
-			case MENU:
+			case MAIN_MENU:
 			{
-				return(nullptr); // FIXME
+				return(m_aStates[MAIN_MENU]);
 			}
 			break;
 
@@ -55,11 +57,11 @@ public:
 
 private:
 
-	Game	(void);
+	Game				(void);
 
-	static Game * instance_;
+	static Game *		instance_;
 
-	State *						m_aStates [MAX_GAME_STATES];
-	int							m_iCurrentState;
+	State *				m_aStates [MAX_GAME_STATES];
+	int					m_iCurrentState;
 
 };

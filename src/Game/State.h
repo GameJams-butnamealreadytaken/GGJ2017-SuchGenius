@@ -12,7 +12,7 @@ protected:
 
 public:
 
-	virtual void init		(const CShIdentifier & levelIdentifier) = 0;
+	virtual void init		(void) = 0;
 	virtual void release	(void) = 0;
 
 	virtual void entered	(void) = 0;
