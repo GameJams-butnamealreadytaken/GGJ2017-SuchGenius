@@ -30,7 +30,7 @@ set_property(TARGET Plugin APPEND PROPERTY COMPILE_FLAGS "${SHSDK_COMPILE_FLAGS}
 
 target_link_libraries(Plugin INTERFACE ${SHSDK_LIBRARIES})
 target_link_libraries(Plugin INTERFACE Box2D)
-target_include_directories(Plugin PRIVATE ${SHSDK_INCLUDE_DIR})
+target_include_directories(Plugin PRIVATE "${SHSDK_INCLUDE_DIR}" "$<TARGET_PROPERTY:Box2D,INCLUDE_DIRECTORIES>")
 
 # Compile to use it in the Shine Editor
 add_library(Plugin_Editor SHARED ${SOURCES_main} ${SOURCES})
@@ -40,6 +40,6 @@ set_property(TARGET Plugin_Editor APPEND PROPERTY COMPILE_FLAGS "${SHSDK_COMPILE
 set_property(TARGET Plugin_Editor APPEND PROPERTY COMPILE_DEFINITIONS "SH_EDITOR=1" "_INTERNAL_DLL") # FIXME
 set_property(TARGET Plugin_Editor APPEND PROPERTY POSITION_INDEPENDENT_CODE True)
 
-target_link_libraries(Plugin_Editor ${SHSDK_EDITOR_LIBRARIES})
+target_link_libraries(Plugin_Editor PRIVATE ${SHSDK_EDITOR_LIBRARIES})
 target_link_libraries(Plugin_Editor PRIVATE Box2D)
-target_include_directories(Plugin_Editor PRIVATE ${SHSDK_INCLUDE_DIR})
+target_include_directories(Plugin_Editor PRIVATE "${SHSDK_INCLUDE_DIR}" "$<TARGET_PROPERTY:Box2D,INCLUDE_DIRECTORIES>")

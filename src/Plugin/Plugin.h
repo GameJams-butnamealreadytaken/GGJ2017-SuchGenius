@@ -2,6 +2,8 @@
 
 #include "ShEngineExt/ShEngineExt.h"
 
+#include "Box2D/Box2D.h"
+
 class PluginGGJ2017 : public CShPlugin
 {
 public:

@@ -48,10 +48,9 @@ ENDIF (NOT MSVC)
 # Add sources
 #
 
-add_subdirectory(src)
-
 set(BOX2D_INSTALL OFF CACHE BOOL "Install Box2D libs, includes, and CMake scripts" FORCE)
 set(BOX2D_BUILD_EXAMPLES OFF CACHE BOOL "Build Box2D examples" FORCE)
 
 add_subdirectory(Box2D/Box2D Box2D)
 
+add_subdirectory(src)
