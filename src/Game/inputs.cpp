@@ -1,3 +1,5 @@
+#include "inputs.h"
+
 #include "Game.h"
 
 /**
