@@ -36,7 +36,7 @@ void GameStateMainMenu::entered(void)
 {
 	//
 	// Load level
-	CShIdentifier levelIdentifier("ggj17_menu_main");
+	CShIdentifier levelIdentifier("main_menu");
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 

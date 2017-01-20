@@ -36,7 +36,7 @@ void GameStateGame::entered(void)
 {
 	//
 	// Load level
-	CShIdentifier levelIdentifier("ggj17_game");
+	CShIdentifier levelIdentifier("level_000");
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 }
