@@ -2,6 +2,9 @@
 
 #include "inputs.h"
 
+extern "C"
+{
+
 /**
  * @brief OnPreInitialize
  */
@@ -73,4 +76,6 @@ void OnDeactivate(bool & bAllowBackgroundUpdates, bool & bAllowBackgroundInputs)
 {
 	bAllowBackgroundUpdates = false;
 	bAllowBackgroundInputs = false;
+}
+
 }
