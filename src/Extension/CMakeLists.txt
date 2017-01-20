@@ -43,6 +43,8 @@ else (WIN32)
 endif (WIN32)
 
 set_property(TARGET ExtGGJ2017 PROPERTY PREFIX "")
+set_property(TARGET ExtGGJ2017 PROPERTY DEBUG_POSTFIX "_Debug")
+set_property(TARGET ExtGGJ2017 PROPERTY RELEASE_POSTFIX "_Release")
 
 target_link_libraries(ExtGGJ2017 ${SHSDK_EDITOR_LIBRARIES})
 
