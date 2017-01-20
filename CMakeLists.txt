@@ -5,6 +5,7 @@ project(GGJ2017)
 #
 # Enable some global CMake features
 #
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -22,7 +23,6 @@ if (NOT DEFINED SHINE_INTERNAL)
 endif (NOT DEFINED SHINE_INTERNAL)
 
 find_package(ShSDK REQUIRED StubUserSystem ShEntryPoint)
-message("${SHSDK_LIBRARIES}")
 
 #
 # Set some additionnal compile flags
@@ -36,12 +36,22 @@ ENDIF()
 
 option(ENABLE_ASAN "Enable address sanitizer" OFF)
 
-IF(ENABLE_ASAN)
+IF (ENABLE_ASAN)
 	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fno-omit-frame-pointer")
-ENDIF(ENABLE_ASAN)
+ENDIF (ENABLE_ASAN)
+
+IF (NOT MSVC)
+	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions -fno-rtti") # Disable exceptions / RTTI
+ENDIF (NOT MSVC)
 
 #
 # Add sources
 #
 
 add_subdirectory(src)
+
+set(BOX2D_INSTALL OFF CACHE BOOL "Install Box2D libs, includes, and CMake scripts" FORCE)
+set(BOX2D_BUILD_EXAMPLES OFF CACHE BOOL "Build Box2D examples" FORCE)
+
+add_subdirectory(Box2D/Box2D Box2D)
+
