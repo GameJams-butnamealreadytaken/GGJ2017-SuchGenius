@@ -1,5 +1,7 @@
 #include "GameStateGame.h"
 
+#include "Game.h"
+
 /**
 * @brief GameStateGame::Constructor
 */

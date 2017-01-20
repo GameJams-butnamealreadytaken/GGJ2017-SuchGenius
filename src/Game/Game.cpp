@@ -20,14 +20,9 @@ Game::Game(void) : m_iCurrentState(-1)
  */
 void Game::initialize(void)
 {
-	m_aStates[MAIN_MENU] = new GameStateMainMenu();
-	SH_ASSERT(shNULL != m_aStates[MAIN_MENU]);
-	m_aStates[MAIN_MENU]->init();
+	bool bLoaded = ShLevel::Load(CShIdentifier("background"));
+	SH_ASSERT(bLoaded);
 
-	m_aStates[GAME_LEVEL] = new GameStateGame();
-	SH_ASSERT(shNULL != m_aStates[GAME_LEVEL]);
-	m_aStates[GAME_LEVEL]->init();
-	 
 	push(MAIN_MENU);
 }
 
@@ -36,7 +31,9 @@ void Game::initialize(void)
  */
 void Game::release(void)
 {
-	m_aStates[m_iCurrentState]->release();
+	pop();
+
+	ShLevel::Release();
 }
 
 /**

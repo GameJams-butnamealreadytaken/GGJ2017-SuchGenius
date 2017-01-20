@@ -1,5 +1,7 @@
 #include "GameStateMainMenu.h"
 
+#include "Game.h"
+
 /**
 * @brief GameStateMainMenu::Constructor
 */
@@ -57,7 +59,7 @@ void GameStateMainMenu::exiting(void)
 */
 void GameStateMainMenu::obscuring(void)
 {
-
+	ShEntity2::SetShow(pButtonPlay, false);
 }
 
 /**
@@ -65,7 +67,7 @@ void GameStateMainMenu::obscuring(void)
 */
 void GameStateMainMenu::revealed(void)
 {
-
+	ShEntity2::SetShow(pButtonPlay, true);
 }
 
 /**
@@ -84,7 +86,6 @@ void GameStateMainMenu::touchBegin(const CShVector2 & pos)
 	// Generate wave
 	if (ShEntity2::Includes(pButtonPlay, pos))
 	{
-		Game::instance().pop();
 		Game::instance().push(Game::GAME_LEVEL);
 	}
 }
