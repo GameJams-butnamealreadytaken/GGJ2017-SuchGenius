@@ -5,6 +5,7 @@ project(GGJ2017)
 #
 # Enable some global CMake features
 #
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -22,7 +23,6 @@ if (NOT DEFINED SHINE_INTERNAL)
 endif (NOT DEFINED SHINE_INTERNAL)
 
 find_package(ShSDK REQUIRED StubUserSystem ShEntryPoint)
-message("${SHSDK_LIBRARIES}")
 
 #
 # Set some additionnal compile flags
@@ -45,3 +45,4 @@ ENDIF(ENABLE_ASAN)
 #
 
 add_subdirectory(src)
+
