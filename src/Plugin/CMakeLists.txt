@@ -15,8 +15,12 @@ endif (WIN32)
 set(SOURCES_Plugin Plugin.cpp Plugin.h)
 source_group("Plugin" FILES ${SOURCES_Plugin})
 
+# Factory files
+set(SOURCES_Factory PluginFactory.cpp PluginFactory.h)
+source_group("Factory" FILES ${SOURCES_Factory})
+
 # Put everything together before adding platform-specific files
-set(SOURCES ${SOURCES_Plugin})
+set(SOURCES ${SOURCES_Plugin} ${SOURCES_Factory})
 
 # Compile to use it on Runtime
 add_library(Plugin STATIC ${SOURCES})
