@@ -35,7 +35,7 @@ public:
 	void		touchBegin		(const CShVector2 & pos);
 	void		touchEnd		(const CShVector2 & pos);
 	void		touchMove		(const CShVector2 & pos);
- 
+
 	void		push			(EState state);
 	void		pop				(void);
 
@@ -46,13 +46,13 @@ public:
 		{
 			case MAIN_MENU:
 			{
-				return(m_aStates[MAIN_MENU]);
+				return(&m_stateMenu);
 			}
 			break;
 
 			case GAME_LEVEL:
 			{
-				return(m_aStates[GAME_LEVEL]);
+				return(&m_stateGame);
 			}
 			break;
 
@@ -72,4 +72,6 @@ private:
 	State *				m_aStates [MAX_GAME_STATES];
 	int					m_iCurrentState;
 
+	GameStateMainMenu	m_stateMenu;
+	GameStateGame		m_stateGame;
 };
