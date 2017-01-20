@@ -15,7 +15,9 @@
         </scene_explorer>
     </editor_settings>
     <plugins/>
-    <extensions/>
+    <extensions>
+        <extension name="GGJ2017"/>
+    </extensions>
     <project_settings>
         <general>
             <setting name="generalname" value="GGj2017"/>
