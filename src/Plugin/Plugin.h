@@ -53,6 +53,8 @@ public:
 
 	int						GetLevelClicCount	(void);
 
+	bool					IsWon				(void);
+
 private:
 
 	void					UpdateShineObjects	(void);

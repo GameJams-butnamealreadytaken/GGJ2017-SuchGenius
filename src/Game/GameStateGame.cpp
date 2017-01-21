@@ -75,7 +75,11 @@ void GameStateGame::revealed(void)
 */
 void GameStateGame::update(float dt)
 {
-	// ...
+	if (g_pInstance->IsWon())
+	{
+		Game & game = Game::instance();
+		game.push(Game::GAME_WIN);
+	}
 }
 
 /**

@@ -167,8 +167,7 @@ void PluginGGJ2017::OnPostUpdate(float dt)
 
 		case STATE_WIN:
 		{
-			//TODO - launch win state
-			SH_TRACE("%d\n", m_iClicCount);
+			//SH_TRACE("%d\n", m_iClicCount);
 		}
 		break;
 	}
@@ -245,7 +244,15 @@ int PluginGGJ2017::GetLevelClicCount(void)
 }
 
 /**
-* @brief PluginGGJ2017::DatasetParser
+* @brief IsWon
+*/
+bool PluginGGJ2017::IsWon(void)
+{
+	return(STATE_WIN == m_eGameState);
+}
+
+/**
+* @brief DatasetParser
 * @param pDataSet
 */
 void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
@@ -377,7 +384,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 }
 
 /**
-* @brief PluginGGJ2017::DatasetParser
+* @brief DatasetParser
 * @param pObject
 * @param pBody
 */
@@ -415,7 +422,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::Convert_sh_b2
+* @brief Convert_sh_b2
 * @param vec
 */
 /*static*/ CShVector2 PluginGGJ2017::Convert_sh_b2(b2Vec2 vec)
@@ -424,7 +431,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::Convert_sh_b2
+* @brief Convert_sh_b2
 * @param vec
 */
 /*static*/ b2Vec2 PluginGGJ2017::Convert_sh_b2(CShVector2 vec)
@@ -434,7 +441,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::UpdateShineObjects
+* @brief UpdateShineObjects
 */
 void PluginGGJ2017::UpdateShineObjects(void)
 {
