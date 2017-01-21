@@ -121,7 +121,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		{
 			bool isStatic = false;
 			ShDataSet::GetDataValue(pDataSet, nData, isStatic);
-			
+
 			if (isStatic)
 			{
 				bodyDef.type = b2_staticBody;
@@ -131,7 +131,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 				bodyDef.type = b2_dynamicBody;
 			}
 		}
-		
+
 		//
 		// Fixture
 		if (CShIdentifier("friction") == idDataIdentifier)
@@ -206,14 +206,13 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 		CShVector2 vPoint3(CShVector2(aabb2.m_max.m_x * scale.m_x, aabb2.m_max.m_y * scale.m_y) + vDummyAABB2Translation);
 		CShVector2 vPoint4(CShVector2(aabb2.m_max.m_x * scale.m_x, aabb2.m_min.m_y * scale.m_y) + vDummyAABB2Translation);
 
-		b2Vec2 * aB2Point = (b2Vec2*)malloc(sizeof(b2Vec2) * 4);
+		b2Vec2 aB2Point [4];
 		aB2Point[0] = Convert_sh_b2(vPoint1) - pBody->GetPosition();
 		aB2Point[1] = Convert_sh_b2(vPoint2) - pBody->GetPosition();
 		aB2Point[2] = Convert_sh_b2(vPoint3) - pBody->GetPosition();
 		aB2Point[3] = Convert_sh_b2(vPoint4) - pBody->GetPosition();
 
 		pPolygonShape->Set(aB2Point, 4);
-		free(aB2Point);
 	}
 
 	return(pPolygonShape);
@@ -249,31 +248,34 @@ void PluginGGJ2017::UpdateShineObjects(void)
 	{
 		ShObject * pObject = (ShObject *)m_aBodyList[nBody]->GetUserData();
 
-		if (b2_staticBody != m_aBodyList[nBody]->GetType())
+		if (shNULL != pObject)
 		{
-			// only movable can be moved
-			if (ShObject::IsMovable(pObject))
+			if (b2_staticBody != m_aBodyList[nBody]->GetType())
 			{
-				CShEulerAngles rotAngle(0.0f, 0.0f, m_aBodyList[nBody]->GetAngle());
-				ShObject::SetWorldRotation(pObject, rotAngle);
-				//if (shNULL != m_pObject)
-				//{
-				//	if (ShObject::IsMovable(m_pObject))
-				//	{
-				//		ShObject::SetWorldRotation(m_pObject, rotAngle);
-				//	}
-				//}
+				// only movable can be moved
+				if (ShObject::IsMovable(pObject))
+				{
+					CShEulerAngles rotAngle(0.0f, 0.0f, m_aBodyList[nBody]->GetAngle());
+					ShObject::SetWorldRotation(pObject, rotAngle);
+					//if (shNULL != m_pObject)
+					//{
+					//	if (ShObject::IsMovable(m_pObject))
+					//	{
+					//		ShObject::SetWorldRotation(m_pObject, rotAngle);
+					//	}
+					//}
 
-				CShVector2 bodyPos = Convert_sh_b2(m_aBodyList[nBody]->GetPosition());
-				ShObject::SetWorldPosition2(pObject, bodyPos);
+					CShVector2 bodyPos = Convert_sh_b2(m_aBodyList[nBody]->GetPosition());
+					ShObject::SetWorldPosition2(pObject, bodyPos);
 
-				//if (shNULL != m_pObject)
-				//{
-				//	if (ShObject::IsMovable(m_pObject))
-				//	{
-				//		ShObject::SetWorldPosition2(m_pObject, bodyPos);
-				//	}
-				//}
+					//if (shNULL != m_pObject)
+					//{
+					//	if (ShObject::IsMovable(m_pObject))
+					//	{
+					//		ShObject::SetWorldPosition2(m_pObject, bodyPos);
+					//	}
+					//}
+				}
 			}
 		}
 	}
