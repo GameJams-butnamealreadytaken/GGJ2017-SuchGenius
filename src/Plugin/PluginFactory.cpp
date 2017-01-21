@@ -2,7 +2,7 @@
 
 #include "ShSDK/ShSDK.h"
 
-extern PluginGGJ2017 * g_pInstance = shNULL;
+PluginGGJ2017 * g_pInstance = shNULL;
 
 static void OnTouchDown(int iTouch, float positionX, float positionY)
 {
