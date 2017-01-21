@@ -74,6 +74,8 @@ void GameStateMainMenu::release(void)
 void GameStateMainMenu::entered(void)
 {
 	setState(IDLE); // FIXME : INTRO
+
+	ShEntity2::SetShow(m_pScreenObject, true);
 }
 
 /**
@@ -81,7 +83,7 @@ void GameStateMainMenu::entered(void)
 */
 void GameStateMainMenu::exiting(void)
 {
-	// ...
+	ShEntity2::SetShow(m_pScreenObject, false);
 }
 
 /**
@@ -89,7 +91,7 @@ void GameStateMainMenu::exiting(void)
 */
 void GameStateMainMenu::obscuring(void)
 {
-	// ...
+	ShEntity2::SetShow(m_pScreenObject, false);
 }
 
 /**
@@ -97,7 +99,7 @@ void GameStateMainMenu::obscuring(void)
 */
 void GameStateMainMenu::revealed(void)
 {
-	// ...
+	ShEntity2::SetShow(m_pScreenObject, true);
 }
 
 /**
