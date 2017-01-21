@@ -49,7 +49,7 @@ void GameStateGame::entered(void)
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 
-	m_pRestartButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_start"));
+	m_pRestartButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_retry"));
 	SH_ASSERT(shNULL != m_pRestartButton);
 
 	m_pHomeButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_home"));
@@ -146,7 +146,7 @@ void GameStateGame::touchEnd(const CShVector2 & pos)
 			}
 			else if (m_pPressedButton == m_pHomeButton)
 			{
-				
+				game.pop();
 			}
 		}
 	}
