@@ -6,6 +6,10 @@ const CShIdentifier plugin_identifier("PluginGGJ2017");
 const b2Vec2 gravity(0.0f, -9.8f);
 const int ratio_sh_b2 = 100;
 
+#define DURATION 0.3f
+#define WAVE_SIZE (256.0f*0.5f) // size of the sprite
+#define MAX_DISTANCE (WAVE_SIZE)
+
 /**
  * @brief Constructor
  */
@@ -29,6 +33,8 @@ PluginGGJ2017::~PluginGGJ2017(void)
 void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 {
 	m_pWorld = new b2World(gravity);
+
+	m_levelIdentifier = levelIdentifier;
 
 	//
 	// Load and parse all DummyAABB2 datasets
@@ -72,8 +78,97 @@ void PluginGGJ2017::OnPreUpdate(void)
 */
 void PluginGGJ2017::OnPostUpdate(float dt)
 {
+	unsigned int iWaveCount = m_aShockWave.GetCount();
+
+	for (int iWave = 0; iWave < iWaveCount; ++iWave)
+	{
+		ShockWave & wave = m_aShockWave[iWave];
+
+		wave.time += dt;
+
+		if (wave.time < DURATION)
+		{
+			float scale = (wave.time/DURATION);
+			float alpha = 1.0f - (wave.time/DURATION);
+
+			ShEntity2::SetScale(wave.pEntity, CShVector3(scale, scale, 1.0f));
+			ShEntity2::SetAlpha(wave.pEntity, alpha);
+
+			float radius_b2 = (WAVE_SIZE * scale) / ratio_sh_b2;
+
+			b2Vec2 pos_b2 = Convert_sh_b2(wave.initialPosition);
+
+			unsigned int iBodyCount = m_aBodyList.GetCount();
+
+			for (auto iBody = 0; iBody < iBodyCount; ++iBody)
+			{
+				const b2Vec2 & pos = m_aBodyList[iBody]->GetPosition();
+
+				b2Vec2 PointerToObject = pos - pos_b2;
+				const float distance = PointerToObject.Normalize();
+
+				if (distance < radius_b2)
+				{
+					b2Vec2 impulse(PointerToObject.x * (distance/(MAX_DISTANCE/ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance/(MAX_DISTANCE/ratio_sh_b2)) * 5.0f);
+					m_aBodyList[iBody]->ApplyLinearImpulseToCenter(impulse, true);
+				}
+			}
+		}
+		else
+		{
+			ShEntity2::SetShow(wave.pEntity, false); // TODO : remove it + destroy entity
+		}
+	}
+
 	m_pWorld->Step(dt, 8, 3);
+
 	UpdateShineObjects();
+}
+
+/**
+ * @brief PluginGGJ2017::OnTouchDown
+ * @param iTouch
+ * @param positionX
+ * @param positionY
+ */
+void PluginGGJ2017::OnTouchDown(int iTouch, float positionX, float positionY)
+{
+	// ...
+}
+
+/**
+ * @brief PluginGGJ2017::OnTouchUp
+ * @param iTouch
+ * @param positionX
+ * @param positionY
+ */
+void PluginGGJ2017::OnTouchUp(int iTouch, float positionX, float positionY)
+{
+	ShCamera * pCamera = ShCamera::GetCamera2D();
+
+	CShVector2 windowPos(ShDisplay::GetWidth()*0.5f+positionX, ShDisplay::GetHeight()*0.5f-positionY);
+
+	CShRay3 ray = ShCamera::Unproject(pCamera, windowPos);
+
+	CShVector2 pos(ray.GetOrigin().m_x, ray.GetOrigin().m_y);
+
+	ShockWave wave;
+	wave.pEntity = ShEntity2::Create(m_levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShIdentifier("ggj17"), CShIdentifier("shockwave"), CShVector3(pos.m_x, pos.m_y, 10.0f), CShEulerAngles(0.0f, 0.0f, 0.0f), CShVector3(0.0f, 0.0f, 1.0f));
+	wave.initialPosition = pos;
+	wave.time = 0.0f;
+
+	m_aShockWave.Add(wave);
+}
+
+/**
+ * @brief PluginGGJ2017::OnTouchMove
+ * @param iTouch
+ * @param positionX
+ * @param positionY
+ */
+void PluginGGJ2017::OnTouchMove(int iTouch, float positionX, float positionY)
+{
+	// ...
 }
 
 /**
@@ -172,7 +267,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		bodyDef.angle = ShObject::GetWorldRotation(pObject).m_z;
 		bodyDef.position = Convert_sh_b2(ShObject::GetWorldPosition2(pObject));
 	}
-	
+
 	b2Body * pBody = m_pWorld->CreateBody(&bodyDef);
 	m_aBodyList.Add(pBody);
 

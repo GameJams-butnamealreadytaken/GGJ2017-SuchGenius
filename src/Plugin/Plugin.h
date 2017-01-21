@@ -31,8 +31,12 @@ public:
 
 	//
 	// Update
-	virtual	void			OnPreUpdate(void) override;
-	virtual	void			OnPostUpdate(float dt) override;
+	virtual	void			OnPreUpdate			(void) override;
+	virtual	void			OnPostUpdate		(float dt) override;
+
+	void					OnTouchDown			(int iTouch, float positionX, float positionY);
+	void					OnTouchUp			(int iTouch, float positionX, float positionY);
+	void					OnTouchMove			(int iTouch, float positionX, float positionY);
 
 private:
 
@@ -49,4 +53,15 @@ private:
 	b2World *			m_pWorld;
 
 	CShArray<b2Body *>	m_aBodyList;
+
+	CShIdentifier m_levelIdentifier;
+
+	struct ShockWave
+	{
+		ShEntity2 * pEntity;
+		CShVector2 initialPosition;
+		float time;
+	};
+
+	CShArray<ShockWave> m_aShockWave;
 };
