@@ -2,8 +2,12 @@
 
 #include "Game.h"
 
+#define ANIM_INTRO_ENTERED_DURATION 0.5f
+#define ANIM_INTRO_ENTERED_POPUP_LENGTH 400.0f
+#define ANIM_INTRO_ENTERED_POPUP_BASE_Y 0.0f
+
 /**
-* @brief :Constructor
+* @brief Constructor
 */
 GameStateWin::GameStateWin(void)
 {
@@ -23,7 +27,17 @@ GameStateWin::~GameStateWin(void)
 */
 void GameStateWin::init(void)
 {
-	// ...
+	CShIdentifier levelIdentifier("level_win");
+	bool loading = ShLevel::Load(levelIdentifier);
+	SH_ASSERT(loading);
+
+	m_pPopupBackgroundEntity = ShEntity2::Find(levelIdentifier, CShIdentifier("popup_background"));
+	SH_ASSERT(shNULL != m_pPopupBackgroundEntity);
+	ShEntity2::SetShow(m_pPopupBackgroundEntity, false);
+
+	m_pPopupEntity = ShEntity2::Find(levelIdentifier, CShIdentifier("popup"));
+	SH_ASSERT(shNULL != m_pPopupEntity);
+	ShEntity2::SetShow(m_pPopupEntity, false);
 }
 
 /**
@@ -31,7 +45,9 @@ void GameStateWin::init(void)
 */
 void GameStateWin::release(void)
 {
-	// ...
+	m_pPopupEntity = shNULL;
+
+	ShLevel::Release();
 }
 
 /**
@@ -39,13 +55,13 @@ void GameStateWin::release(void)
 */
 void GameStateWin::entered(void)
 {
-	//
-	// Load level
-	CShIdentifier levelIdentifier("level_win");
-	bool loading = ShLevel::Load(levelIdentifier);
-	SH_ASSERT(loading);
+	m_eCurrentState = ANIM_INTRO_ENTERED;
 
 	m_iClicCount = g_pInstance->GetLevelClicCount();
+
+	ShEntity2::SetShow(m_pPopupEntity, true);
+	ShEntity2::SetShow(m_pPopupBackgroundEntity, true);
+	ShEntity2::SetAlpha(m_pPopupBackgroundEntity, 0.0f);
 }
 
 /**
@@ -53,7 +69,8 @@ void GameStateWin::entered(void)
 */
 void GameStateWin::exiting(void)
 {
-	// ...
+	ShEntity2::SetShow(m_pPopupEntity, false);
+	ShEntity2::SetShow(m_pPopupBackgroundEntity, false);
 }
 
 /**
@@ -61,7 +78,8 @@ void GameStateWin::exiting(void)
 */
 void GameStateWin::obscuring(void)
 {
-	// ...
+	ShEntity2::SetShow(m_pPopupEntity, false);
+	ShEntity2::SetShow(m_pPopupBackgroundEntity, false);
 }
 
 /**
@@ -69,7 +87,9 @@ void GameStateWin::obscuring(void)
 */
 void GameStateWin::revealed(void)
 {
-	// ...
+	ShEntity2::SetShow(m_pPopupEntity, true);
+	ShEntity2::SetShow(m_pPopupBackgroundEntity, true);
+	ShEntity2::SetAlpha(m_pPopupBackgroundEntity, 0.0f);
 }
 
 /**
@@ -77,7 +97,37 @@ void GameStateWin::revealed(void)
 */
 void GameStateWin::update(float dt)
 {
-	// ...
+	m_fStateTime += dt;
+
+	switch (m_eCurrentState)
+	{
+		case ANIM_INTRO_ENTERED:
+		{
+			if (m_fStateTime > ANIM_INTRO_ENTERED_DURATION)
+			{
+				ShObject::SetRelativePositionY(m_pPopupEntity, ANIM_INTRO_ENTERED_POPUP_BASE_Y);
+				m_eCurrentState = IDLE;
+			}
+			else
+			{
+				float progress = (m_fStateTime / ANIM_INTRO_ENTERED_DURATION);
+
+				float progress_background = 2.0f * progress;
+				float alpha = (progress_background < 0.6f) ? progress_background : 0.6f;
+				ShEntity2::SetAlpha(m_pPopupBackgroundEntity, alpha);
+
+				float progress_popup = BounceEase(progress);
+				ShObject::SetRelativePositionY(m_pPopupEntity, (ANIM_INTRO_ENTERED_POPUP_BASE_Y + ANIM_INTRO_ENTERED_POPUP_LENGTH) - (ANIM_INTRO_ENTERED_POPUP_LENGTH * progress_popup));
+			}
+		}
+		break;
+
+		case IDLE:
+		{
+			// do nothing
+		}
+		break;
+	}
 }
 
 /**
