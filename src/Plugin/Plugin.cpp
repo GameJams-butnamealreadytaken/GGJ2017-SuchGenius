@@ -327,11 +327,20 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 	if (CShIdentifier("sensor_obect") == idDataSetIdentifier)
 	{
 		bodyFixture.isSensor = true;
-		type = Block::SENSOR;
+		bodyFixture.filter.categoryBits = 2;
+		bodyFixture.filter.maskBits = 16;
 	}
 	else if (CShIdentifier("block_object_player") == idDataSetIdentifier)
 	{
 		type = Block::PLAYER;
+		bodyFixture.filter.categoryBits = 1;
+		bodyFixture.filter.maskBits = 1;
+	}
+	else if (CShIdentifier("block_object_static") == idDataSetIdentifier)
+	{
+		type = Block::STATIC;
+		bodyFixture.filter.categoryBits = 1;
+		bodyFixture.filter.maskBits = 1;
 	}
 
 	if (ShObject::GetType(pObject) != ShObject::e_type_unknown)
@@ -342,20 +351,23 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 
 	b2Body * pBody = m_pWorld->CreateBody(&bodyDef);
 
-	Block * pBlock = new Block();
-	pBlock->Initialize(pBody, pAttachedSprite, type);
-	m_aBlockList.Add(pBlock);
-
-	pBody->SetUserData(pBlock);
-
-	b2Shape * pShape = GenerateBlockShape(pObject, pBody);
-	SH_ASSERT(shNULL != pShape);
-
-	if (shNULL != pShape)
+	if (!bodyFixture.isSensor)
 	{
-		bodyFixture.shape = pShape;
+		Block * pBlock = new Block();
+		pBlock->Initialize(pBody, pAttachedSprite, type);
+		m_aBlockList.Add(pBlock);
 
-		b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
+		pBody->SetUserData(pBlock);
+
+		b2Shape * pShape = GenerateBlockShape(pObject, pBody);
+		SH_ASSERT(shNULL != pShape);
+
+		if (shNULL != pShape)
+		{
+			bodyFixture.shape = pShape;
+
+			b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
+		}
 	}
 }
 

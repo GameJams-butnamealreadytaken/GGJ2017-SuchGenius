@@ -14,6 +14,7 @@
             <sprite_texture name="ggj17.block_arrivee.tga"/>
             <sprite_texture name="ggj17.block_dynamic.tga"/>
             <sprite_texture name="ggj17.block_static.tga"/>
+            <sprite_texture name="ggj17.shockwave.tga"/>
         </sprite_texture_list>
         <material_library_list/>
         <submesh_list/>
@@ -25,7 +26,7 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-71.000000" min_y="0.000000" max_x="180.000000" max_y="210.000000"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-71.000000" min_y="0.000000" max_x="382.513702" max_y="264.309296"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
@@ -33,6 +34,7 @@
         <entity2 name="sprite_ggj17_block_static_002" position_x="70.000000" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha"/>
         <entity2 name="sprite_ggj17_block_static_003" position_x="-70.000000" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha"/>
         <entity2 name="sprite_ggj17_block_dynamic_001" position_x="110.000000" position_y="140.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_dynamic" blend_function="alpha"/>
+        <entity2 name="" position_x="137.061981" position_y="18.857574" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.958796" scale_y="0.958796" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.041204" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
         <dummy_aabb2 name="dummy_aabb2_auto_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="35.000000" scale_y="35.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
@@ -94,7 +96,7 @@
                     <data type="bool" name="isstatic" value="false"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
-                    <data type="bool" name="fixedrotation" value="true"/>
+                    <data type="bool" name="fixedrotation" value="false"/>
                     <data type="bool" name="bullet" value="false"/>
                     <data type="bool" name="active" value="true"/>
                     <data type="float" name="friction" value="0.200000"/>
@@ -124,17 +126,6 @@
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
-        </prefab>
-        <prefab name="prefab_block_player_001" position_x="-403.114807" position_y="340.036499" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_player" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_dynamic_002" prefab_child_resource_identifier="sprite_ggj17_block_dynamic_001">
-                <dummy_aabb2 name="dummy_aabb2_auto_005" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                    <data_set_list>
-                        <data_set name="block_object_player" instance_name="block_object_player_0">
-                            <data type="object" name="attachedobject" value="sprite_ggj17_block_dynamic_002"/>
-                        </data_set>
-                    </data_set_list>
-                </dummy_aabb2>
-            </entity2>
         </prefab>
         <prefab name="prefab_block_arrival_001" position_x="-530.125732" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_001" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
@@ -181,6 +172,16 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
+        <prefab name="prefab_block_player_001" position_x="-416.679840" position_y="374.622375" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_player" layer="layer_default">
+            <entity2 name="sprite_ggj17_block_dynamic_002" prefab_child_resource_identifier="sprite_ggj17_block_dynamic_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_005" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_player" instance_name="block_object_player_0">
+                        <data type="object" name="attachedobject" value="sprite_ggj17_block_dynamic_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
     </object_list>
     <plugins>
         <plugin name="pluginggj2017"/>
@@ -195,6 +196,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="false"/>
-        <camera position_x="-417.456482" position_y="113.008835" position_z="536.627686" target_x="-417.456482" target_y="113.009003" target_z="0.000035" znear="1.000000" zfar="40000.000000" zoom="0.536628" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-536.627625" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="-344.083344" position_y="215.601181" position_z="864.244202" target_x="-344.083374" target_y="215.601456" target_z="0.000067" znear="1.000000" zfar="40000.000000" zoom="0.864244" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-864.244141" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>

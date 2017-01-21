@@ -30,7 +30,7 @@
                         <data type="float" name="restitution" value="0.000000"/>
                         <data type="float" name="density" value="1.000000"/>
                         <data type="int" name="categorybits" value="1"/>
-                        <data type="int" name="maskbits" value="65535"/>
+                        <data type="int" name="maskbits" value="1"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>

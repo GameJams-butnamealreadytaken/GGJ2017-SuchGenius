@@ -15,5 +15,5 @@
 	<data name="density" 			type="float" 	editable="true" 	default_value="1.0"/>
 
 	<data name="categoryBits" 		type="int" 		editable="true" 	default_value="1"/>
-	<data name="maskBits" 			type="int" 		editable="true" 	default_value="65535"/>
+	<data name="maskBits" 			type="int" 		editable="true" 	default_value="2"/>
 </data_set>

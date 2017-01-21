@@ -26,16 +26,27 @@ void Box2DListener::Initialize(PluginGGJ2017 * pPlugin)
 */
 void Box2DListener::BeginContact(b2Contact * contact)
 {
-	Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
-	Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+	b2Fixture* fixtureA = contact->GetFixtureA();
+	b2Fixture* fixtureB = contact->GetFixtureB();
 
-	if (Block::SENSOR == pBlockA->GetType() && Block::PLAYER == pBlockB->GetType())
+	bool sensorA = fixtureA->IsSensor();
+	bool sensorB = fixtureB->IsSensor();
+
+	if (sensorA)
 	{
-		m_pPlugin->SetPlayerOnArrival(true);
+		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+		if (Block::PLAYER == pBlockB->GetType())
+		{
+			m_pPlugin->SetPlayerOnArrival(true);
+		}
 	}
-	else if (Block::SENSOR == pBlockB->GetType() && Block::PLAYER == pBlockA->GetType())
+	else if (sensorB)
 	{
-		m_pPlugin->SetPlayerOnArrival(true);
+		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
+		if (Block::PLAYER == pBlockA->GetType())
+		{
+			m_pPlugin->SetPlayerOnArrival(true);
+		}
 	}
 }
 
@@ -44,16 +55,27 @@ void Box2DListener::BeginContact(b2Contact * contact)
 */
 void Box2DListener::EndContact(b2Contact * contact)
 {
-	Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
-	Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+	b2Fixture* fixtureA = contact->GetFixtureA();
+	b2Fixture* fixtureB = contact->GetFixtureB();
 
-	if (Block::SENSOR == pBlockA->GetType() && Block::PLAYER == pBlockB->GetType())
+	bool sensorA = fixtureA->IsSensor();
+	bool sensorB = fixtureB->IsSensor();
+
+	if (sensorA)
 	{
-		m_pPlugin->SetPlayerOnArrival(false);
+		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+		if (Block::PLAYER == pBlockB->GetType())
+		{
+			m_pPlugin->SetPlayerOnArrival(false);
+		}
 	}
-	else if (Block::SENSOR == pBlockB->GetType() && Block::PLAYER == pBlockA->GetType())
+	else if (sensorB)
 	{
-		m_pPlugin->SetPlayerOnArrival(false);
+		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
+		if (Block::PLAYER == pBlockA->GetType())
+		{
+			m_pPlugin->SetPlayerOnArrival(false);
+		}
 	}
 }
 
