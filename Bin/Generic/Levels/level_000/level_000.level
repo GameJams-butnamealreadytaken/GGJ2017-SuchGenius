@@ -32,7 +32,7 @@
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_static_001"/>
-                    <data type="bool" name="isstatic" value="false"/>
+                    <data type="bool" name="isstatic" value="true"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
                     <data type="bool" name="fixedrotation" value="false"/>
@@ -50,21 +50,7 @@
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_static_002"/>
-                    <data type="bool" name="isstatic" value="false"/>
-                    <data type="bool" name="allowsleep" value="true"/>
-                    <data type="bool" name="awake" value="true"/>
-                    <data type="bool" name="fixedrotation" value="false"/>
-                    <data type="bool" name="bullet" value="true"/>
-                    <data type="bool" name="active" value="true"/>
-                    <data type="float" name="friction" value="0.200000"/>
-                    <data type="float" name="restitution" value="0.000000"/>
-                    <data type="float" name="density" value="1.000000"/>
-                    <data type="int" name="categorybits" value="1"/>
-                    <data type="int" name="maskbits" value="65535"/>
-                </data_set>
-                <data_set name="block_object_static" instance_name="block_object_static_1">
-                    <data type="object" sub_type="all" name="attachedobject" value=""/>
-                    <data type="bool" name="isstatic" value="false"/>
+                    <data type="bool" name="isstatic" value="true"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
                     <data type="bool" name="fixedrotation" value="false"/>
@@ -82,7 +68,7 @@
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_static_003"/>
-                    <data type="bool" name="isstatic" value="false"/>
+                    <data type="bool" name="isstatic" value="true"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
                     <data type="bool" name="fixedrotation" value="false"/>
@@ -115,6 +101,9 @@
             </data_set_list>
         </dummy_aabb2>
     </object_list>
+    <plugins>
+        <plugin name="pluginggj2017"/>
+    </plugins>
     <editor_settings>
         <snap_x enabled="false" value="100.000000"/>
         <snap_y enabled="false" value="100.000000"/>
