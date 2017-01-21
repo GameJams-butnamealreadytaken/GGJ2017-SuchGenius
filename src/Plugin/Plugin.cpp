@@ -1,6 +1,5 @@
 #include "Plugin.h"
 
-#include "ShSDK/ShSDK.h"
 
 const CShIdentifier plugin_identifier("PluginGGJ2017");
 const b2Vec2 gravity(0.0f, -9.8f);
@@ -13,7 +12,12 @@ const int ratio_sh_b2 = 100;
 /**
  * @brief Constructor
  */
-PluginGGJ2017::PluginGGJ2017(void) : CShPlugin(plugin_identifier), m_levelIdentifier(GID(NULL))
+PluginGGJ2017::PluginGGJ2017(void) : CShPlugin(plugin_identifier)
+, m_pWorld(shNULL)
+, m_Box2DListener(shNULL)
+, m_playerOnArrival(false)
+, m_arrivalTimer(0.0f)
+, m_levelIdentifier(GID(NULL))
 {
 	// ...
 }
@@ -34,6 +38,9 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 {
 	m_pWorld = new b2World(gravity);
 
+	m_Box2DListener = new Box2DListener();
+	m_pWorld->SetContactListener(m_Box2DListener);
+
 	m_levelIdentifier = levelIdentifier;
 
 	//
@@ -52,6 +59,8 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 			DatasetParser(pObject, pDataSet);
 		}
 	}
+
+	m_eGameState = STATE_PLAYING;
 }
 
 /**
@@ -60,10 +69,18 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
  */
 void PluginGGJ2017::OnPlayStop(const CShIdentifier & levelIdentifier)
 {
+	int iBlockCount = m_aBlockList.GetCount();
+	for (int i = 0; i < iBlockCount; ++i)
+	{
+		m_aBlockList[i]->Release();
+	}
+	m_aBlockList.Empty();
+
 	m_levelIdentifier = GID(NULL);
 
-	m_aBodyList.Empty();
 	SH_SAFE_DELETE(m_pWorld);
+
+	SH_SAFE_DELETE(m_Box2DListener);
 }
 
 /**
@@ -80,51 +97,75 @@ void PluginGGJ2017::OnPreUpdate(void)
 */
 void PluginGGJ2017::OnPostUpdate(float dt)
 {
-	unsigned int iWaveCount = m_aShockWave.GetCount();
-
-	for (int iWave = 0; iWave < iWaveCount; ++iWave)
+	switch (m_eGameState)
 	{
-		ShockWave & wave = m_aShockWave[iWave];
-
-		wave.time += dt;
-
-		if (wave.time < DURATION)
+		case STATE_PLAYING:
 		{
-			float scale = (wave.time/DURATION);
-			float alpha = 1.0f - (wave.time/DURATION);
+			unsigned int iWaveCount = m_aShockWave.GetCount();
 
-			ShEntity2::SetScale(wave.pEntity, CShVector3(scale, scale, 1.0f));
-			ShEntity2::SetAlpha(wave.pEntity, alpha);
-
-			float radius_b2 = (WAVE_SIZE * scale) / ratio_sh_b2;
-
-			b2Vec2 pos_b2 = Convert_sh_b2(wave.initialPosition);
-
-			unsigned int iBodyCount = m_aBodyList.GetCount();
-
-			for (auto iBody = 0; iBody < iBodyCount; ++iBody)
+			for (int iWave = 0; iWave < iWaveCount; ++iWave)
 			{
-				const b2Vec2 & pos = m_aBodyList[iBody]->GetPosition();
+				ShockWave & wave = m_aShockWave[iWave];
 
-				b2Vec2 PointerToObject = pos - pos_b2;
-				const float distance = PointerToObject.Normalize();
+				wave.time += dt;
 
-				if (distance < radius_b2)
+				if (wave.time < DURATION)
 				{
-					b2Vec2 impulse(PointerToObject.x * (distance/(MAX_DISTANCE/ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance/(MAX_DISTANCE/ratio_sh_b2)) * 5.0f);
-					m_aBodyList[iBody]->ApplyLinearImpulseToCenter(impulse, true);
+					float scale = (wave.time / DURATION);
+					float alpha = 1.0f - (wave.time / DURATION);
+
+					ShEntity2::SetScale(wave.pEntity, CShVector3(scale, scale, 1.0f));
+					ShEntity2::SetAlpha(wave.pEntity, alpha);
+
+					float radius_b2 = (WAVE_SIZE * scale) / ratio_sh_b2;
+
+					b2Vec2 pos_b2 = Convert_sh_b2(wave.initialPosition);
+
+					unsigned int iBlockCount = m_aBlockList.GetCount();
+
+					for (auto iBody = 0; iBody < iBlockCount; ++iBody)
+					{
+						const b2Vec2 & pos = m_aBlockList[iBody]->GetBody()->GetPosition();
+
+						b2Vec2 PointerToObject = pos - pos_b2;
+						const float distance = PointerToObject.Normalize();
+
+						if (distance < radius_b2)
+						{
+							b2Vec2 impulse(PointerToObject.x * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f);
+							m_aBlockList[iBody]->GetBody()->ApplyLinearImpulseToCenter(impulse, true);
+						}
+					}
+				}
+				else
+				{
+					ShEntity2::SetShow(wave.pEntity, false); // TODO : remove it + destroy entity
+				}
+			}
+
+			m_pWorld->Step(dt, 8, 3);
+
+			UpdateShineObjects();
+
+			if (m_playerOnArrival)
+			{
+				m_arrivalTimer += dt;
+
+				if (m_arrivalTimer >= 3.0f)
+				{
+					m_eGameState = STATE_WIN;
+					m_arrivalTimer = 0.0f;
 				}
 			}
 		}
-		else
+		break;
+
+		case STATE_WIN:
 		{
-			ShEntity2::SetShow(wave.pEntity, false); // TODO : remove it + destroy entity
+
 		}
+		break;
 	}
-
-	m_pWorld->Step(dt, 8, 3);
-
-	UpdateShineObjects();
 }
 
 /**
@@ -177,6 +218,20 @@ void PluginGGJ2017::OnTouchMove(int iTouch, float positionX, float positionY)
 }
 
 /**
+* @brief PluginGGJ2017::SetPlayerOnArrival
+* @param playerOnArrival
+*/
+void PluginGGJ2017::SetPlayerOnArrival(bool playerOnArrival)
+{
+	m_playerOnArrival = playerOnArrival;
+
+	if (!m_playerOnArrival)
+	{
+		m_arrivalTimer = 0.0f;
+	}
+}
+
+/**
 * @brief PluginGGJ2017::DatasetParser
 * @param pDataSet
 */
@@ -185,7 +240,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 	b2BodyDef bodyDef;
 	b2FixtureDef bodyFixture;
 
-	ShObject * pAttachedObject = shNULL;
+	ShObject * pAttachedSprite = shNULL;
 
 	int iDataCount = ShDataSet::GetDataCount(pDataSet);
 	for (int nData = 0; nData < iDataCount; ++nData)
@@ -195,8 +250,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		const CShIdentifier & idDataIdentifier = ShDataSet::GetDataIdentifier(pDataSet, nData);
 		if (CShIdentifier("AttachedObject") == idDataIdentifier)
 		{
-			ShDataSet::GetDataValue(pDataSet, nData, &pAttachedObject);
-			bodyDef.userData = pAttachedObject;
+			ShDataSet::GetDataValue(pDataSet, nData, &pAttachedSprite);
 		}
 		else if (CShIdentifier("allowSleep") == idDataIdentifier)
 		{
@@ -267,6 +321,28 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		}
 	}
 
+	CShIdentifier idDataSetIdentifier = ShDataSet::GetDataSetIdentifier(pDataSet);
+
+	Block::EBlockType type = Block::STATIC;
+	if (CShIdentifier("sensor_obect") == idDataSetIdentifier)
+	{
+		bodyFixture.isSensor = true;
+		bodyFixture.filter.categoryBits = 2;
+		bodyFixture.filter.maskBits = 16;
+	}
+	else if (CShIdentifier("block_object_player") == idDataSetIdentifier)
+	{
+		type = Block::PLAYER;
+		bodyFixture.filter.categoryBits = 1;
+		bodyFixture.filter.maskBits = 1;
+	}
+	else if (CShIdentifier("block_object_static") == idDataSetIdentifier)
+	{
+		type = Block::STATIC;
+		bodyFixture.filter.categoryBits = 1;
+		bodyFixture.filter.maskBits = 1;
+	}
+
 	if (ShObject::GetType(pObject) != ShObject::e_type_unknown)
 	{
 		bodyDef.angle = ShObject::GetWorldRotation(pObject).m_z;
@@ -274,16 +350,24 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 	}
 
 	b2Body * pBody = m_pWorld->CreateBody(&bodyDef);
-	m_aBodyList.Add(pBody);
 
-	b2Shape * pShape = GenerateBlockShape(pObject, pBody);
-	SH_ASSERT(shNULL != pShape);
-
-	if (shNULL != pShape)
+	if (!bodyFixture.isSensor)
 	{
-		bodyFixture.shape = pShape;
+		Block * pBlock = new Block();
+		pBlock->Initialize(pBody, pAttachedSprite, type);
+		m_aBlockList.Add(pBlock);
 
-		b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
+		pBody->SetUserData(pBlock);
+
+		b2Shape * pShape = GenerateBlockShape(pObject, pBody);
+		SH_ASSERT(shNULL != pShape);
+
+		if (shNULL != pShape)
+		{
+			bodyFixture.shape = pShape;
+
+			b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
+		}
 	}
 }
 
@@ -350,22 +434,24 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 */
 void PluginGGJ2017::UpdateShineObjects(void)
 {
-	int iBodyCount = m_aBodyList.GetCount();
+	int iBodyCount = m_aBlockList.GetCount();
 	for (int nBody = 0; nBody < iBodyCount; ++nBody)
 	{
-		ShObject * pObject = (ShObject *)m_aBodyList[nBody]->GetUserData();
+		Block * pBlock = (Block *)m_aBlockList[nBody]->GetBody()->GetUserData();
+		ShObject * pObject = pBlock->GetSprite();
 
 		if (shNULL != pObject)
 		{
-			//if (b2_staticBody != m_aBodyList[nBody]->GetType())
+			if (b2_staticBody != m_aBlockList[nBody]->GetBody()->GetType())
 			{
 				// only movable can be moved
 				if (ShObject::IsMovable(pObject))
 				{
-					CShEulerAngles rotAngle(0.0f, 0.0f, m_aBodyList[nBody]->GetAngle());
+					CShEulerAngles rotAngle(0.0f, 0.0f, m_aBlockList[nBody]->GetBody()->GetAngle());
 					ShObject::SetWorldRotation(pObject, rotAngle);
+					
+					CShVector2 bodyPos = Convert_sh_b2(m_aBlockList[nBody]->GetBody()->GetPosition());
 
-					CShVector2 bodyPos = Convert_sh_b2(m_aBodyList[nBody]->GetPosition());
 					ShObject::SetWorldPosition2(pObject, bodyPos);
 				}
 			}

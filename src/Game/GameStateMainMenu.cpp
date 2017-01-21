@@ -78,6 +78,8 @@ bool GameStateMainMenu::load(void)
 
 	m_pButtonPlay = ShEntity2::Find(levelIdentifier, CShIdentifier("sprite_ggj17_main_menu_button_play_001"));
 	SH_ASSERT(shNULL != m_pButtonPlay);
+
+	return(loading);
 }
 
 /**
@@ -89,6 +91,8 @@ bool GameStateMainMenu::unload(void)
 	m_pButtonPlay = shNULL;
 
 	ShLevel::Release();
+
+	return(true);
 }
 
 

@@ -1,13 +1,13 @@
 #pragma once
 
 #if defined(_WIN32)
-#	if defined(Plugin_EXPORTS)
-#		define PLUGIN_EXPORT __declspec(dllexport)
+#	if defined(Plugin_Editor_EXPORTS)
+#		define PLUGIN_GGJ17_EXPORT __declspec(dllexport)
 #	else
-#		define PLUGIN_EXPORT __declspec(dllimport)
+#		define PLUGIN_GGJ17_EXPORT //__declspec(dllimport)
 #	endif // Plugin_EXPORTS
 #else // defined(_WIN32)
-#	define PLUGIN_EXPORT
+#	define PLUGIN_GGJ17_EXPORT
 #endif
 
 #include "ShSDK/ShSDK.h"
@@ -15,9 +15,20 @@
 
 #include "Box2D/Box2D.h"
 
+#include "Box2D_listener.h"
+#include "Block.h"
+
+class Box2DListener;
+
 class PluginGGJ2017 : public CShPlugin
 {
 public:
+
+	enum EGameState
+	{
+		STATE_PLAYING,
+		STATE_WIN
+	};
 
 	//
 	// Constructor / Destructor
@@ -38,6 +49,8 @@ public:
 	void					OnTouchUp			(int iTouch, float positionX, float positionY);
 	void					OnTouchMove			(int iTouch, float positionX, float positionY);
 
+	void					SetPlayerOnArrival	(bool playerOnArrival);
+
 private:
 
 	void					UpdateShineObjects	(void);
@@ -52,7 +65,12 @@ private:
 
 	b2World *			m_pWorld;
 
-	CShArray<b2Body *>	m_aBodyList;
+	CShArray<Block *>	m_aBlockList;
+
+	Box2DListener *		m_Box2DListener;
+
+	bool				m_playerOnArrival;
+	float				m_arrivalTimer;
 
 	CShIdentifier m_levelIdentifier;
 
@@ -64,4 +82,6 @@ private:
 	};
 
 	CShArray<ShockWave> m_aShockWave;
+
+	EGameState m_eGameState;
 };
