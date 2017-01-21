@@ -7,6 +7,12 @@ class GameStateMainMenu : public State
 
 public:
 
+	enum EState
+	{
+		IDLE,
+		ANIM_OUTRO_LEVELS,
+	};
+
 	explicit	GameStateMainMenu	(void);
 	virtual		~GameStateMainMenu	(void);
 
@@ -30,9 +36,23 @@ protected:
 	bool		load				(void);
 	bool		unload				(void);
 
+	void		setState			(EState eState);
+
 private:
+
+	EState		m_eCurrentState;
+	float		m_fStateTime;
+
+	ShObject * m_pScreenObject;
 
 	ShEntity2 * m_pPressedButton;
 
 	ShEntity2 * m_pButtonPlay;
+	ShEntity2 * m_pButtonSound;
+	ShEntity2 * m_pButtonLevels;
+	ShEntity2 * m_pButtonInfo;
+
+	ShEntity2 * m_pIconSoundOn;
+	ShEntity2 * m_pIconSoundOff;
+
 };

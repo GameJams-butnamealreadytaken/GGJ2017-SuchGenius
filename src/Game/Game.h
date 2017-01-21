@@ -41,6 +41,8 @@ public:
 	void		push			(EState state);
 	void		pop				(void);
 
+	bool		toggleMute		(void);
+
 	// Get State
 	State *	get(EState state)
 	{
@@ -83,4 +85,6 @@ private:
 	GameStateMainMenu		m_stateMainMenu;
 	GameStateLevelSelection	m_stateLevelSelection;
 	GameStateGame			m_stateGame;
+
+	bool					m_bMuted;
 };

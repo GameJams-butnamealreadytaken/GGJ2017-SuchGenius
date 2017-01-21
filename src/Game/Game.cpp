@@ -7,7 +7,7 @@ Game * Game::instance_ = shNULL;
 /**
  * @brief Game::Game
  */
-Game::Game(void) : m_iCurrentState(-1)
+Game::Game(void) : m_iCurrentState(-1), m_bMuted(false)
 {
 	for (int i = 0; i < MAX_GAME_STATES; ++i)
 	{
@@ -123,3 +123,23 @@ void Game::pop(void)
 	}
 }
 
+
+/**
+ * @brief Game::toggleMute
+ * @return
+ */
+bool Game::toggleMute(void)
+{
+	m_bMuted = !m_bMuted;
+
+	if (m_bMuted)
+	{
+		ShSound::SetGlobalVolume(0.0f);
+	}
+	else
+	{
+		ShSound::SetGlobalVolume(1.0f);
+	}
+
+	return(m_bMuted);
+}
