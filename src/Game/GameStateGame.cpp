@@ -9,7 +9,7 @@ GameStateGame::GameStateGame(void)
 : m_pPressedButton(shNULL)
 , m_pHomeButton(shNULL)
 , m_pRestartButton(shNULL)
-{ 
+{
 	// ...
 }
 
@@ -42,19 +42,6 @@ void GameStateGame::release(void)
 */
 void GameStateGame::entered(void)
 {
-	//
-	// Load level
-	CShString strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
-	CShIdentifier levelIdentifier(strLevelName);
-	bool loading = ShLevel::Load(levelIdentifier);
-	SH_ASSERT(loading);
-
-	m_pRestartButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_retry"));
-	SH_ASSERT(shNULL != m_pRestartButton);
-
-	m_pHomeButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_home"));
-	SH_ASSERT(shNULL != m_pHomeButton);
-
 	load();
 }
 
@@ -91,7 +78,22 @@ void GameStateGame::load(void)
 	CShString strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
 	CShIdentifier levelIdentifier(strLevelName);
 	bool loading = ShLevel::Load(levelIdentifier);
+
+	if (!loading)
+	{
+		Game & game = Game::instance();
+		game.pop();
+		game.push(Game::CREDITS);
+		return;
+	}
+
 	SH_ASSERT(loading);
+
+	m_pRestartButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_retry"));
+	SH_ASSERT(shNULL != m_pRestartButton);
+
+	m_pHomeButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_home"));
+	SH_ASSERT(shNULL != m_pHomeButton);
 }
 
 /**
@@ -149,6 +151,8 @@ void GameStateGame::touchEnd(const CShVector2 & pos)
 				game.pop();
 			}
 		}
+
+		m_pPressedButton = shNULL;
 	}
 }
 
