@@ -1,5 +1,15 @@
 #pragma once
 
+#if defined(_WIN32)
+#	if defined(Plugin_EXPORTS)
+#		define PLUGIN_EXPORT __declspec(dllexport)
+#	else
+#		define PLUGIN_EXPORT __declspec(dllimport)
+#	endif // Extension_EXPORTS
+#else // defined(_WIN32)
+#	define EXTENSION_EXPORT
+#endif
+
 #include "ShSDK/ShSDK.h"
 #include "ShEngineExt/ShEngineExt.h"
 

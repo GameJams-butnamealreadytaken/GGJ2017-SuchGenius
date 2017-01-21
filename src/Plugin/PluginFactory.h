@@ -1,7 +1,9 @@
 #pragma once
 
+#include "Plugin.h"
+
 extern "C"
 {
-	void RegisterPluginGGJ2017(void);
-	void UnRegisterPluginGGJ2017(void);
+	PLUGIN_EXPORT void RegisterPluginGGJ2017(void);
+	PLUGIN_EXPORT void UnRegisterPluginGGJ2017(void);
 }
