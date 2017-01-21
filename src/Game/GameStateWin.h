@@ -7,6 +7,12 @@ class GameStateWin : public State
 
 public:
 
+	enum EState
+	{
+		ANIM_INTRO_ENTERED,
+		IDLE,
+	};
+
 	explicit	GameStateWin		(void);
 	virtual		~GameStateWin		(void);
 
@@ -27,5 +33,12 @@ public:
 
 private:
 
-	int					m_iClicCount;
+	EState		m_eCurrentState;
+	float		m_fStateTime;
+
+	ShEntity2 * m_pPopupBackgroundEntity;
+	ShEntity2 * m_pPopupEntity;
+
+	int			m_iClicCount;
+
 };

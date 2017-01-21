@@ -254,6 +254,8 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 
 	ShObject * pAttachedSprite = shNULL;
 
+	const CShIdentifier & idDataSetIdentifier = ShDataSet::GetDataSetIdentifier(pDataSet);
+
 	int iDataCount = ShDataSet::GetDataCount(pDataSet);
 	for (int nData = 0; nData < iDataCount; ++nData)
 	{
@@ -298,42 +300,42 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 				bodyDef.type = b2_dynamicBody;
 			}
 		}
-
-		//
-		// Fixture
-		if (CShIdentifier("friction") == idDataIdentifier)
+		else
 		{
-			float fFriction = 0.0f;
-			ShDataSet::GetDataValue(pDataSet, nData, fFriction);
-			bodyFixture.friction = fFriction;
-		}
-		else if (CShIdentifier("restitution") == idDataIdentifier)
-		{
-			float fRestitution = 0.0f;
-			ShDataSet::GetDataValue(pDataSet, nData, fRestitution);
-			bodyFixture.restitution = fRestitution;
-		}
-		else if (CShIdentifier("density") == idDataIdentifier)
-		{
-			float fDensity = 0.0f;
-			ShDataSet::GetDataValue(pDataSet, nData, fDensity);
-			bodyFixture.density = fDensity;
-		}
-		else if ((CShIdentifier("categoryBits") == idDataIdentifier))
-		{
-			int iCategories = 0;
-			ShDataSet::GetDataValue(pDataSet, nData, iCategories);
-			bodyFixture.filter.categoryBits = iCategories;
-		}
-		else if ((CShIdentifier("maskBits") == idDataIdentifier))
-		{
-			int iMask = 0;
-			ShDataSet::GetDataValue(pDataSet, nData, iMask);
-			bodyFixture.filter.maskBits = iMask;
+			//
+			// Fixture
+			if (CShIdentifier("friction") == idDataIdentifier)
+			{
+				float fFriction = 0.0f;
+				ShDataSet::GetDataValue(pDataSet, nData, fFriction);
+				bodyFixture.friction = fFriction;
+			}
+			else if (CShIdentifier("restitution") == idDataIdentifier)
+			{
+				float fRestitution = 0.0f;
+				ShDataSet::GetDataValue(pDataSet, nData, fRestitution);
+				bodyFixture.restitution = fRestitution;
+			}
+			else if (CShIdentifier("density") == idDataIdentifier)
+			{
+				float fDensity = 0.0f;
+				ShDataSet::GetDataValue(pDataSet, nData, fDensity);
+				bodyFixture.density = fDensity;
+			}
+			else if ((CShIdentifier("categoryBits") == idDataIdentifier))
+			{
+				int iCategories = 0;
+				ShDataSet::GetDataValue(pDataSet, nData, iCategories);
+				bodyFixture.filter.categoryBits = iCategories;
+			}
+			else if ((CShIdentifier("maskBits") == idDataIdentifier))
+			{
+				int iMask = 0;
+				ShDataSet::GetDataValue(pDataSet, nData, iMask);
+				bodyFixture.filter.maskBits = iMask;
+			}
 		}
 	}
-
-	CShIdentifier idDataSetIdentifier = ShDataSet::GetDataSetIdentifier(pDataSet);
 
 	Block::EBlockType type = Block::STATIC;
 	if (CShIdentifier("sensor_object") == idDataSetIdentifier)
