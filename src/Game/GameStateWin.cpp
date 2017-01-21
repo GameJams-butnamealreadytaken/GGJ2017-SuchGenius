@@ -45,7 +45,7 @@ void GameStateWin::entered(void)
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 
-	//m_iClicCount = g_pInstance->GetLevelClicCount();
+	m_iClicCount = g_pInstance->GetLevelClicCount();
 }
 
 /**

@@ -19,6 +19,7 @@ PluginGGJ2017::PluginGGJ2017(void) : CShPlugin(plugin_identifier)
 , m_arrivalTimer(0.0f)
 , m_levelIdentifier(GID(NULL))
 , m_iClicCount(0)
+, m_isWon(false)
 {
 	// ...
 }
@@ -65,8 +66,8 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 		}
 	}
 
-	m_eGameState = STATE_PLAYING;
 	m_iClicCount = 0;
+	m_isWon = false;
 }
 
 /**
@@ -105,75 +106,61 @@ void PluginGGJ2017::OnPreUpdate(void)
 */
 void PluginGGJ2017::OnPostUpdate(float dt)
 {
-	switch (m_eGameState)
+	unsigned int iWaveCount = m_aShockWave.GetCount();
+
+	for (int iWave = 0; iWave < iWaveCount; ++iWave)
 	{
-		case STATE_PLAYING:
+		ShockWave & wave = m_aShockWave[iWave];
+
+		wave.time += dt;
+
+		if (wave.time < DURATION)
 		{
-			unsigned int iWaveCount = m_aShockWave.GetCount();
+			float scale = (wave.time / DURATION);
+			float alpha = 1.0f - (wave.time / DURATION);
 
-			for (int iWave = 0; iWave < iWaveCount; ++iWave)
+			ShEntity2::SetScale(wave.pEntity, CShVector3(scale, scale, 1.0f));
+			ShEntity2::SetAlpha(wave.pEntity, alpha);
+
+			float radius_b2 = (WAVE_SIZE * scale) / ratio_sh_b2;
+
+			b2Vec2 pos_b2 = Convert_sh_b2(wave.initialPosition);
+
+			unsigned int iBlockCount = m_aBlockList.GetCount();
+
+			for (auto iBody = 0; iBody < iBlockCount; ++iBody)
 			{
-				ShockWave & wave = m_aShockWave[iWave];
+				const b2Vec2 & pos = m_aBlockList[iBody]->GetBody()->GetPosition();
 
-				wave.time += dt;
+				b2Vec2 PointerToObject = pos - pos_b2;
+				const float distance = PointerToObject.Normalize();
 
-				if (wave.time < DURATION)
+				if (distance < radius_b2)
 				{
-					float scale = (wave.time / DURATION);
-					float alpha = 1.0f - (wave.time / DURATION);
-
-					ShEntity2::SetScale(wave.pEntity, CShVector3(scale, scale, 1.0f));
-					ShEntity2::SetAlpha(wave.pEntity, alpha);
-
-					float radius_b2 = (WAVE_SIZE * scale) / ratio_sh_b2;
-
-					b2Vec2 pos_b2 = Convert_sh_b2(wave.initialPosition);
-
-					unsigned int iBlockCount = m_aBlockList.GetCount();
-
-					for (auto iBody = 0; iBody < iBlockCount; ++iBody)
-					{
-						const b2Vec2 & pos = m_aBlockList[iBody]->GetBody()->GetPosition();
-
-						b2Vec2 PointerToObject = pos - pos_b2;
-						const float distance = PointerToObject.Normalize();
-
-						if (distance < radius_b2)
-						{
-							b2Vec2 impulse(PointerToObject.x * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f);
-							m_aBlockList[iBody]->GetBody()->ApplyLinearImpulseToCenter(impulse, true);
-						}
-					}
-				}
-				else
-				{
-					ShEntity2::SetShow(wave.pEntity, false); // TODO : remove it + destroy entity
-				}
-			}
-
-			m_pWorld->Step(dt, 8, 3);
-
-			UpdateShineObjects();
-
-			if (m_playerOnArrival)
-			{
-				m_arrivalTimer += dt;
-
-				if (m_arrivalTimer >= 3.0f)
-				{
-					m_eGameState = STATE_WIN;
-					m_arrivalTimer = 0.0f;
+					b2Vec2 impulse(PointerToObject.x * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f);
+					m_aBlockList[iBody]->GetBody()->ApplyLinearImpulseToCenter(impulse, true);
 				}
 			}
 		}
-		break;
-
-		case STATE_WIN:
+		else
 		{
-			//TODO - launch win state
-			SH_TRACE("%d\n", m_iClicCount);
+			ShEntity2::SetShow(wave.pEntity, false); // TODO : remove it + destroy entity
 		}
-		break;
+	}
+
+	m_pWorld->Step(dt, 8, 3);
+
+	UpdateShineObjects();
+
+	if (m_playerOnArrival)
+	{
+		m_arrivalTimer += dt;
+
+		if (m_arrivalTimer >= 3.0f)
+		{
+			m_arrivalTimer = 0.0f;
+			m_isWon = true;
+		}
 	}
 }
 
@@ -248,7 +235,15 @@ int PluginGGJ2017::GetLevelClicCount(void)
 }
 
 /**
-* @brief PluginGGJ2017::DatasetParser
+* @brief IsWon
+*/
+bool PluginGGJ2017::IsWon(void)
+{
+	return(m_isWon);
+}
+
+/**
+* @brief DatasetParser
 * @param pDataSet
 */
 void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
@@ -380,7 +375,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 }
 
 /**
-* @brief PluginGGJ2017::DatasetParser
+* @brief DatasetParser
 * @param pObject
 * @param pBody
 */
@@ -418,7 +413,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::Convert_sh_b2
+* @brief Convert_sh_b2
 * @param vec
 */
 /*static*/ CShVector2 PluginGGJ2017::Convert_sh_b2(b2Vec2 vec)
@@ -427,7 +422,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::Convert_sh_b2
+* @brief Convert_sh_b2
 * @param vec
 */
 /*static*/ b2Vec2 PluginGGJ2017::Convert_sh_b2(CShVector2 vec)
@@ -437,7 +432,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::UpdateShineObjects
+* @brief UpdateShineObjects
 */
 void PluginGGJ2017::UpdateShineObjects(void)
 {

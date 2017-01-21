@@ -41,7 +41,7 @@ void GameStateGame::entered(void)
 {
 	//
 	// Load level
-	CShIdentifier levelIdentifier("level_000");
+	CShIdentifier levelIdentifier("level_01");
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 }
@@ -75,7 +75,11 @@ void GameStateGame::revealed(void)
 */
 void GameStateGame::update(float dt)
 {
-	// ...
+	if (g_pInstance->IsWon())
+	{
+		Game & game = Game::instance();
+		game.push(Game::GAME_WIN);
+	}
 }
 
 /**
