@@ -5,9 +5,9 @@
 /**
 * @brief GameStateMainMenu::Constructor
 */
-GameStateMainMenu::GameStateMainMenu(void)
-: pButtonPlay(shNULL)
+GameStateMainMenu::GameStateMainMenu(void) : m_pPressedButton(shNULL), m_pButtonPlay(shNULL)
 {
+	// ...
 }
 
 /**
@@ -15,6 +15,7 @@ GameStateMainMenu::GameStateMainMenu(void)
 */
 GameStateMainMenu::~GameStateMainMenu(void)
 {
+	// ...
 }
 
 /**
@@ -22,6 +23,7 @@ GameStateMainMenu::~GameStateMainMenu(void)
 */
 void GameStateMainMenu::init(void)
 {
+	// ...
 }
 
 /**
@@ -29,6 +31,7 @@ void GameStateMainMenu::init(void)
 */
 void GameStateMainMenu::release(void)
 {
+	// ...
 }
 
 /**
@@ -36,14 +39,7 @@ void GameStateMainMenu::release(void)
 */
 void GameStateMainMenu::entered(void)
 {
-	//
-	// Load level
-	CShIdentifier levelIdentifier("main_menu");
-	bool loading = ShLevel::Load(levelIdentifier);
-	SH_ASSERT(loading);
-
-	pButtonPlay = ShEntity2::Find(levelIdentifier, CShIdentifier("sprite_ggj17_main_menu_button_play_001"));
-	SH_ASSERT(shNULL != pButtonPlay);
+	load();
 }
 
 /**
@@ -51,7 +47,7 @@ void GameStateMainMenu::entered(void)
 */
 void GameStateMainMenu::exiting(void)
 {
-	pButtonPlay = shNULL;
+	unload();
 }
 
 /**
@@ -59,7 +55,7 @@ void GameStateMainMenu::exiting(void)
 */
 void GameStateMainMenu::obscuring(void)
 {
-	ShEntity2::SetShow(pButtonPlay, false);
+	unload();
 }
 
 /**
@@ -67,41 +63,77 @@ void GameStateMainMenu::obscuring(void)
 */
 void GameStateMainMenu::revealed(void)
 {
-	ShEntity2::SetShow(pButtonPlay, true);
+	load();
 }
 
 /**
-* @brief GameStateMainMenu::Release
-*/
+ * @brief Load level
+ * @return
+ */
+bool GameStateMainMenu::load(void)
+{
+	CShIdentifier levelIdentifier("main_menu");
+	bool loading = ShLevel::Load(levelIdentifier);
+	SH_ASSERT(loading);
+
+	m_pButtonPlay = ShEntity2::Find(levelIdentifier, CShIdentifier("sprite_ggj17_main_menu_button_play_001"));
+	SH_ASSERT(shNULL != m_pButtonPlay);
+}
+
+/**
+ * @brief Unload level
+ * @return
+ */
+bool GameStateMainMenu::unload(void)
+{
+	m_pButtonPlay = shNULL;
+
+	ShLevel::Release();
+}
+
+
+/**
+ * @brief GameStateMainMenu::Release
+ */
 void GameStateMainMenu::update(float dt)
 {
-
+	// ...
 }
 
 /**
-* @brief GameStateMainMenu::Release
-*/
+ * @brief GameStateMainMenu::Release
+ */
 void GameStateMainMenu::touchBegin(const CShVector2 & pos)
 {
-	// Generate wave
-	if (ShEntity2::Includes(pButtonPlay, pos))
+	if (ShEntity2::Includes(m_pButtonPlay, pos))
 	{
-		Game::instance().push(Game::GAME_LEVEL);
+		m_pPressedButton = m_pButtonPlay;
 	}
 }
 
 /**
-* @brief GameStateMainMenu::Release
-*/
+ * @brief GameStateMainMenu::Release
+ */
 void GameStateMainMenu::touchEnd(const CShVector2 & pos)
 {
+	if (shNULL != m_pPressedButton)
+	{
+		if (ShEntity2::Includes(m_pPressedButton, pos))
+		{
+			if (m_pPressedButton == m_pButtonPlay)
+			{
+				Game::instance().push(Game::GAME_LEVEL);
+			}
+		}
 
+		m_pPressedButton = shNULL;
+	}
 }
 
 /**
-* @brief GameStateMainMenu::Release
-*/
+ * @brief GameStateMainMenu::Release
+ */
 void GameStateMainMenu::touchMove(const CShVector2 & pos)
 {
-
+	// ...
 }

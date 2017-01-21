@@ -25,7 +25,14 @@ public:
 	void		touchEnd			(const CShVector2 & pos) SH_ATTRIBUTE_OVERRIDE;
 	void		touchMove			(const CShVector2 & pos) SH_ATTRIBUTE_OVERRIDE;
 
+protected:
+
+	bool		load				(void);
+	bool		unload				(void);
+
 private:
 
-	ShEntity2 * pButtonPlay;
+	ShEntity2 * m_pPressedButton;
+
+	ShEntity2 * m_pButtonPlay;
 };
