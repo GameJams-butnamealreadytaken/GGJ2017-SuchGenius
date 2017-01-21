@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ShSDK/ShSDK.h"
 #include "ShEngineExt/ShEngineExt.h"
 
 #include "Box2D/Box2D.h"
@@ -15,4 +16,9 @@ public:
 
 	virtual	void			OnPlayStart			(const CShIdentifier & levelIdentifier) override;
 	virtual	void			OnPlayStop			(const CShIdentifier & levelIdentifier) override;
+
+	void					DatasetParser		(ShDataSet * pDataSet);
+
+private:
+	CShArray<b2Body *>		m_aBodyList;
 };
