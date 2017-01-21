@@ -166,8 +166,12 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		}
 	}
 
-	bodyDef.position = Convert_sh_b2(ShObject::GetWorldPosition2(pObject));
-
+	if (ShObject::GetType(pObject) != ShObject::e_type_unknown)
+	{
+		bodyDef.angle = ShObject::GetWorldRotation(pObject).m_z;
+		bodyDef.position = Convert_sh_b2(ShObject::GetWorldPosition2(pObject));
+	}
+	
 	b2Body * pBody = m_pWorld->CreateBody(&bodyDef);
 	m_aBodyList.Add(pBody);
 
