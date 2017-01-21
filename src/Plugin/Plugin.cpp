@@ -17,6 +17,7 @@ PluginGGJ2017::PluginGGJ2017(void) : CShPlugin(plugin_identifier)
 , m_Box2DListener(shNULL)
 , m_playerOnArrival(false)
 , m_arrivalTimer(0.0f)
+, m_levelIdentifier(GID(NULL))
 {
 	// ...
 }
@@ -74,6 +75,8 @@ void PluginGGJ2017::OnPlayStop(const CShIdentifier & levelIdentifier)
 		m_aBlockList[i]->Release();
 	}
 	m_aBlockList.Empty();
+
+	m_levelIdentifier = GID(NULL);
 
 	SH_SAFE_DELETE(m_pWorld);
 
@@ -184,20 +187,23 @@ void PluginGGJ2017::OnTouchDown(int iTouch, float positionX, float positionY)
  */
 void PluginGGJ2017::OnTouchUp(int iTouch, float positionX, float positionY)
 {
-	ShCamera * pCamera = ShCamera::GetCamera2D();
+	if (GID(NULL) != m_levelIdentifier)
+	{
+		ShCamera * pCamera = ShCamera::GetCamera2D();
 
-	CShVector2 windowPos(ShDisplay::GetWidth()*0.5f+positionX, ShDisplay::GetHeight()*0.5f-positionY);
+		CShVector2 windowPos(ShDisplay::GetWidth()*0.5f+positionX, ShDisplay::GetHeight()*0.5f-positionY);
 
-	CShRay3 ray = ShCamera::Unproject(pCamera, windowPos);
+		CShRay3 ray = ShCamera::Unproject(pCamera, windowPos);
 
-	CShVector2 pos(ray.GetOrigin().m_x, ray.GetOrigin().m_y);
+		CShVector2 pos(ray.GetOrigin().m_x, ray.GetOrigin().m_y);
 
-	ShockWave wave;
-	wave.pEntity = ShEntity2::Create(m_levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShIdentifier("ggj17"), CShIdentifier("shockwave"), CShVector3(pos.m_x, pos.m_y, 10.0f), CShEulerAngles(0.0f, 0.0f, 0.0f), CShVector3(0.0f, 0.0f, 1.0f));
-	wave.initialPosition = pos;
-	wave.time = 0.0f;
+		ShockWave wave;
+		wave.pEntity = ShEntity2::Create(m_levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShIdentifier("ggj17"), CShIdentifier("shockwave"), CShVector3(pos.m_x, pos.m_y, 10.0f), CShEulerAngles(0.0f, 0.0f, 0.0f), CShVector3(0.0f, 0.0f, 1.0f));
+		wave.initialPosition = pos;
+		wave.time = 0.0f;
 
-	m_aShockWave.Add(wave);
+		m_aShockWave.Add(wave);
+	}
 }
 
 /**
@@ -433,6 +439,7 @@ void PluginGGJ2017::UpdateShineObjects(void)
 					ShObject::SetWorldRotation(pObject, rotAngle);
 					
 					CShVector2 bodyPos = Convert_sh_b2(m_aBlockList[nBody]->GetBody()->GetPosition());
+
 					ShObject::SetWorldPosition2(pObject, bodyPos);
 				}
 			}
