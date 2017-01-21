@@ -54,6 +54,7 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
  */
 void PluginGGJ2017::OnPlayStop(const CShIdentifier & levelIdentifier)
 {
+	m_aBodyList.Empty();
 	SH_SAFE_DELETE(m_pWorld);
 }
 
@@ -263,24 +264,9 @@ void PluginGGJ2017::UpdateShineObjects(void)
 				{
 					CShEulerAngles rotAngle(0.0f, 0.0f, m_aBodyList[nBody]->GetAngle());
 					ShObject::SetWorldRotation(pObject, rotAngle);
-					//if (shNULL != m_pObject)
-					//{
-					//	if (ShObject::IsMovable(m_pObject))
-					//	{
-					//		ShObject::SetWorldRotation(m_pObject, rotAngle);
-					//	}
-					//}
-
+					
 					CShVector2 bodyPos = Convert_sh_b2(m_aBodyList[nBody]->GetPosition());
 					ShObject::SetWorldPosition2(pObject, bodyPos);
-
-					//if (shNULL != m_pObject)
-					//{
-					//	if (ShObject::IsMovable(m_pObject))
-					//	{
-					//		ShObject::SetWorldPosition2(m_pObject, bodyPos);
-					//	}
-					//}
 				}
 			}
 		}

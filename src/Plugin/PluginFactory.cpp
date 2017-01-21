@@ -1,7 +1,5 @@
 #include "PluginFactory.h"
 
-#include "Plugin.h"
-
 #include "ShSDK/ShSDK.h"
 
 static PluginGGJ2017 * g_pInstance = shNULL;
