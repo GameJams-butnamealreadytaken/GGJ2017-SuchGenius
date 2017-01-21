@@ -2,6 +2,8 @@
 
 #include "Game.h"
 
+int State::m_currentLevel = 0;
+
 /**
  * @brief State::State
  */
@@ -16,6 +18,22 @@ State::State(void)
 State::~State(void)
 {
 	// ...
+}
+
+/**
+* @brief State::GetCurrentLevel
+*/
+int State::GetCurrentLevel(void)
+{
+	return(m_currentLevel);
+}
+
+/**
+* @brief State::SetCurrentLevel
+*/
+void State::SetCurrentLevel(int level)
+{
+	m_currentLevel = level;
 }
 
 /**
