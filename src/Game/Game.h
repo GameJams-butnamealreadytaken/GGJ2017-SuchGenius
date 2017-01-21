@@ -4,6 +4,7 @@
 #include "GameStateMainMenu.h"
 #include "GameStateLevelSelection.h"
 #include "GameStateGame.h"
+#include "GameStateWin.h"
 
 class Game
 {
@@ -15,6 +16,7 @@ public:
 		MAIN_MENU,
 		LEVEL_SELECTION,
 		GAME_LEVEL,
+		GAME_WIN,
 
 		MAX_GAME_STATES
 	};
@@ -66,6 +68,12 @@ public:
 			}
 			break;
 
+			case GAME_WIN:
+			{
+				return(&m_stateWin);
+			}
+			break;
+
 			default:
 			{
 				return((State*)0); // this should never happen
@@ -85,6 +93,7 @@ private:
 	GameStateMainMenu		m_stateMainMenu;
 	GameStateLevelSelection	m_stateLevelSelection;
 	GameStateGame			m_stateGame;
+	GameStateWin			m_stateWin;
 
 	bool					m_bMuted;
 };
