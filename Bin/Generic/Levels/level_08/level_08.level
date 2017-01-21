@@ -14,6 +14,7 @@
             <sprite_texture name="ggj17.block_arrivee.tga"/>
             <sprite_texture name="ggj17.block_dynamic.tga"/>
             <sprite_texture name="ggj17.block_static.tga"/>
+            <sprite_texture name="ggj17.main_menu_button_round_background.tga"/>
             <sprite_texture name="ggj17.shockwave.tga"/>
         </sprite_texture_list>
         <material_library_list/>
@@ -26,7 +27,7 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="-429.910278" max_x="976.377014" max_y="519.865234"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="-429.910278" max_x="976.377014" max_y="519.865112"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
@@ -95,6 +96,7 @@
         <entity2 name="" position_x="129.660126" position_y="-104.488403" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.936860" scale_y="0.936860" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.063140" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
         <entity2 name="" position_x="-38.869644" position_y="-73.443451" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.942471" scale_y="0.942471" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.057529" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
         <entity2 name="" position_x="129.660126" position_y="-263.261200" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.931619" scale_y="0.931619" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.068381" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="button_retry" position_x="-585.000000" position_y="-300.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="2.155312" position_y="7.014652" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-640.000000" min_y="360.000000" max_x="640.000000" max_y="-360.000000"/>
         <prefab name="prefab_block_arrival_002" position_x="315.313232" position_y="113.392792" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_002" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
@@ -189,14 +191,6 @@
             <dummy_aabb2 name="dummy_aabb2_auto_013" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
         <prefab name="prefab_block_static_005_001" position_x="-129.257782" position_y="151.068176" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_005_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_009_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_011"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_007" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_011" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -207,14 +201,6 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001" position_x="-59.220901" position_y="11.031548" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_012"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_008" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_012" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -225,40 +211,16 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_005_002" position_x="-59.220901" position_y="81.031563" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_005_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_009_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+            <entity2 name="sprite_ggj17_block_static_008" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_012" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
                         <data type="object" name="attachedobject" value="dummy_aabb2_auto_012"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001" position_x="10.419182" position_y="11.031548" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_014"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_009" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_014" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -269,14 +231,6 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_001_001" position_x="-199.238312" position_y="-58.996208" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_015"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_010" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_015" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -287,116 +241,36 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_002" position_x="-129.257782" position_y="-59.041985" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_015"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_010" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_015" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_015"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_002" position_x="-59.220901" position_y="-59.041985" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_015"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_010" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_015" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_015"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001" position_x="10.419182" position_y="-59.041985" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+            <entity2 name="sprite_ggj17_block_static_010" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_015" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
                         <data type="object" name="attachedobject" value="dummy_aabb2_auto_015"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001_001" position_x="80.469719" position_y="-59.041985" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_016"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_011" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_016" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -407,46 +281,6 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001_001_001" position_x="80.469719" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_011_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_016_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_012" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_017" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -457,182 +291,46 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_001_001_001" position_x="-199.238312" position_y="-221.686249" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_012" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_017" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_002_001" position_x="-129.257782" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_012" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_017" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_002_001" position_x="-59.220901" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_012" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_017" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001_002" position_x="10.419182" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+            <entity2 name="sprite_ggj17_block_static_012" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_017" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
                         <data type="object" name="attachedobject" value="dummy_aabb2_auto_017"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_002" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_002" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_012" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_017" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001_001_001_001" position_x="290.413208" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_018"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_011_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_016_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_012_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_017_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_013" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_018" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -643,154 +341,26 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_002_001_001" position_x="150.530472" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_002_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_002_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_018"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_002_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_002_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_012_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_017_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_013" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_018" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_018"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001_002_001" position_x="220.362717" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+            <entity2 name="sprite_ggj17_block_static_013" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_018" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
                     <data_set name="block_object_static" instance_name="block_object_static_0">
                         <data type="object" name="attachedobject" value="dummy_aabb2_auto_018"/>
                     </data_set>
                 </data_set_list>
             </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_002_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_012_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_017_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_013" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_018" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001_001_001_001_001" position_x="360.501404" position_y="-221.732025" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_019"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_011_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_016_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_012_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_017_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_013_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_018_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_014" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_019" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -801,70 +371,6 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_004_001_001_001_001_001_001_001_001" position_x="360.501404" position_y="-151.644272" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_004_001_001_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_008_001_001_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_020"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_008_001_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_012_001_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_009_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_014_001_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_010_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_015_001_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_011_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_016_001_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_012_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_017_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_013_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_018_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
-            <entity2 name="sprite_ggj17_block_static_014_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_019_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value=""/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_015" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_020" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -888,6 +394,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="49.511974" position_y="2.046499" position_z="1017.116821" target_x="49.511974" target_y="2.046818" target_z="-0.000008" znear="1.000000" zfar="40000.000000" zoom="1.017117" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1017.116821" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="61.717377" position_y="52.902332" position_z="1017.116821" target_x="61.717377" target_y="52.902653" target_z="0.000008" znear="1.000000" zfar="40000.000000" zoom="1.017117" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1017.116821" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>
