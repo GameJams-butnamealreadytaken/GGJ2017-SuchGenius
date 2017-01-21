@@ -36,6 +36,12 @@ private:
 	EState		m_eCurrentState;
 	float		m_fStateTime;
 
+	ShEntity2 * m_pPressedButton;
+
+	ShEntity2 * m_pButtonMenu;
+	ShEntity2 * m_pButtonRetry;
+	ShEntity2 * m_pButtonNext;
+
 	ShEntity2 * m_pPopupBackgroundEntity;
 	ShEntity2 * m_pPopupEntity;
 

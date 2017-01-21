@@ -2,7 +2,7 @@
 
 #include "Game.h"
 
-int State::m_currentLevel = 0;
+int State::m_currentLevel = 1;
 
 /**
  * @brief State::State

@@ -39,12 +39,7 @@ void GameStateGame::release(void)
 */
 void GameStateGame::entered(void)
 {
-	//
-	// Load level
-	CShString strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
-	CShIdentifier levelIdentifier(strLevelName);
-	bool loading = ShLevel::Load(levelIdentifier);
-	SH_ASSERT(loading);
+	load();
 }
 
 /**
@@ -52,7 +47,7 @@ void GameStateGame::entered(void)
 */
 void GameStateGame::exiting(void)
 {
-	// ...
+	unload();
 }
 
 /**
@@ -68,7 +63,27 @@ void GameStateGame::obscuring(void)
 */
 void GameStateGame::revealed(void)
 {
-	// ...
+	unload();
+	load();
+}
+
+/**
+ * @brief GameStateGame::load
+ */
+void GameStateGame::load(void)
+{
+	CShString strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
+	CShIdentifier levelIdentifier(strLevelName);
+	bool loading = ShLevel::Load(levelIdentifier);
+	SH_ASSERT(loading);
+}
+
+/**
+ * @brief GameStateGame::unload
+ */
+void GameStateGame::unload(void)
+{
+	ShLevel::Release();
 }
 
 /**
