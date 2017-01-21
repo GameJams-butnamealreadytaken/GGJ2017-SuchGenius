@@ -49,6 +49,8 @@ public:
 
 	bool					IsWon				(void);
 
+	void					Reset				(void);
+
 private:
 
 	void					CapBlockVelocity	(float velocityMax);
@@ -68,6 +70,8 @@ private:
 	CShArray<Block *>	m_aBlockList;
 
 	Box2DListener *		m_Box2DListener;
+
+	b2Vec2				m_PlayerInitPos;
 
 	bool				m_playerOnArrival;
 	float				m_arrivalTimer;
