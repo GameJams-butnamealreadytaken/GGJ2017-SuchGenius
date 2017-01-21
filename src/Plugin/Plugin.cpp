@@ -72,6 +72,7 @@ void PluginGGJ2017::OnPreUpdate(void)
 void PluginGGJ2017::OnPostUpdate(float dt)
 {
 	m_pWorld->Step(dt, 8, 3);
+	UpdateShineObjects();
 }
 
 /**
@@ -94,6 +95,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		if (CShIdentifier("AttachedObject") == idDataIdentifier)
 		{
 			ShDataSet::GetDataValue(pDataSet, nData, &pAttachedObject);
+			bodyDef.userData = pAttachedObject;
 		}
 		else if (CShIdentifier("allowSleep") == idDataIdentifier)
 		{
@@ -126,7 +128,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 			}
 			else
 			{
-				bodyDef.type = b2_kinematicBody;
+				bodyDef.type = b2_dynamicBody;
 			}
 		}
 		
@@ -234,4 +236,45 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 {
 	vec /= CShVector2(ratio_sh_b2, ratio_sh_b2);
 	return b2Vec2(vec.m_x, vec.m_y);
+}
+
+/**
+* @brief PluginGGJ2017::ConvertShToB2
+* @param vec
+*/
+void PluginGGJ2017::UpdateShineObjects(void)
+{
+	int iBodyCount = m_aBodyList.GetCount();
+	for (int nBody = 0; nBody < iBodyCount; ++nBody)
+	{
+		ShObject * pObject = (ShObject *)m_aBodyList[nBody]->GetUserData();
+
+		if (b2_staticBody != m_aBodyList[nBody]->GetType())
+		{
+			// only movable can be moved
+			if (ShObject::IsMovable(pObject))
+			{
+				CShEulerAngles rotAngle(0.0f, 0.0f, m_aBodyList[nBody]->GetAngle());
+				ShObject::SetWorldRotation(pObject, rotAngle);
+				//if (shNULL != m_pObject)
+				//{
+				//	if (ShObject::IsMovable(m_pObject))
+				//	{
+				//		ShObject::SetWorldRotation(m_pObject, rotAngle);
+				//	}
+				//}
+
+				CShVector2 bodyPos = Convert_sh_b2(m_aBodyList[nBody]->GetPosition());
+				ShObject::SetWorldPosition2(pObject, bodyPos);
+
+				//if (shNULL != m_pObject)
+				//{
+				//	if (ShObject::IsMovable(m_pObject))
+				//	{
+				//		ShObject::SetWorldPosition2(m_pObject, bodyPos);
+				//	}
+				//}
+			}
+		}
+	}
 }

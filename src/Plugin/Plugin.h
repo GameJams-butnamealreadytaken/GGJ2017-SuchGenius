@@ -26,6 +26,8 @@ public:
 
 private:
 
+	void					UpdateShineObjects	(void);
+
 	void					DatasetParser		(ShObject * pObject, ShDataSet * pDataSet);
 	b2Shape *				GenerateBlockShape	(ShObject * pObject, b2Body * pBody);
 
