@@ -338,7 +338,7 @@ void GameStateMainMenu::touchEnd(const CShVector2 & pos)
 			}
 			else if (m_pPressedButton == m_pButtonInfo)
 			{
-
+				game.push(Game::CREDITS);
 			}
 			else
 			{
