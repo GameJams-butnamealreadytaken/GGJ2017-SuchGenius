@@ -39,6 +39,9 @@ protected:
 	State(void);
 	virtual ~State(void);
 
+	static int	GetCurrentLevel(void);
+	static void SetCurrentLevel(int level);
+
 public:
 
 	virtual void init		(void) = 0;
@@ -56,4 +59,6 @@ public:
 	virtual void touchEnd	(const CShVector2 & pos);
 	virtual void touchMove	(const CShVector2 & pos);
 
+protected:
+	static int m_currentLevel;
 };

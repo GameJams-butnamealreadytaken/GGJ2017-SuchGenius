@@ -12,7 +12,8 @@ const int ratio_sh_b2 = 100;
 /**
  * @brief Constructor
  */
-PluginGGJ2017::PluginGGJ2017(void) : CShPlugin(plugin_identifier)
+PluginGGJ2017::PluginGGJ2017(void) 
+: CShPlugin(plugin_identifier)
 , m_pWorld(shNULL)
 , m_Box2DListener(shNULL)
 , m_playerOnArrival(false)

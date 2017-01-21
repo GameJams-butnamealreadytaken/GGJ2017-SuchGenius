@@ -207,8 +207,8 @@ void GameStateLevelSelection::touchBegin(const CShVector2 & pos)
 		{
 			if (ShEntity2::Includes(m_apThumbnails[i], pos))
 			{
-				// launch level i of page m_iCurrentPageID
-				m_pPressedButton = m_pBackButton;
+				m_pPressedButton = m_apThumbnails[i];
+				break;
 			}
 		}
 	}
@@ -259,6 +259,9 @@ void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
 					if (ShEntity2::Includes(m_apThumbnails[i], pos))
 					{
 						// launch level i of page m_iCurrentPageID
+						State::SetCurrentLevel(1 + ((m_iCurrentPageID * 9) + i));
+						game.push(Game::GAME_LEVEL);
+						break;
 					}
 				}
 			}

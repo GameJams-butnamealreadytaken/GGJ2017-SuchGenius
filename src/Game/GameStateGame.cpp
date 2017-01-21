@@ -41,7 +41,8 @@ void GameStateGame::entered(void)
 {
 	//
 	// Load level
-	CShIdentifier levelIdentifier("level_01");
+	CShString strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
+	CShIdentifier levelIdentifier(strLevelName);
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 }
