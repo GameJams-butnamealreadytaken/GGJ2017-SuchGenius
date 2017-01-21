@@ -48,5 +48,5 @@ set_property(TARGET Game APPEND PROPERTY COMPILE_FLAGS "${SHSDK_COMPILE_FLAGS}")
 set_property(TARGET Game APPEND PROPERTY COMPILE_DEFINITIONS "SH_$<UPPER_CASE:$<CONFIG>>=1")
 
 target_link_libraries(Game PRIVATE ${SHSDK_LIBRARIES})
-target_link_libraries(Game PRIVATE Box2D)
-target_include_directories(Game PRIVATE ${SHSDK_INCLUDE_DIR})
+target_link_libraries(Game PRIVATE Plugin)
+target_include_directories(Game PRIVATE "${SHSDK_INCLUDE_DIR}" "$<TARGET_PROPERTY:Box2D,INCLUDE_DIRECTORIES>")

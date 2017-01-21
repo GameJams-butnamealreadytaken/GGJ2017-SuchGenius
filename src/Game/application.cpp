@@ -2,6 +2,8 @@
 #include "Game.h"
 #include "inputs.h"
 
+#include "../../src/Plugin/PluginFactory.h"
+
 extern "C"
 {
 
@@ -20,7 +22,7 @@ void OnPreInitialize(void)
  */
 void OnPostInitialize(void)
 {
-	//ShApplication::RegisterPlugin(&g_pluginGGJ17);
+	RegisterPluginGGJ2017();
 
 	Game & game = Game::instance();
 	game.initialize();
@@ -50,7 +52,10 @@ void OnPostUpdate(float dt)
  */
 void OnPreRelease(void)
 {
-	// ...
+	Game & game = Game::instance();
+	game.release();
+
+	UnRegisterPluginGGJ2017();
 }
 
 /**

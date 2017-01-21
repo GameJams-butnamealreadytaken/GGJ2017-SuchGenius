@@ -5,9 +5,9 @@
 #		define PLUGIN_EXPORT __declspec(dllexport)
 #	else
 #		define PLUGIN_EXPORT __declspec(dllimport)
-#	endif // Extension_EXPORTS
+#	endif // Plugin_EXPORTS
 #else // defined(_WIN32)
-#	define EXTENSION_EXPORT
+#	define PLUGIN_EXPORT
 #endif
 
 #include "ShSDK/ShSDK.h"

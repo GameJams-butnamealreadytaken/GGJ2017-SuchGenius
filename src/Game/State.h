@@ -1,9 +1,6 @@
 #pragma once
 
 #include "ShSDK/ShSDK.h"
-//#include "../Plugin/Plugin.h"
-
-//extern PluginGGJ2017 g_pluginGGJ17;
 
 class State
 {

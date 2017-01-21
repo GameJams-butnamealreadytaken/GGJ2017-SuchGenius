@@ -4,19 +4,24 @@
 
 #include "ShSDK/ShSDK.h"
 
-static PluginGGJ2017 instance;
+static PluginGGJ2017 * g_pInstance = shNULL;
 
 extern "C"
 {
 
 void RegisterPluginGGJ2017(void)
 {
-	ShApplication::RegisterPlugin(&instance);
+	if (!g_pInstance)
+	{
+		g_pInstance = new PluginGGJ2017();
+	}
+
+	ShApplication::RegisterPlugin(g_pInstance);
 }
 
 void UnRegisterPluginGGJ2017(void)
 {
-	ShApplication::UnRegisterPlugin(&instance);
+	ShApplication::UnRegisterPlugin(g_pInstance);
 }
 
 }
