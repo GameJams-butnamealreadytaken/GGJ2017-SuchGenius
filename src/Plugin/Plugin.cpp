@@ -12,7 +12,7 @@ const int ratio_sh_b2 = 100;
 /**
  * @brief Constructor
  */
-PluginGGJ2017::PluginGGJ2017(void) 
+PluginGGJ2017::PluginGGJ2017(void)
 : CShPlugin(plugin_identifier)
 , m_pWorld(shNULL)
 , m_Box2DListener(shNULL)
@@ -132,39 +132,44 @@ void PluginGGJ2017::OnPostUpdate(float dt)
 	{
 		ShockWave & wave = m_aShockWave[iWave];
 
-		wave.time += dt;
-
-		if (wave.time < DURATION)
+		if (wave.pEntity)
 		{
-			float scale = (wave.time / DURATION);
-			float alpha = 1.0f - (wave.time / DURATION);
+			wave.time += dt;
 
-			ShEntity2::SetScale(wave.pEntity, CShVector3(scale, scale, 1.0f));
-			ShEntity2::SetAlpha(wave.pEntity, alpha);
-
-			float radius_b2 = (WAVE_SIZE * scale) / ratio_sh_b2;
-
-			b2Vec2 pos_b2 = Convert_sh_b2(wave.initialPosition);
-
-			unsigned int iBlockCount = m_aBlockList.GetCount();
-
-			for (auto iBody = 0; iBody < iBlockCount; ++iBody)
+			if (wave.time < DURATION)
 			{
-				const b2Vec2 & pos = m_aBlockList[iBody]->GetBody()->GetPosition();
+				float scale = (wave.time / DURATION);
+				float alpha = 1.0f - (wave.time / DURATION);
 
-				b2Vec2 PointerToObject = pos - pos_b2;
-				const float distance = PointerToObject.Normalize();
+				ShEntity2::SetScale(wave.pEntity, CShVector3(scale, scale, 1.0f));
+				ShEntity2::SetAlpha(wave.pEntity, alpha);
 
-				if (distance < radius_b2)
+				float radius_b2 = (WAVE_SIZE * scale) / ratio_sh_b2;
+
+				b2Vec2 pos_b2 = Convert_sh_b2(wave.initialPosition);
+
+				unsigned int iBlockCount = m_aBlockList.GetCount();
+
+				for (auto iBody = 0; iBody < iBlockCount; ++iBody)
 				{
-					b2Vec2 impulse(PointerToObject.x * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f);
-					m_aBlockList[iBody]->GetBody()->ApplyLinearImpulseToCenter(impulse, true);
+					const b2Vec2 & pos = m_aBlockList[iBody]->GetBody()->GetPosition();
+
+					b2Vec2 PointerToObject = pos - pos_b2;
+					const float distance = PointerToObject.Normalize();
+
+					if (distance < radius_b2)
+					{
+						b2Vec2 impulse(PointerToObject.x * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f);
+						m_aBlockList[iBody]->GetBody()->ApplyLinearImpulseToCenter(impulse, true);
+					}
 				}
 			}
-		}
-		else
-		{
-			ShEntity2::SetShow(wave.pEntity, false); // TODO : remove it + destroy entity
+			else
+			{
+				ShEntity2::Destroy(wave.pEntity);
+				wave.pEntity = shNULL;
+				// TODO : remove from array
+			}
 		}
 	}
 

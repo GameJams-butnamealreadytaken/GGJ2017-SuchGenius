@@ -31,6 +31,15 @@ void GameStateWin::init(void)
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 
+	m_pButtonMenu = ShEntity2::Find(levelIdentifier, CShIdentifier("button_menu"));
+	SH_ASSERT(shNULL != m_pButtonMenu);
+
+	m_pButtonRetry = ShEntity2::Find(levelIdentifier, CShIdentifier("button_retry"));
+	SH_ASSERT(shNULL != m_pButtonRetry);
+
+	m_pButtonNext = ShEntity2::Find(levelIdentifier, CShIdentifier("button_next"));
+	SH_ASSERT(shNULL != m_pButtonNext);
+
 	m_pPopupBackgroundEntity = ShEntity2::Find(levelIdentifier, CShIdentifier("popup_background"));
 	SH_ASSERT(shNULL != m_pPopupBackgroundEntity);
 	ShEntity2::SetShow(m_pPopupBackgroundEntity, false);
@@ -135,7 +144,18 @@ void GameStateWin::update(float dt)
 */
 void GameStateWin::touchBegin(const CShVector2 & pos)
 {
-	// ...
+	if (ShEntity2::Includes(m_pButtonMenu, pos))
+	{
+		m_pPressedButton = m_pButtonMenu;
+	}
+	else if (ShEntity2::Includes(m_pButtonRetry, pos))
+	{
+		m_pPressedButton = m_pButtonRetry;
+	}
+	else if (ShEntity2::Includes(m_pButtonNext, pos))
+	{
+		m_pPressedButton = m_pButtonNext;
+	}
 }
 
 /**
@@ -143,7 +163,28 @@ void GameStateWin::touchBegin(const CShVector2 & pos)
 */
 void GameStateWin::touchEnd(const CShVector2 & pos)
 {
-	// ...
+	if (shNULL != m_pPressedButton)
+	{
+		if (ShEntity2::Includes(m_pPressedButton, pos))
+		{
+			Game & game = Game::instance();
+
+			if (m_pPressedButton == m_pButtonMenu)
+			{
+				game.pop();
+				game.pop();
+			}
+			else if (m_pPressedButton == m_pButtonRetry)
+			{
+				game.pop();
+			}
+			else if (m_pPressedButton == m_pButtonNext)
+			{
+				SetCurrentLevel(GetCurrentLevel()+1);
+				game.pop();
+			}
+		}
+	}
 }
 
 /**

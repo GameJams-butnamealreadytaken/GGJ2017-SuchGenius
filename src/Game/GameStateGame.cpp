@@ -54,6 +54,8 @@ void GameStateGame::entered(void)
 
 	m_pHomeButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_home"));
 	SH_ASSERT(shNULL != m_pHomeButton);
+
+	load();
 }
 
 /**
@@ -61,7 +63,7 @@ void GameStateGame::entered(void)
 */
 void GameStateGame::exiting(void)
 {
-	// ...
+	unload();
 }
 
 /**
@@ -77,7 +79,27 @@ void GameStateGame::obscuring(void)
 */
 void GameStateGame::revealed(void)
 {
-	// ...
+	unload();
+	load();
+}
+
+/**
+ * @brief GameStateGame::load
+ */
+void GameStateGame::load(void)
+{
+	CShString strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
+	CShIdentifier levelIdentifier(strLevelName);
+	bool loading = ShLevel::Load(levelIdentifier);
+	SH_ASSERT(loading);
+}
+
+/**
+ * @brief GameStateGame::unload
+ */
+void GameStateGame::unload(void)
+{
+	ShLevel::Release();
 }
 
 /**
