@@ -24,12 +24,6 @@ class PluginGGJ2017 : public CShPlugin
 {
 public:
 
-	enum EGameState
-	{
-		STATE_PLAYING,
-		STATE_WIN
-	};
-
 	//
 	// Constructor / Destructor
 							PluginGGJ2017		(void);
@@ -75,6 +69,7 @@ private:
 
 	bool				m_playerOnArrival;
 	float				m_arrivalTimer;
+	bool				m_isWon;
 
 	int					m_iClicCount;
 
@@ -89,5 +84,4 @@ private:
 
 	CShArray<ShockWave> m_aShockWave;
 
-	EGameState m_eGameState;
 };
