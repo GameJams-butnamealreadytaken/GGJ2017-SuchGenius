@@ -7,6 +7,7 @@
 */
 GameStateGame::GameStateGame(void)
 {
+	// ...
 }
 
 /**
@@ -14,6 +15,7 @@ GameStateGame::GameStateGame(void)
 */
 GameStateGame::~GameStateGame(void)
 {
+	// ...
 }
 
 /**
@@ -21,7 +23,7 @@ GameStateGame::~GameStateGame(void)
 */
 void GameStateGame::init(void)
 {
-
+	// ...
 }
 
 /**
@@ -29,6 +31,7 @@ void GameStateGame::init(void)
 */
 void GameStateGame::release(void)
 {
+	// ...
 }
 
 /**
@@ -48,7 +51,7 @@ void GameStateGame::entered(void)
 */
 void GameStateGame::exiting(void)
 {
-
+	// ...
 }
 
 /**
@@ -56,7 +59,7 @@ void GameStateGame::exiting(void)
 */
 void GameStateGame::obscuring(void)
 {
-
+	// ...
 }
 
 /**
@@ -64,7 +67,7 @@ void GameStateGame::obscuring(void)
 */
 void GameStateGame::revealed(void)
 {
-
+	// ...
 }
 
 /**
@@ -72,7 +75,7 @@ void GameStateGame::revealed(void)
 */
 void GameStateGame::update(float dt)
 {
-
+	// ...
 }
 
 /**
@@ -80,7 +83,7 @@ void GameStateGame::update(float dt)
 */
 void GameStateGame::touchBegin(const CShVector2 & pos)
 {
-	// Generate waves
+	// ...
 }
 
 /**
@@ -88,7 +91,7 @@ void GameStateGame::touchBegin(const CShVector2 & pos)
 */
 void GameStateGame::touchEnd(const CShVector2 & pos)
 {
-
+	// ...
 }
 
 /**
@@ -96,5 +99,5 @@ void GameStateGame::touchEnd(const CShVector2 & pos)
 */
 void GameStateGame::touchMove(const CShVector2 & pos)
 {
-
+	// ...
 }
