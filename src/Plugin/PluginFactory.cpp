@@ -22,7 +22,7 @@ static void OnTouchMove(int iTouch, float positionX, float positionY)
 extern "C"
 {
 
-void RegisterPluginGGJ2017(void)
+PLUGIN_GGJ17_EXPORT void RegisterPluginGGJ2017(void)
 {
 	if (!g_pInstance)
 	{
@@ -36,7 +36,7 @@ void RegisterPluginGGJ2017(void)
 	ShApplication::RegisterPlugin(g_pInstance);
 }
 
-void UnRegisterPluginGGJ2017(void)
+PLUGIN_GGJ17_EXPORT void UnRegisterPluginGGJ2017(void)
 {
 	ShInput::RemoveOnTouchDown(OnTouchDown);
 	ShInput::RemoveOnTouchUp(OnTouchUp);
