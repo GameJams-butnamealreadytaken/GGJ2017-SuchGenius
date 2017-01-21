@@ -14,6 +14,7 @@
             <sprite_texture name="ggj17.block_arrivee.tga"/>
             <sprite_texture name="ggj17.block_dynamic.tga"/>
             <sprite_texture name="ggj17.block_static.tga"/>
+            <sprite_texture name="ggj17.shockwave.tga"/>
         </sprite_texture_list>
         <material_library_list/>
         <submesh_list/>
@@ -25,12 +26,21 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="0.000000" max_x="642.155334" max_y="70.000000"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="-204.873672" max_x="642.155334" max_y="307.251434"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
+        <entity2 name="" position_x="-567.106934" position_y="-130.686310" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.929595" scale_y="0.929595" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.070405" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-330.258148" position_y="-40.094387" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.950427" scale_y="0.950427" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.049573" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-531.088379" position_y="-115.405731" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.984361" scale_y="0.984361" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.015639" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-395.746307" position_y="66.869606" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.938992" scale_y="0.938992" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.061008" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-564.745667" position_y="-53.400902" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.918802" scale_y="0.918802" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.081198" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-86.764923" position_y="-84.817482" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.936625" scale_y="0.936625" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.063375" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="72.561989" position_y="-204.873672" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.980307" scale_y="0.980307" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.019693" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="125.296982" position_y="-203.751663" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.982151" scale_y="0.982151" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.017849" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="134.273148" position_y="-167.846985" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.988871" scale_y="0.988871" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.011129" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="2.155312" position_y="7.014652" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-640.000000" min_y="360.000000" max_x="640.000000" max_y="-360.000000"/>
-        <prefab name="prefab_block_arrival_002" position_x="350.000000" position_y="-200.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
+        <prefab name="prefab_block_arrival_002" position_x="212.474594" position_y="-150.883789" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_002" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_003" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -47,7 +57,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_arrival_003" position_x="420.000000" position_y="-200.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
+        <prefab name="prefab_block_arrival_003" position_x="282.474548" position_y="-150.883789" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_003" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_005" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -64,11 +74,11 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_001" position_x="280.000000" position_y="-200.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_001" position_x="40.000000" position_y="5.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_001" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_001" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
-        <prefab name="prefab_block_static_002" position_x="280.000000" position_y="-130.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_002" position_x="180.000000" position_y="145.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_002" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_002" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -78,7 +88,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_003" position_x="280.000000" position_y="-60.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_003" position_x="110.000000" position_y="75.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_003" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_007" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -88,7 +98,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_004" position_x="490.000000" position_y="-200.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_004" position_x="352.474487" position_y="-150.883789" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_004" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_008" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -98,7 +108,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_005" position_x="490.000000" position_y="-130.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_005" position_x="352.474487" position_y="-80.883835" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_005" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_009" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -108,7 +118,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_006" position_x="490.000000" position_y="-60.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_006" position_x="352.474487" position_y="-10.883850" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_006" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_010" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -118,7 +128,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_007" position_x="-350.000000" position_y="-30.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_007" position_x="-541.312988" position_y="-66.489059" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_007" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_011" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -128,7 +138,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_008" position_x="-280.000000" position_y="-30.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_008" position_x="-471.313080" position_y="-66.489059" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_008" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_012" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -138,9 +148,27 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_player_001" position_x="-302.971466" position_y="49.406380" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_player" layer="layer_default">
+        <prefab name="prefab_block_player_001" position_x="-505.199188" position_y="5.277050" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_player" layer="layer_default">
             <entity2 name="sprite_ggj17_block_dynamic_001" prefab_child_resource_identifier="sprite_ggj17_block_dynamic_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_013" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_static_001_001" position_x="-30.000000" position_y="-65.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+            <entity2 name="sprite_ggj17_block_static_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_014"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <entity2 name="sprite_ggj17_block_static_009" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_014" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value=""/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
         </prefab>
     </object_list>
     <plugins>
@@ -156,6 +184,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="50.664516" position_y="82.150093" position_z="1091.468628" target_x="50.664516" target_y="82.150436" target_z="0.000017" znear="1.000000" zfar="40000.000000" zoom="1.091469" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1091.468628" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="46.755524" position_y="95.827820" position_z="1122.020508" target_x="46.755524" target_y="95.828171" target_z="0.000021" znear="1.000000" zfar="40000.000000" zoom="1.122020" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1122.020508" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>

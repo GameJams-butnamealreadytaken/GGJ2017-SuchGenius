@@ -138,7 +138,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_player_001" position_x="-302.971466" position_y="49.406380" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_player" layer="layer_default">
+        <prefab name="prefab_block_player_001" position_x="-311.703247" position_y="42.857567" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_player" layer="layer_default">
             <entity2 name="sprite_ggj17_block_dynamic_001" prefab_child_resource_identifier="sprite_ggj17_block_dynamic_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_013" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
