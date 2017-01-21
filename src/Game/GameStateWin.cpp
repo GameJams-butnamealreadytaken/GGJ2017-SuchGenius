@@ -10,6 +10,7 @@
 * @brief Constructor
 */
 GameStateWin::GameStateWin(void)
+: m_fStateTime(0.0f)
 {
 	// ...
 }
@@ -71,6 +72,8 @@ void GameStateWin::entered(void)
 	ShEntity2::SetShow(m_pPopupEntity, true);
 	ShEntity2::SetShow(m_pPopupBackgroundEntity, true);
 	ShEntity2::SetAlpha(m_pPopupBackgroundEntity, 0.0f);
+
+	m_fStateTime = 0.0f;
 }
 
 /**
@@ -182,6 +185,8 @@ void GameStateWin::touchEnd(const CShVector2 & pos)
 			{
 				SetCurrentLevel(GetCurrentLevel()+1);
 				game.pop();
+				game.pop();
+				game.push(Game::GAME_LEVEL);
 			}
 		}
 	}
