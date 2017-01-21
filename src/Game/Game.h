@@ -2,6 +2,7 @@
 
 #include "State.h"
 #include "GameStateMainMenu.h"
+#include "GameStateCredits.h"
 #include "GameStateLevelSelection.h"
 #include "GameStateGame.h"
 #include "GameStateWin.h"
@@ -17,6 +18,7 @@ public:
 		LEVEL_SELECTION,
 		GAME_LEVEL,
 		GAME_WIN,
+		CREDITS,
 
 		MAX_GAME_STATES
 	};
@@ -74,6 +76,12 @@ public:
 			}
 			break;
 
+			case CREDITS:
+			{
+				return(&m_stateCredits);
+			}
+			break;
+
 			default:
 			{
 				return((State*)0); // this should never happen
@@ -90,6 +98,7 @@ private:
 	State *					m_aStates [MAX_GAME_STATES];
 	int						m_iCurrentState;
 
+	GameStateCredits		m_stateCredits;
 	GameStateMainMenu		m_stateMainMenu;
 	GameStateLevelSelection	m_stateLevelSelection;
 	GameStateGame			m_stateGame;
