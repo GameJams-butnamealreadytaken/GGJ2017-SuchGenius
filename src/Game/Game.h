@@ -2,6 +2,7 @@
 
 #include "State.h"
 #include "GameStateMainMenu.h"
+#include "GameStateLevelSelection.h"
 #include "GameStateGame.h"
 
 class Game
@@ -12,6 +13,7 @@ public:
 	enum EState
 	{
 		MAIN_MENU,
+		LEVEL_SELECTION,
 		GAME_LEVEL,
 
 		MAX_GAME_STATES
@@ -46,7 +48,13 @@ public:
 		{
 			case MAIN_MENU:
 			{
-				return(&m_stateMenu);
+				return(&m_stateMainMenu);
+			}
+			break;
+
+			case LEVEL_SELECTION:
+			{
+				return(&m_stateLevelSelection);
 			}
 			break;
 
@@ -65,13 +73,14 @@ public:
 
 private:
 
-	Game				(void);
+	Game					(void);
 
-	static Game *		instance_;
+	static Game *			instance_;
 
-	State *				m_aStates [MAX_GAME_STATES];
-	int					m_iCurrentState;
+	State *					m_aStates [MAX_GAME_STATES];
+	int						m_iCurrentState;
 
-	GameStateMainMenu	m_stateMenu;
-	GameStateGame		m_stateGame;
+	GameStateMainMenu		m_stateMainMenu;
+	GameStateLevelSelection	m_stateLevelSelection;
+	GameStateGame			m_stateGame;
 };

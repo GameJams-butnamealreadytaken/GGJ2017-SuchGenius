@@ -23,6 +23,10 @@ void Game::initialize(void)
 	bool bLoaded = ShLevel::Load(CShIdentifier("background"));
 	SH_ASSERT(bLoaded);
 
+	get(MAIN_MENU)->init();
+	get(LEVEL_SELECTION)->init();
+	get(GAME_LEVEL)->init();
+
 	push(MAIN_MENU);
 }
 
@@ -32,6 +36,10 @@ void Game::initialize(void)
 void Game::release(void)
 {
 	pop();
+
+	get(GAME_LEVEL)->release();
+	get(LEVEL_SELECTION)->release();
+	get(MAIN_MENU)->release();
 
 	ShLevel::Release();
 }
