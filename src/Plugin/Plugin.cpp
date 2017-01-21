@@ -22,6 +22,7 @@ PluginGGJ2017::PluginGGJ2017(void)
 , m_iClicCount(0)
 , m_isWon(false)
 , m_PlayerInitPos()
+, m_pPlayerBlock(shNULL)
 {
 	// ...
 }
@@ -46,6 +47,7 @@ void PluginGGJ2017::Reset(void)
 		{
 			b2Body * pBody = m_aBlockList[i]->GetBody();
 			pBody->SetLinearVelocity(b2Vec2(0.0f, 0.0f));
+			pBody->SetAngularVelocity(0.0f);
 			pBody->SetTransform(m_PlayerInitPos, 0.0f);
 		}
 	}
@@ -192,6 +194,8 @@ void PluginGGJ2017::OnPostUpdate(float dt)
 			m_isWon = true;
 		}
 	}
+
+	CheckForAutorRetry();
 }
 
 /**
@@ -395,6 +399,11 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 
 	pBody->SetUserData(pBlock);
 
+	if (CShIdentifier("block_object_player") == idDataSetIdentifier)
+	{
+		m_pPlayerBlock = pBlock;
+	}
+
 	b2Shape * pShape = GenerateBlockShape(pObject, pBody);
 	SH_ASSERT(shNULL != pShape);
 
@@ -490,6 +499,20 @@ void PluginGGJ2017::UpdateShineObjects(void)
 				}
 			}
 		}
+	}
+}
+
+/**
+* @brief CheckForAutorRetry
+*/
+void PluginGGJ2017::CheckForAutorRetry(void)
+{
+	b2Body * pBody = m_pPlayerBlock->GetBody();
+	CShVector2 bodyPos = Convert_sh_b2(pBody->GetPosition());
+	// 640 / 360
+	if (bodyPos.m_x >= 700.0f || bodyPos.m_x <= -700.0f || bodyPos.m_y <= -400.0f)
+	{
+		Reset();
 	}
 }
 

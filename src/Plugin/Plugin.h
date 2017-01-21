@@ -53,6 +53,8 @@ public:
 
 private:
 
+	void					CheckForAutorRetry	(void);
+
 	void					CapBlockVelocity	(float velocityMax);
 
 	void					UpdateShineObjects	(void);
@@ -71,6 +73,7 @@ private:
 
 	Box2DListener *		m_Box2DListener;
 
+	Block *				m_pPlayerBlock;
 	b2Vec2				m_PlayerInitPos;
 
 	bool				m_playerOnArrival;
