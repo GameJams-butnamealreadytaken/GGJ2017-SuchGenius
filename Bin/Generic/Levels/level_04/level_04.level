@@ -14,6 +14,7 @@
             <sprite_texture name="ggj17.block_arrivee.tga"/>
             <sprite_texture name="ggj17.block_dynamic.tga"/>
             <sprite_texture name="ggj17.block_static.tga"/>
+            <sprite_texture name="ggj17.main_menu_button_round_background.tga"/>
         </sprite_texture_list>
         <material_library_list/>
         <submesh_list/>
@@ -25,10 +26,11 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="0.000000" max_x="642.155334" max_y="70.000000"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="-300.000000" max_x="642.155334" max_y="70.000000"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
+        <entity2 name="button_retry" position_x="-585.000000" position_y="-300.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="2.155312" position_y="7.014652" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-640.000000" min_y="360.000000" max_x="640.000000" max_y="-360.000000"/>
         <prefab name="prefab_block_arrival_002" position_x="318.377747" position_y="-229.441376" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_002" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
@@ -126,14 +128,6 @@
             <dummy_aabb2 name="dummy_aabb2_auto_013" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
         <prefab name="prefab_block_static_006_001" position_x="178.377838" position_y="190.558624" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_006_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_010_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_005"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_009" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_005" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -144,14 +138,6 @@
             </dummy_aabb2>
         </prefab>
         <prefab name="prefab_block_static_005_001" position_x="248.377838" position_y="120.558640" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
-            <entity2 name="sprite_ggj17_block_static_005_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
-            <dummy_aabb2 name="dummy_aabb2_auto_009_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
-                <data_set_list>
-                    <data_set name="block_object_static" instance_name="block_object_static_0">
-                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_006"/>
-                    </data_set>
-                </data_set_list>
-            </dummy_aabb2>
             <entity2 name="sprite_ggj17_block_static_010" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_006" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -175,6 +161,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="142.901306" position_y="96.090088" position_z="1211.928833" target_x="142.901306" target_y="96.090469" target_z="0.000021" znear="1.000000" zfar="40000.000000" zoom="1.211929" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1211.928833" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="115.632904" position_y="68.821716" position_z="1090.735962" target_x="115.632904" target_y="68.822060" target_z="0.000012" znear="1.000000" zfar="40000.000000" zoom="1.090736" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1090.735962" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>

@@ -127,4 +127,20 @@
 		</pad>		
 	</event>
 	
+	<event name="reset">
+		<keyboard>
+			<input name="just_pressed">
+				<parameter name="control" value="r"/>
+				<parameter name="threshold" value="0.5"/>
+			</input>
+		</keyboard>
+	
+		<pad>
+			<input name="just_pressed">
+				<parameter name="control" value="y"/>
+				<parameter name="threshold" value="0.5"/>			
+			</input>
+		</pad>		
+	</event>
+	
 </configuration>
