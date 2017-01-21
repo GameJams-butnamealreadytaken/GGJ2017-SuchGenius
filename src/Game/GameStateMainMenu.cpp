@@ -6,24 +6,24 @@
 #define ANIM_LEVELS_LENGTH 720.0f
 
 /**
-* @brief GameStateMainMenu::Constructor
-*/
+ * @brief Constructor
+ */
 GameStateMainMenu::GameStateMainMenu(void) : m_pPressedButton(shNULL), m_eCurrentState(IDLE), m_fStateTime(0.0f)
 {
 	// ...
 }
 
 /**
-* @brief GameStateMainMenu::Destructor
-*/
+ * @brief Destructor
+ */
 GameStateMainMenu::~GameStateMainMenu(void)
 {
 	// ...
 }
 
 /**
-* @brief GameStateMainMenu::Initialize
-*/
+ * @brief Initialize
+ */
 void GameStateMainMenu::init(void)
 {
 	CShIdentifier levelIdentifier("main_menu");
@@ -53,8 +53,8 @@ void GameStateMainMenu::init(void)
 }
 
 /**
-* @brief GameStateMainMenu::Release
-*/
+ * @brief Release
+ */
 void GameStateMainMenu::release(void)
 {
 	m_pButtonSound = shNULL;
@@ -69,8 +69,8 @@ void GameStateMainMenu::release(void)
 }
 
 /**
-* @brief GameStateMainMenu::entered
-*/
+ * @brief entered
+ */
 void GameStateMainMenu::entered(void)
 {
 	setState(IDLE); // FIXME : INTRO
@@ -79,31 +79,31 @@ void GameStateMainMenu::entered(void)
 }
 
 /**
-* @brief GameStateMainMenu::exiting
-*/
+ * @brief exiting
+ */
 void GameStateMainMenu::exiting(void)
 {
 	ShEntity2::SetShow(m_pScreenObject, false);
 }
 
 /**
-* @brief GameStateMainMenu::obscuring
-*/
+ * @brief obscuring
+ */
 void GameStateMainMenu::obscuring(void)
 {
 	ShEntity2::SetShow(m_pScreenObject, false);
 }
 
 /**
-* @brief GameStateMainMenu::revealed
-*/
+ * @brief revealed
+ */
 void GameStateMainMenu::revealed(void)
 {
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
 
 /**
- * @brief GameStateMainMenu::Release
+ * @brief update
  */
 void GameStateMainMenu::update(float dt)
 {
