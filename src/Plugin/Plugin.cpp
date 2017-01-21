@@ -49,6 +49,9 @@ void PluginGGJ2017::Reset(void)
 			pBody->SetTransform(m_PlayerInitPos, 0.0f);
 		}
 	}
+
+	m_iClicCount = 0;
+	m_isWon = false;
 }
 
 /**
@@ -86,6 +89,8 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 	}
 
 	m_iClicCount = 0;
+	m_arrivalTimer = 0.0f;
+	m_playerOnArrival = false;
 	m_isWon = false;
 }
 
