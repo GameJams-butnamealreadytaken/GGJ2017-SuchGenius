@@ -11,16 +11,24 @@ else(WIN32)
 	set(SOURCES_main )
 endif (WIN32)
 
-# Extension files
+# Plugin files
 set(SOURCES_Plugin Plugin.cpp Plugin.h)
 source_group("Plugin" FILES ${SOURCES_Plugin})
+
+# Plugin files
+set(SOURCES_Block Block.cpp Block.h)
+source_group("Plugin\\Block" FILES ${SOURCES_Block})
+
+# Listener files
+set(SOURCES_Listener Box2D_listener.cpp Box2D_listener.h)
+source_group("Plugin\\Listener" FILES ${SOURCES_Listener})
 
 # Factory files
 set(SOURCES_Factory PluginFactory.cpp PluginFactory.h)
 source_group("Factory" FILES ${SOURCES_Factory})
 
 # Put everything together before adding platform-specific files
-set(SOURCES ${SOURCES_Plugin} ${SOURCES_Factory})
+set(SOURCES ${SOURCES_Plugin} ${SOURCES_Factory} ${SOURCES_Listener} ${SOURCES_Block})
 
 # Compile to use it on Runtime
 add_library(Plugin STATIC ${SOURCES})
