@@ -14,6 +14,8 @@
             <sprite_texture name="ggj17.block_arrivee.tga"/>
             <sprite_texture name="ggj17.block_dynamic.tga"/>
             <sprite_texture name="ggj17.block_static.tga"/>
+            <sprite_texture name="ggj17.main_menu_button_home.tga"/>
+            <sprite_texture name="ggj17.main_menu_button_restart.tga"/>
             <sprite_texture name="ggj17.main_menu_button_round_background.tga"/>
             <sprite_texture name="ggj17.shockwave.tga"/>
         </sprite_texture_list>
@@ -27,7 +29,7 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="-295.000000" max_x="857.029297" max_y="567.984863"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="-310.000000" max_x="857.029297" max_y="567.984863"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
@@ -52,7 +54,10 @@
         <entity2 name="" position_x="-344.447327" position_y="2.472878" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.942226" scale_y="0.942226" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.057774" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
         <entity2 name="" position_x="-337.898499" position_y="11.204614" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.923247" scale_y="0.923247" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.076753" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
         <entity2 name="" position_x="-350.996094" position_y="-11.716217" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.958690" scale_y="0.958690" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.041310" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
-        <entity2 name="button_retry" position_x="-575.000000" position_y="-295.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha"/>
+        <entity2 name="button_retry" position_x="-590.000000" position_y="-310.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.800000" scale_y="0.800000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha"/>
+        <entity2 name="sprite_ggj17_main_menu_button_restart_001" position_x="-590.000000" position_y="-310.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_restart" blend_function="alpha"/>
+        <entity2 name="button_home" position_x="-505.000000" position_y="-310.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.800000" scale_y="0.800000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha"/>
+        <entity2 name="sprite_ggj17_main_menu_button_home_001" position_x="-505.000000" position_y="-310.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_home" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="2.155312" position_y="7.014652" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-640.000000" min_y="360.000000" max_x="640.000000" max_y="-360.000000"/>
         <prefab name="prefab_block_arrival_002" position_x="350.000000" position_y="-200.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_002" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
@@ -180,6 +185,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="45.649403" position_y="16.042229" position_z="1061.968384" target_x="45.649403" target_y="16.042562" target_z="-0.000004" znear="1.000000" zfar="40000.000000" zoom="1.061968" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1061.968384" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="107.479134" position_y="40.624352" position_z="1145.290039" target_x="107.479134" target_y="40.624710" target_z="0.000003" znear="1.000000" zfar="40000.000000" zoom="1.145290" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1145.290039" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>
