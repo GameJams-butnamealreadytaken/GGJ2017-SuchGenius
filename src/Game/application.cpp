@@ -1,7 +1,5 @@
 #include "application.h"
-
 #include "Game.h"
-
 #include "inputs.h"
 
 extern "C"
@@ -22,6 +20,8 @@ void OnPreInitialize(void)
  */
 void OnPostInitialize(void)
 {
+	//ShApplication::RegisterPlugin(&g_pluginGGJ17);
+
 	Game & game = Game::instance();
 	game.initialize();
 }

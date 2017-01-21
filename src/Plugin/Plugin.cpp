@@ -31,18 +31,18 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 	m_pWorld = new b2World(gravity);
 
 	//
-	// Dummy AABB2
+	// Load and parse all DummyAABB2 datasets
 	CShArray<ShDummyAABB2 *> dummyAABB2;
 	ShDummyAABB2::GetDummyAABB2Array(levelIdentifier, dummyAABB2);
-	int iObjectCount = dummyAABB2.GetCount();
+	int nDummyCount = dummyAABB2.GetCount();
 
-	for (int nDummy = 0; nDummy < iObjectCount; ++nDummy)
+	for (int i = 0; i < nDummyCount; ++i)
 	{
-		ShObject * pObject = dummyAABB2[nDummy];
+		ShObject * pObject = dummyAABB2[i];
 		int iDataSetCount = ShObject::GetDataSetCount(pObject);
-		for (int i = 0; i < iDataSetCount; ++i)
+		for (int j = 0; j < iDataSetCount; ++j)
 		{
-			ShDataSet * pDataSet = ShObject::GetDataSet(pObject, i);
+			ShDataSet * pDataSet = ShObject::GetDataSet(pObject, j);
 			DatasetParser(pObject, pDataSet);
 		}
 	}
