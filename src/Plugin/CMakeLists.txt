@@ -41,5 +41,5 @@ set_property(TARGET Plugin_Editor APPEND PROPERTY COMPILE_DEFINITIONS "SH_EDITOR
 set_property(TARGET Plugin_Editor APPEND PROPERTY POSITION_INDEPENDENT_CODE True)
 
 target_link_libraries(Plugin_Editor PRIVATE ${SHSDK_EDITOR_LIBRARIES})
-target_link_libraries(Plugin_Editor PRIVATE Box2D)
+target_link_libraries(Plugin_Editor PRIVATE Box2D_shared)
 target_include_directories(Plugin_Editor PRIVATE "${SHSDK_INCLUDE_DIR}" "$<TARGET_PROPERTY:Box2D,INCLUDE_DIRECTORIES>")

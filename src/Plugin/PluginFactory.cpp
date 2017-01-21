@@ -1,3 +1,5 @@
+#include "PluginFactory.h"
+
 #include "Plugin.h"
 
 #include "ShSDK/ShSDK.h"
