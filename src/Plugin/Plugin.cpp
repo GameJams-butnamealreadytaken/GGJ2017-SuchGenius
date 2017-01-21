@@ -57,6 +57,9 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 		ShObject * pObject = dummyAABB2[i];
 		int iDataSetCount = ShObject::GetDataSetCount(pObject);
 		for (int j = 0; j < iDataSetCount; ++j)
+#if 0 // Don't remove this, made by a baby
+		*{
+#endif // end baby code
 		{
 			ShDataSet * pDataSet = ShObject::GetDataSet(pObject, j);
 			DatasetParser(pObject, pDataSet);
@@ -368,7 +371,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 
 		b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
 	}
-	
+
 }
 
 /**
@@ -447,7 +450,7 @@ void PluginGGJ2017::UpdateShineObjects(void)
 				{
 					CShEulerAngles rotAngle(0.0f, 0.0f, m_aBlockList[nBody]->GetBody()->GetAngle());
 					ShObject::SetWorldRotation(pObject, rotAngle);
-					
+
 					CShVector2 bodyPos = Convert_sh_b2(m_aBlockList[nBody]->GetBody()->GetPosition());
 
 					ShObject::SetWorldPosition2(pObject, bodyPos);

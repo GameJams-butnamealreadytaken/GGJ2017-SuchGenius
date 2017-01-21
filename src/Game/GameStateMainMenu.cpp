@@ -5,6 +5,13 @@
 #define ANIM_LEVELS_DURATION 0.8f
 #define ANIM_LEVELS_LENGTH 720.0f
 
+#define ANIM_INTRO_ENTERED_DURATION 0.4f
+#define ANIM_INTRO_ENTERED_TITLE_LENGTH 120.0f
+#define ANIM_INTRO_ENTERED_TITLE_BASE_Y 240.0f
+#define ANIM_INTRO_ENTERED_PLAY_LENGTH 480.0f
+#define ANIM_INTRO_ENTERED_PLAY_BASE_Y 0.0f
+#define ANIM_INTRO_ENTERED_BUTTONS_LENGTH 480.0f
+#define ANIM_INTRO_ENTERED_BUTTONS_BASE_Y -250.0f
 /**
  * @brief Constructor
  */
@@ -50,6 +57,9 @@ void GameStateMainMenu::init(void)
 
 	m_pIconSoundOff = ShEntity2::Find(levelIdentifier, CShIdentifier("icon_sound_off"));
 	SH_ASSERT(shNULL != m_pIconSoundOff);
+
+	m_pTitleEntity = ShEntity2::Find(levelIdentifier, CShIdentifier("title"));
+	SH_ASSERT(shNULL != m_pTitleEntity);
 }
 
 /**
@@ -57,6 +67,11 @@ void GameStateMainMenu::init(void)
  */
 void GameStateMainMenu::release(void)
 {
+	m_pTitleEntity = shNULL;
+
+	m_pIconSoundOn = shNULL;
+	m_pIconSoundOff = shNULL;
+
 	m_pButtonSound = shNULL;
 	m_pButtonLevels = shNULL;
 	m_pButtonInfo = shNULL;
@@ -73,7 +88,7 @@ void GameStateMainMenu::release(void)
  */
 void GameStateMainMenu::entered(void)
 {
-	setState(IDLE); // FIXME : INTRO
+	setState(ANIM_INTRO_ENTERED);
 
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
@@ -111,6 +126,78 @@ void GameStateMainMenu::update(float dt)
 
 	switch (m_eCurrentState)
 	{
+		case ANIM_INTRO_ENTERED:
+		{
+			//
+			//
+			if (m_fStateTime > ANIM_INTRO_ENTERED_DURATION)
+			{
+				ShObject::SetRelativePositionY(m_pTitleEntity, ANIM_INTRO_ENTERED_TITLE_BASE_Y);
+			}
+			else
+			{
+				float progress = (m_fStateTime / ANIM_INTRO_ENTERED_DURATION);
+				ShObject::SetRelativePositionY(m_pTitleEntity, (ANIM_INTRO_ENTERED_TITLE_BASE_Y + ANIM_INTRO_ENTERED_PLAY_LENGTH) - (ANIM_INTRO_ENTERED_PLAY_LENGTH * progress));
+			}
+
+			//
+			// Play
+			if ((m_fStateTime - 0.1f) > ANIM_INTRO_ENTERED_DURATION)
+			{
+				ShObject::SetRelativePositionY(m_pButtonPlay, ANIM_INTRO_ENTERED_PLAY_BASE_Y);
+			}
+			else
+			{
+				float progress = ((m_fStateTime - 0.1f) / ANIM_INTRO_ENTERED_DURATION);
+				ShObject::SetRelativePositionY(m_pButtonPlay, (ANIM_INTRO_ENTERED_PLAY_BASE_Y - ANIM_INTRO_ENTERED_PLAY_LENGTH) + (ANIM_INTRO_ENTERED_PLAY_LENGTH * progress));
+			}
+
+			//
+			// Sound
+			if ((m_fStateTime - 0.2f) > ANIM_INTRO_ENTERED_DURATION)
+			{
+				ShObject::SetRelativePositionY(m_pButtonSound, ANIM_INTRO_ENTERED_BUTTONS_BASE_Y);
+			}
+			else
+			{
+				float progress = ((m_fStateTime - 0.2f) / ANIM_INTRO_ENTERED_DURATION);
+				ShObject::SetRelativePositionY(m_pButtonSound, (ANIM_INTRO_ENTERED_BUTTONS_BASE_Y - ANIM_INTRO_ENTERED_BUTTONS_LENGTH) + (ANIM_INTRO_ENTERED_BUTTONS_LENGTH * progress));
+			}
+
+			//
+			// Levels
+			if ((m_fStateTime - 0.3f) > ANIM_INTRO_ENTERED_DURATION)
+			{
+				ShObject::SetRelativePositionY(m_pButtonLevels, ANIM_INTRO_ENTERED_BUTTONS_BASE_Y);
+			}
+			else
+			{
+				float progress = ((m_fStateTime - 0.3f) / ANIM_INTRO_ENTERED_DURATION);
+				ShObject::SetRelativePositionY(m_pButtonLevels, (ANIM_INTRO_ENTERED_BUTTONS_BASE_Y - ANIM_INTRO_ENTERED_BUTTONS_LENGTH) + (ANIM_INTRO_ENTERED_BUTTONS_LENGTH * progress));
+			}
+
+
+			//
+			// Info
+			if ((m_fStateTime - 0.4f) > ANIM_INTRO_ENTERED_DURATION)
+			{
+				ShObject::SetRelativePositionY(m_pButtonInfo, ANIM_INTRO_ENTERED_BUTTONS_BASE_Y);
+			}
+			else
+			{
+				float progress = ((m_fStateTime - 0.4f) / ANIM_INTRO_ENTERED_DURATION);
+				ShObject::SetRelativePositionY(m_pButtonInfo, (ANIM_INTRO_ENTERED_BUTTONS_BASE_Y - ANIM_INTRO_ENTERED_BUTTONS_LENGTH) + (ANIM_INTRO_ENTERED_BUTTONS_LENGTH * progress));
+			}
+
+			//
+			// change state
+			if ((m_fStateTime - 0.5f) > ANIM_INTRO_ENTERED_DURATION)
+			{
+				setState(IDLE);
+			}
+		}
+		break;
+
 		case IDLE:
 		{
 			// do nothing
@@ -121,14 +208,14 @@ void GameStateMainMenu::update(float dt)
 		{
 			if (m_fStateTime > ANIM_LEVELS_DURATION)
 			{
-				ShObject::SetPositionY(m_pScreenObject, ANIM_LEVELS_LENGTH);
+				ShObject::SetRelativePositionY(m_pScreenObject, ANIM_LEVELS_LENGTH);
 				Game & game = Game::instance();
 				game.push(Game::LEVEL_SELECTION);
 			}
 			else
 			{
 				float progress = (m_fStateTime / ANIM_LEVELS_DURATION);
-				ShObject::SetPositionY(m_pScreenObject, ANIM_LEVELS_LENGTH * progress * progress);
+				ShObject::SetRelativePositionY(m_pScreenObject, ANIM_LEVELS_LENGTH * progress * progress);
 			}
 		}
 		break;
@@ -149,6 +236,39 @@ void GameStateMainMenu::setState(GameStateMainMenu::EState eState)
 {
 	m_eCurrentState = eState;
 	m_fStateTime = 0.0f;
+
+	switch (m_eCurrentState)
+	{
+		case ANIM_INTRO_ENTERED:
+		{
+			CShVector2 pos = ShObject::GetWorldPosition2(m_pScreenObject);
+
+			ShEntity2::SetRelativePositionY(m_pButtonPlay, pos.m_y - ANIM_INTRO_ENTERED_PLAY_LENGTH);
+
+			ShEntity2::SetRelativePositionY(m_pButtonSound, pos.m_y - ANIM_INTRO_ENTERED_BUTTONS_LENGTH);
+			ShEntity2::SetRelativePositionY(m_pButtonLevels, pos.m_y - ANIM_INTRO_ENTERED_BUTTONS_LENGTH);
+			ShEntity2::SetRelativePositionY(m_pButtonInfo, pos.m_y - ANIM_INTRO_ENTERED_BUTTONS_LENGTH);
+		}
+		break;
+
+		case IDLE:
+		{
+			// ...
+		}
+		break;
+
+		case ANIM_OUTRO_LEVELS:
+		{
+			// ...
+		}
+		break;
+
+		default:
+		{
+			SH_ASSERT_ALWAYS();
+		}
+		break;
+	}
 }
 
 /**
