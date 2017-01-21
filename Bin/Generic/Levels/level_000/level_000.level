@@ -20,15 +20,19 @@
         <prefab_list/>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-70.039375" min_y="0.000000" max_x="1560.000000" max_y="1110.000000"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-71.000000" min_y="0.000000" max_x="180.000000" max_y="210.000000"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
-		<entity2 name="sprite_ggj17_block_static_001" position_x="0.000000" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha">
+        <entity2 name="sprite_ggj17_block_static_001" position_x="0.000000" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha"/>
+        <entity2 name="sprite_ggj17_block_static_002" position_x="70.000000" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha"/>
+        <entity2 name="sprite_ggj17_block_static_003" position_x="-70.000000" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha"/>
+        <entity2 name="sprite_ggj17_block_dynamic_001" position_x="110.000000" position_y="140.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_dynamic" blend_function="alpha"/>
+        <dummy_aabb2 name="dummy_aabb2_auto_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="35.000000" scale_y="35.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_static_001"/>
-                    <data type="bool" name="isstatic" value="true"/>
+                    <data type="bool" name="isstatic" value="false"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
                     <data type="bool" name="fixedrotation" value="false"/>
@@ -39,15 +43,14 @@
                     <data type="float" name="density" value="1.000000"/>
                     <data type="int" name="categorybits" value="1"/>
                     <data type="int" name="maskbits" value="65535"/>
-                    <data type="int" name="groupindex" value="0"/>
                 </data_set>
             </data_set_list>
-        </entity2>
-        <entity2 name="sprite_ggj17_block_static_002" position_x="70.039185" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha">
+        </dummy_aabb2>
+        <dummy_aabb2 name="dummy_aabb2_auto_002" position_x="70.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="35.000000" scale_y="35.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_static_002"/>
-                    <data type="bool" name="isstatic" value="true"/>
+                    <data type="bool" name="isstatic" value="false"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
                     <data type="bool" name="fixedrotation" value="false"/>
@@ -58,7 +61,6 @@
                     <data type="float" name="density" value="1.000000"/>
                     <data type="int" name="categorybits" value="1"/>
                     <data type="int" name="maskbits" value="65535"/>
-                    <data type="int" name="groupindex" value="0"/>
                 </data_set>
                 <data_set name="block_object_static" instance_name="block_object_static_1">
                     <data type="object" sub_type="all" name="attachedobject" value=""/>
@@ -73,15 +75,14 @@
                     <data type="float" name="density" value="1.000000"/>
                     <data type="int" name="categorybits" value="1"/>
                     <data type="int" name="maskbits" value="65535"/>
-                    <data type="int" name="groupindex" value="0"/>
                 </data_set>
             </data_set_list>
-        </entity2>
-        <entity2 name="sprite_ggj17_block_static_003" position_x="-70.039375" position_y="0.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_static" blend_function="alpha">
+        </dummy_aabb2>
+        <dummy_aabb2 name="dummy_aabb2_auto_003" position_x="-70.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="35.000000" scale_y="35.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_static_003"/>
-                    <data type="bool" name="isstatic" value="true"/>
+                    <data type="bool" name="isstatic" value="false"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
                     <data type="bool" name="fixedrotation" value="false"/>
@@ -92,11 +93,10 @@
                     <data type="float" name="density" value="1.000000"/>
                     <data type="int" name="categorybits" value="1"/>
                     <data type="int" name="maskbits" value="65535"/>
-                    <data type="int" name="groupindex" value="0"/>
                 </data_set>
             </data_set_list>
-        </entity2>
-        <entity2 name="sprite_ggj17_block_dynamic_001" position_x="108.005699" position_y="138.932800" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_dynamic" blend_function="alpha">
+        </dummy_aabb2>
+        <dummy_aabb2 name="dummy_aabb2_auto_004" position_x="110.000000" position_y="140.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="35.000000" scale_y="35.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
             <data_set_list>
                 <data_set name="block_object_player" instance_name="block_object_player_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_dynamic_001"/>
@@ -111,10 +111,9 @@
                     <data type="float" name="density" value="1.000000"/>
                     <data type="int" name="categorybits" value="1"/>
                     <data type="int" name="maskbits" value="65535"/>
-                    <data type="int" name="groupindex" value="0"/>
                 </data_set>
             </data_set_list>
-        </entity2>
+        </dummy_aabb2>
     </object_list>
     <editor_settings>
         <snap_x enabled="false" value="100.000000"/>
@@ -126,6 +125,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="false"/>
-        <camera position_x="141.978546" position_y="31.787548" position_z="522.659058" target_x="141.978546" target_y="31.787712" target_z="0.000010" znear="1.000000" zfar="40000.000000" zoom="0.522659" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-522.659058" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="87.695274" position_y="80.836777" position_z="385.701385" target_x="87.695274" target_y="80.836899" target_z="0.000025" znear="1.000000" zfar="40000.000000" zoom="0.385701" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-385.701324" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>
