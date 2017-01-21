@@ -2,11 +2,14 @@
 
 #include "Game.h"
 
+#define ANIM_MAIN_MENU_DURATION 0.8f
+#define ANIM_MAIN_MENU_LENGTH 720.0f
+
 /**
 * @brief GameStateLevelSelection::Constructor
 */
-GameStateLevelSelection::GameStateLevelSelection(void) 
-: m_pBackButton(shNULL)
+GameStateLevelSelection::GameStateLevelSelection(void)
+: m_pPressedButton(shNULL)
 , m_eCurrentState(IDLE)
 , m_fStateTime(0.0f)
 , m_iCurrentPageID(0)
@@ -41,7 +44,7 @@ void GameStateLevelSelection::init(void)
 
 	m_pButtonNext = ShEntity2::Find(levelIdentifier, CShIdentifier("button_next"));
 	SH_ASSERT(shNULL != m_pButtonNext);
-	
+
 	m_pBackButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_return"));
 	SH_ASSERT(shNULL != m_pBackButton);
 
@@ -63,7 +66,6 @@ void GameStateLevelSelection::init(void)
 			m_apLevelIcon[m_iCurrentPageID][i] = ShEntity2::Find(levelIdentifier, CShIdentifier(strEntityName));
 		}
 	}
-
 
 	DisplayCurrentPage();
 }
@@ -132,7 +134,38 @@ void GameStateLevelSelection::revealed(void)
  */
 void GameStateLevelSelection::update(float dt)
 {
-	// ...
+	m_fStateTime += dt;
+
+	switch (m_eCurrentState)
+	{
+		case ANIM_INTRO_ENTERED:
+		{
+			// ...
+		}
+		break;
+
+		case IDLE:
+		{
+			// do nothing
+		}
+		break;
+
+		case ANIM_OUTRO_MAIN_MENU:
+		{
+			if (m_fStateTime > ANIM_MAIN_MENU_DURATION)
+			{
+				ShObject::SetRelativePositionY(m_pScreenObject, -ANIM_MAIN_MENU_LENGTH);
+				Game & game = Game::instance();
+				game.pop();
+			}
+			else
+			{
+				float progress = BounceEase(m_fStateTime / ANIM_MAIN_MENU_DURATION);
+				ShObject::SetRelativePositionY(m_pScreenObject, -ANIM_MAIN_MENU_LENGTH * progress);
+			}
+		}
+		break;
+	}
 }
 
 /**
@@ -141,11 +174,14 @@ void GameStateLevelSelection::update(float dt)
  */
 void GameStateLevelSelection::prepareAnim(ShObject * pParent)
 {
+	ShObject::UnLink(m_pScreenObject, pParent);
 	ShObject::Link(pParent, m_pScreenObject);
 
-	ShObject::SetPositionY(m_pScreenObject, -720.0f);
+	ShObject::SetPositionY(m_pScreenObject, -ANIM_MAIN_MENU_LENGTH);
 
 	ShEntity2::SetShow(m_pScreenObject, true);
+
+	setState(ANIM_INTRO_ENTERED);
 }
 
 /**
@@ -153,38 +189,17 @@ void GameStateLevelSelection::prepareAnim(ShObject * pParent)
  */
 void GameStateLevelSelection::touchBegin(const CShVector2 & pos)
 {
-	// ...
-}
-
-/**
- * @brief GameStateLevelSelection::Release
- */
-void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
-{
 	if (ShEntity2::Includes(m_pButtonPrevious, pos))
 	{
-		if (0 != m_iCurrentPageID)
-		{
-			ShEntity2::SetAlpha(m_pButtonNext, 1.0f);
-			m_iLastPageID = m_iCurrentPageID;
-			--m_iCurrentPageID;
-			DisplayCurrentPage();
-		}
+		m_pPressedButton = m_pButtonPrevious;
 	}
 	else if (ShEntity2::Includes(m_pButtonNext, pos))
 	{
-		if (MAX_PAGE > m_iCurrentPageID)
-		{
-			ShEntity2::SetAlpha(m_pButtonPrevious, 1.0f);
-			m_iLastPageID = m_iCurrentPageID;
-			++m_iCurrentPageID;
-			DisplayCurrentPage();
-		}
+		m_pPressedButton = m_pButtonNext;
 	}
 	else if (ShEntity2::Includes(m_pBackButton, pos))
 	{
-		Game & game = Game::instance();
-		game.pop();
+		m_pPressedButton = m_pBackButton;
 	}
 	else
 	{
@@ -193,8 +208,63 @@ void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
 			if (ShEntity2::Includes(m_apThumbnails[i], pos))
 			{
 				// launch level i of page m_iCurrentPageID
+				m_pPressedButton = m_pBackButton;
 			}
 		}
+	}
+}
+
+/**
+ * @brief GameStateLevelSelection::Release
+ */
+void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
+{
+	if (shNULL != m_pPressedButton)
+	{
+		if (ShEntity2::Includes(m_pPressedButton, pos))
+		{
+			Game & game = Game::instance();
+
+			if (m_pPressedButton == m_pButtonPrevious)
+			{
+				if (0 != m_iCurrentPageID)
+				{
+					ShEntity2::SetAlpha(m_pButtonNext, 1.0f);
+					m_iLastPageID = m_iCurrentPageID;
+					--m_iCurrentPageID;
+					DisplayCurrentPage();
+				}
+			}
+			else if (m_pPressedButton == m_pButtonNext)
+			{
+				if (MAX_PAGE > m_iCurrentPageID)
+				{
+					ShEntity2::SetAlpha(m_pButtonPrevious, 1.0f);
+					m_iLastPageID = m_iCurrentPageID;
+					++m_iCurrentPageID;
+					DisplayCurrentPage();
+				}
+			}
+			else if (m_pPressedButton == m_pBackButton)
+			{
+				Game & game = Game::instance();
+				((GameStateMainMenu*)game.get(Game::MAIN_MENU))->prepareAnim(m_pScreenObject);
+
+				setState(ANIM_OUTRO_MAIN_MENU);
+			}
+			else
+			{
+				for (int i = 0; i < 9; ++i)
+				{
+					if (ShEntity2::Includes(m_apThumbnails[i], pos))
+					{
+						// launch level i of page m_iCurrentPageID
+					}
+				}
+			}
+		}
+
+		m_pPressedButton = shNULL;
 	}
 }
 
@@ -204,6 +274,16 @@ void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
 void GameStateLevelSelection::touchMove(const CShVector2 & pos)
 {
 	// ...
+}
+
+/**
+ * @brief GameStateLevelSelection::setState
+ * @param eState
+ */
+void GameStateLevelSelection::setState(EState eState)
+{
+	m_eCurrentState = eState;
+	m_fStateTime = 0.0f;
 }
 
 /**

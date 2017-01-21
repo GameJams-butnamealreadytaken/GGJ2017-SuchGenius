@@ -11,8 +11,9 @@ public:
 
 	enum EState
 	{
-		IDLE,
 		ANIM_INTRO_ENTERED,
+		IDLE,
+		ANIM_OUTRO_MAIN_MENU,
 	};
 
 	explicit	GameStateLevelSelection		(void);
@@ -36,6 +37,9 @@ public:
 	void		prepareAnim					(ShObject * pParent);
 
 private:
+
+	void		setState					(EState eState);
+
 	void		DisplayCurrentPage			(void);
 
 private:
@@ -43,8 +47,7 @@ private:
 	EState		m_eCurrentState;
 	float		m_fStateTime;
 
-	int			m_iLastPageID;
-	int			m_iCurrentPageID;
+	ShEntity2 * m_pPressedButton;
 
 	ShObject *	m_pScreenObject;
 
@@ -55,4 +58,7 @@ private:
 
 	ShEntity2 * m_apThumbnails [9];
 	ShEntity2 * m_apLevelIcon  [MAX_PAGE][9];
+
+	int			m_iLastPageID;
+	int			m_iCurrentPageID;
 };

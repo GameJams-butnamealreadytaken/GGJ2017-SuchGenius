@@ -32,6 +32,8 @@ public:
 	void		touchEnd			(const CShVector2 & pos) SH_ATTRIBUTE_OVERRIDE;
 	void		touchMove			(const CShVector2 & pos) SH_ATTRIBUTE_OVERRIDE;
 
+	void		prepareAnim			(ShObject * pParent);
+
 protected:
 
 	bool		load				(void);

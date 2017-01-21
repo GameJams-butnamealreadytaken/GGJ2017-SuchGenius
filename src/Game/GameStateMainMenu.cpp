@@ -60,6 +60,8 @@ void GameStateMainMenu::init(void)
 
 	m_pTitleEntity = ShEntity2::Find(levelIdentifier, CShIdentifier("title"));
 	SH_ASSERT(shNULL != m_pTitleEntity);
+
+	setState(ANIM_INTRO_ENTERED);
 }
 
 /**
@@ -88,8 +90,6 @@ void GameStateMainMenu::release(void)
  */
 void GameStateMainMenu::entered(void)
 {
-	setState(ANIM_INTRO_ENTERED);
-
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
 
@@ -214,8 +214,8 @@ void GameStateMainMenu::update(float dt)
 			}
 			else
 			{
-				float progress = (m_fStateTime / ANIM_LEVELS_DURATION);
-				ShObject::SetRelativePositionY(m_pScreenObject, ANIM_LEVELS_LENGTH * progress * progress);
+				float progress = BounceEase(m_fStateTime / ANIM_LEVELS_DURATION);
+				ShObject::SetRelativePositionY(m_pScreenObject, ANIM_LEVELS_LENGTH * progress);
 			}
 		}
 		break;
@@ -269,6 +269,22 @@ void GameStateMainMenu::setState(GameStateMainMenu::EState eState)
 		}
 		break;
 	}
+}
+
+/**
+ * @brief GameStateMainMenu::prepareAnim
+ * @param pParent
+ */
+void GameStateMainMenu::prepareAnim(ShObject * pParent)
+{
+	ShObject::UnLink(m_pScreenObject, pParent);
+	ShObject::Link(pParent, m_pScreenObject);
+
+	ShObject::SetPositionY(m_pScreenObject, ANIM_LEVELS_LENGTH);
+
+	ShEntity2::SetShow(m_pScreenObject, true);
+
+	setState(IDLE);
 }
 
 /**
