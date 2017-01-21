@@ -6,7 +6,10 @@
 * @brief GameStateGame::Constructor
 */
 GameStateGame::GameStateGame(void)
-{
+: m_pPressedButton(shNULL)
+, m_pHomeButton(shNULL)
+, m_pRestartButton(shNULL)
+{ 
 	// ...
 }
 
@@ -45,6 +48,12 @@ void GameStateGame::entered(void)
 	CShIdentifier levelIdentifier(strLevelName);
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
+
+	m_pRestartButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_start"));
+	SH_ASSERT(shNULL != m_pRestartButton);
+
+	m_pHomeButton = ShEntity2::Find(levelIdentifier, CShIdentifier("button_home"));
+	SH_ASSERT(shNULL != m_pHomeButton);
 }
 
 /**
@@ -88,7 +97,14 @@ void GameStateGame::update(float dt)
 */
 void GameStateGame::touchBegin(const CShVector2 & pos)
 {
-	// ...
+	if (ShEntity2::Includes(m_pRestartButton, pos))
+	{
+		m_pPressedButton = m_pRestartButton;
+	}
+	else if (ShEntity2::Includes(m_pHomeButton, pos))
+	{
+		m_pPressedButton = m_pHomeButton;
+	}
 }
 
 /**
@@ -96,7 +112,22 @@ void GameStateGame::touchBegin(const CShVector2 & pos)
 */
 void GameStateGame::touchEnd(const CShVector2 & pos)
 {
-	// ...
+	if (shNULL != m_pPressedButton)
+	{
+		if (ShEntity2::Includes(m_pPressedButton, pos))
+		{
+			Game & game = Game::instance();
+
+			if (m_pPressedButton == m_pRestartButton)
+			{
+				g_pInstance->Reset();
+			}
+			else if (m_pPressedButton == m_pHomeButton)
+			{
+				
+			}
+		}
+	}
 }
 
 /**

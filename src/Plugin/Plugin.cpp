@@ -21,6 +21,7 @@ PluginGGJ2017::PluginGGJ2017(void)
 , m_levelIdentifier(GID(NULL))
 , m_iClicCount(0)
 , m_isWon(false)
+, m_PlayerInitPos()
 {
 	// ...
 }
@@ -31,6 +32,23 @@ PluginGGJ2017::PluginGGJ2017(void)
 PluginGGJ2017::~PluginGGJ2017(void)
 {
 	// ...
+}
+
+/**
+* @brief Reset
+*/
+void PluginGGJ2017::Reset(void)
+{
+	int iBlockCount = m_aBlockList.GetCount();
+	for (int i = 0; i < iBlockCount; ++i)
+	{
+		if (Block::PLAYER == m_aBlockList[i]->GetType())
+		{
+			b2Body * pBody = m_aBlockList[i]->GetBody();
+			pBody->SetLinearVelocity(b2Vec2(0.0f, 0.0f));
+			pBody->SetTransform(m_PlayerInitPos, 0.0f);
+		}
+	}
 }
 
 /**
@@ -78,6 +96,7 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 void PluginGGJ2017::OnPlayStop(const CShIdentifier & levelIdentifier)
 {
 	m_iClicCount = 0;
+	m_isWon = false;
 
 	int iBlockCount = m_aBlockList.GetCount();
 	for (int i = 0; i < iBlockCount; ++i)
@@ -337,6 +356,12 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		}
 	}
 
+	if (ShObject::GetType(pObject) != ShObject::e_type_unknown)
+	{
+		bodyDef.angle = ShObject::GetWorldRotation(pObject).m_z;
+		bodyDef.position = Convert_sh_b2(ShObject::GetWorldPosition2(pObject));
+	}
+
 	Block::EBlockType type = Block::STATIC;
 	if (CShIdentifier("sensor_object") == idDataSetIdentifier)
 	{
@@ -345,16 +370,11 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 	else if (CShIdentifier("block_object_player") == idDataSetIdentifier)
 	{
 		type = Block::PLAYER;
+		m_PlayerInitPos = bodyDef.position;
 	}
 	else if (CShIdentifier("block_object_static") == idDataSetIdentifier)
 	{
 		type = Block::STATIC;
-	}
-
-	if (ShObject::GetType(pObject) != ShObject::e_type_unknown)
-	{
-		bodyDef.angle = ShObject::GetWorldRotation(pObject).m_z;
-		bodyDef.position = Convert_sh_b2(ShObject::GetWorldPosition2(pObject));
 	}
 
 	b2Body * pBody = m_pWorld->CreateBody(&bodyDef);

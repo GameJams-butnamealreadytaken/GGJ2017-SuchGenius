@@ -27,4 +27,8 @@ public:
 
 private:
 
+	ShEntity2 * m_pPressedButton;
+	ShEntity2 * m_pRestartButton;
+	ShEntity2 * m_pHomeButton;
+
 };
