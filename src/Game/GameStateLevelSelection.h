@@ -2,6 +2,8 @@
 
 #include "State.h"
 
+#define MAX_PAGE 2
+
 class GameStateLevelSelection : public State
 {
 
@@ -34,16 +36,23 @@ public:
 	void		prepareAnim					(ShObject * pParent);
 
 private:
+	void		DisplayCurrentPage			(void);
+
+private:
 
 	EState		m_eCurrentState;
 	float		m_fStateTime;
 
-	ShObject * m_pScreenObject;
+	int			m_iLastPageID;
+	int			m_iCurrentPageID;
 
-	ShEntity2 * m_pPressedButton;
+	ShObject *	m_pScreenObject;
+
+	ShEntity2 * m_pBackButton;
 
 	ShEntity2 * m_pButtonPrevious;
 	ShEntity2 * m_pButtonNext;
 
 	ShEntity2 * m_apThumbnails [9];
+	ShEntity2 * m_apLevelIcon  [MAX_PAGE][9];
 };
