@@ -185,8 +185,6 @@ void GameStateWin::touchEnd(const CShVector2 & pos)
 			{
 				SetCurrentLevel(GetCurrentLevel()+1);
 				game.pop();
-				game.pop();
-				game.push(Game::GAME_LEVEL);
 			}
 		}
 	}
