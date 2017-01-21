@@ -9,6 +9,7 @@ public:
 
 	enum EState
 	{
+		ANIM_INTRO_ENTERED,
 		IDLE,
 		ANIM_OUTRO_LEVELS,
 	};
@@ -54,5 +55,7 @@ private:
 
 	ShEntity2 * m_pIconSoundOn;
 	ShEntity2 * m_pIconSoundOff;
+
+	ShEntity2 * m_pTitleEntity;
 
 };
