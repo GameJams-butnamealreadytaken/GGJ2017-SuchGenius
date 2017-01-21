@@ -166,6 +166,8 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 		}
 	}
 
+	bodyDef.position = Convert_sh_b2(ShObject::GetWorldPosition2(pObject));
+
 	b2Body * pBody = m_pWorld->CreateBody(&bodyDef);
 	m_aBodyList.Add(pBody);
 
@@ -250,7 +252,7 @@ void PluginGGJ2017::UpdateShineObjects(void)
 
 		if (shNULL != pObject)
 		{
-			if (b2_staticBody != m_aBodyList[nBody]->GetType())
+			//if (b2_staticBody != m_aBodyList[nBody]->GetType())
 			{
 				// only movable can be moved
 				if (ShObject::IsMovable(pObject))
