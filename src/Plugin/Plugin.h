@@ -51,6 +51,8 @@ public:
 
 private:
 
+	void					CapBlockVelocity	(float velocityMax);
+
 	void					UpdateShineObjects	(void);
 
 	void					DatasetParser		(ShObject * pObject, ShDataSet * pDataSet);

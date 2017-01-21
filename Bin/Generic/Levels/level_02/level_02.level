@@ -14,6 +14,7 @@
             <sprite_texture name="ggj17.block_arrivee.tga"/>
             <sprite_texture name="ggj17.block_dynamic.tga"/>
             <sprite_texture name="ggj17.block_static.tga"/>
+            <sprite_texture name="ggj17.shockwave.tga"/>
         </sprite_texture_list>
         <material_library_list/>
         <submesh_list/>
@@ -25,12 +26,74 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-637.844666" min_y="0.000000" max_x="642.155334" max_y="70.000000"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-710.387268" min_y="-240.857559" max_x="1154.476196" max_y="900.015198"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
+        <entity2 name="" position_x="-334.624084" position_y="-9.533325" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.979118" scale_y="0.979118" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.020882" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="599.673462" position_y="241.504578" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.987394" scale_y="0.987394" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.012606" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-350.996094" position_y="1.381393" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.925078" scale_y="0.925078" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.074922" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="708.820374" position_y="208.760483" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.976911" scale_y="0.976911" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.023089" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-356.453430" position_y="-1.893013" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.921908" scale_y="0.921908" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.078092" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="645.515137" position_y="318.998871" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.964486" scale_y="0.964486" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.035514" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-352.254089" position_y="-1.693275" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.951379" scale_y="0.951379" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.048621" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="8.332077" position_y="-87.547104" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.976955" scale_y="0.976955" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.023045" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="115.036102" position_y="-240.857559" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.945849" scale_y="0.945849" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.054151" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="154.283554" position_y="-136.606461" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.955911" scale_y="0.955911" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.044089" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-710.387268" position_y="238.697433" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.899551" scale_y="0.899551" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.100449" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="110.130157" position_y="-72.829330" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.979518" scale_y="0.979518" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.020482" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-349.801117" position_y="-15.184608" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.990431" scale_y="0.990431" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.009569" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="632.612061" position_y="533.053467" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.949113" scale_y="0.949113" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.050887" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-202.623108" position_y="-44.620193" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.994978" scale_y="0.994978" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.005022" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-336.309814" position_y="-11.505157" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.956458" scale_y="0.956458" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.043542" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="657.141724" position_y="351.533936" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.902509" scale_y="0.902509" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.097491" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-358.386536" position_y="-0.466805" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.949650" scale_y="0.949650" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.050350" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="579.873352" position_y="297.568665" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.968532" scale_y="0.968532" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.031468" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="691.483337" position_y="-232.272141" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.969256" scale_y="0.969256" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.030744" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-347.348145" position_y="-11.505157" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.970356" scale_y="0.970356" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.029644" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-12.518188" position_y="-65.470428" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.905397" scale_y="0.905397" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.094603" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="132.206879" position_y="-140.285904" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.938689" scale_y="0.938689" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.061311" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-344.895172" position_y="8.118576" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.917382" scale_y="0.917382" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.082618" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="698.842163" position_y="107.463707" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.976221" scale_y="0.976221" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.023779" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-374.330750" position_y="-10.278687" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.953840" scale_y="0.953840" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.046160" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="144.471725" position_y="-55.658554" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.944238" scale_y="0.944238" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.055762" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-354.707062" position_y="-10.278687" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.998564" scale_y="0.998564" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.001436" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="670.633057" position_y="482.767700" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.953323" scale_y="0.953323" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.046677" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-324.044952" position_y="-12.731628" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.923804" scale_y="0.923804" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.076196" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="617.894348" position_y="30.195286" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.936677" scale_y="0.936677" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.063323" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="519.775635" position_y="-119.435699" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.945477" scale_y="0.945477" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.054523" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-347.348145" position_y="-31.128891" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.934301" scale_y="0.934301" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.065699" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-332.630341" position_y="-0.466805" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.977214" scale_y="0.977214" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.022786" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="626.479736" position_y="89.066483" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.967191" scale_y="0.967191" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.032809" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="626.479736" position_y="-87.547104" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.986861" scale_y="0.986861" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.013139" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-336.309814" position_y="-18.864059" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.958265" scale_y="0.958265" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.041735" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="665.727112" position_y="523.241577" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.979219" scale_y="0.979219" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.020781" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-359.612976" position_y="-16.411079" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.972465" scale_y="0.972465" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.027535" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="106.450729" position_y="-53.205597" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.952940" scale_y="0.952940" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.047060" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="153.057037" position_y="28.968815" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.913106" scale_y="0.913106" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.086894" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="162.868912" position_y="11.798027" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.917692" scale_y="0.917692" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.082308" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-330.177399" position_y="-38.487793" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.947529" scale_y="0.947529" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.052471" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-359.612976" position_y="-32.355362" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.936029" scale_y="0.936029" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.063971" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="165.321945" position_y="-40.940735" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.955519" scale_y="0.955519" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.044481" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="146.924698" position_y="134.446381" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.960297" scale_y="0.960297" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.039703" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-352.254089" position_y="-17.637558" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.946924" scale_y="0.946924" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.053076" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-17.424133" position_y="-42.167252" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.980295" scale_y="0.980295" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.019705" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="132.206879" position_y="-91.226563" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.949709" scale_y="0.949709" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.050291" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="172.680786" position_y="-239.631058" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.966200" scale_y="0.966200" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.033800" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-339.989288" position_y="-22.543518" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.969818" scale_y="0.969818" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.030182" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="527.134521" position_y="653.248840" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.963931" scale_y="0.963931" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.036069" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="186.172089" position_y="270.585999" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.894717" scale_y="0.894717" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.105283" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-322.818451" position_y="-40.940735" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.969002" scale_y="0.969002" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.030998" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="874.229370" position_y="-66.696899" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.969756" scale_y="0.969756" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.030244" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-330.177399" position_y="-13.958138" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.972135" scale_y="0.972135" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.027865" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="725.824890" position_y="24.062851" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.966136" scale_y="0.966136" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.033864" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="-342.442200" position_y="-53.205597" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.931532" scale_y="0.931532" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.068468" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="58.617859" position_y="9.345047" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.951984" scale_y="0.951984" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.048016" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="112.583130" position_y="-6.599236" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.960451" scale_y="0.960451" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.039549" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="123.621460" position_y="200.676453" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.952203" scale_y="0.952203" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.047797" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
+        <entity2 name="" position_x="903.664978" position_y="633.625061" position_z="10.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.979731" scale_y="0.979731" scale_z="1.000000" layer="layer_default" show="false" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="0.020269" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="shockwave" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="2.155312" position_y="7.014652" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-640.000000" min_y="360.000000" max_x="640.000000" max_y="-360.000000"/>
-        <prefab name="prefab_block_arrival_002" position_x="350.000000" position_y="-200.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
+        <prefab name="prefab_block_arrival_002" position_x="315.156738" position_y="-248.109528" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_002" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_003" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -47,7 +110,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_arrival_003" position_x="420.000000" position_y="-200.000000" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
+        <prefab name="prefab_block_arrival_003" position_x="385.156738" position_y="-248.109528" position_z="1.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival" layer="layer_default">
             <entity2 name="sprite_ggj17_block_arrivee_003" prefab_child_resource_identifier="sprite_ggj17_block_arrivee_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_005" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -64,11 +127,11 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_001" position_x="280.000000" position_y="-200.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_001" position_x="245.156754" position_y="-248.109528" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_001" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_001" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
-        <prefab name="prefab_block_static_002" position_x="280.000000" position_y="-130.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_002" position_x="245.156754" position_y="-178.109589" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_002" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_002" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -78,7 +141,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_003" position_x="280.000000" position_y="-60.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_003" position_x="245.156754" position_y="-108.109505" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_003" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_007" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -88,7 +151,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_004" position_x="490.000000" position_y="-200.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_004" position_x="455.156738" position_y="-248.109528" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_004" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_008" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -98,7 +161,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_005" position_x="490.000000" position_y="-130.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_005" position_x="525.000000" position_y="-248.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_005" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_009" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -108,7 +171,7 @@
                 </data_set_list>
             </dummy_aabb2>
         </prefab>
-        <prefab name="prefab_block_static_006" position_x="490.000000" position_y="-60.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+        <prefab name="prefab_block_static_006" position_x="315.156738" position_y="101.890472" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
             <entity2 name="sprite_ggj17_block_static_006" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_010" prefab_child_resource_identifier="dummy_aabb2_auto_001">
                 <data_set_list>
@@ -142,6 +205,84 @@
             <entity2 name="sprite_ggj17_block_dynamic_001" prefab_child_resource_identifier="sprite_ggj17_block_dynamic_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_013" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
+        <prefab name="prefab_block_static_003_001" position_x="245.156754" position_y="-38.109512" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+            <entity2 name="sprite_ggj17_block_static_003_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_007_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_014"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <entity2 name="sprite_ggj17_block_static_009" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_014" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value=""/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_static_003_001_001" position_x="245.156754" position_y="31.890488" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+            <entity2 name="sprite_ggj17_block_static_003_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_007_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_015"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <entity2 name="sprite_ggj17_block_static_009_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_014_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value=""/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <entity2 name="sprite_ggj17_block_static_010" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_015" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value=""/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_static_003_001_001_001" position_x="245.156754" position_y="101.890472" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_static" layer="layer_default">
+            <entity2 name="sprite_ggj17_block_static_003_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_007_001_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_016"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <entity2 name="sprite_ggj17_block_static_009_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_014_001_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value=""/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <entity2 name="sprite_ggj17_block_static_010_001" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_015_001" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value=""/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <entity2 name="sprite_ggj17_block_static_011" rotation_z="-0.000000" prefab_child_resource_identifier="sprite_ggj17_block_static_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_016" rotation_z="-0.000000" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value=""/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
     </object_list>
     <plugins>
         <plugin name="pluginggj2017"/>
@@ -156,6 +297,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="50.664516" position_y="82.150093" position_z="1091.468628" target_x="50.664516" target_y="82.150436" target_z="0.000017" znear="1.000000" zfar="40000.000000" zoom="1.091469" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1091.468628" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="134.488251" position_y="68.508530" position_z="1166.175659" target_x="134.488251" target_y="68.508896" target_z="0.000013" znear="1.000000" zfar="40000.000000" zoom="1.166176" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1166.175659" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>

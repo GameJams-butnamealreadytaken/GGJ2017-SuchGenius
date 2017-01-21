@@ -97,7 +97,7 @@ void PluginGGJ2017::OnPlayStop(const CShIdentifier & levelIdentifier)
  */
 void PluginGGJ2017::OnPreUpdate(void)
 {
-	// ...
+	CapBlockVelocity(7.0f);
 }
 
 /**
@@ -455,6 +455,29 @@ void PluginGGJ2017::UpdateShineObjects(void)
 
 					ShObject::SetWorldPosition2(pObject, bodyPos);
 				}
+			}
+		}
+	}
+}
+
+/**
+* @brief CapBodyVelocity
+*/
+void PluginGGJ2017::CapBlockVelocity(float velocityMax)
+{
+	int iBlockCount = m_aBlockList.GetCount();
+
+	for (int i = 0; i < iBlockCount; ++i)
+	{
+		if (Block::PLAYER == m_aBlockList[i]->GetType())
+		{
+			b2Body * pBody = m_aBlockList[i]->GetBody();
+			b2Vec2 velocity = pBody->GetLinearVelocity();
+			float speed = velocity.Length();
+
+			if (velocityMax < speed)
+			{
+				pBody->SetLinearVelocity((velocityMax / speed) * velocity);
 			}
 		}
 	}
