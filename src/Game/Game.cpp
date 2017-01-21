@@ -26,6 +26,7 @@ void Game::initialize(void)
 	get(MAIN_MENU)->init();
 	get(LEVEL_SELECTION)->init();
 	get(GAME_LEVEL)->init();
+	get(GAME_WIN)->init();
 
 	push(MAIN_MENU);
 }
@@ -40,6 +41,7 @@ void Game::release(void)
 	get(GAME_LEVEL)->release();
 	get(LEVEL_SELECTION)->release();
 	get(MAIN_MENU)->release();
+	get(GAME_WIN)->release();
 
 	ShLevel::Release();
 }

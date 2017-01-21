@@ -18,6 +18,7 @@ PluginGGJ2017::PluginGGJ2017(void) : CShPlugin(plugin_identifier)
 , m_playerOnArrival(false)
 , m_arrivalTimer(0.0f)
 , m_levelIdentifier(GID(NULL))
+, m_iClicCount(0)
 {
 	// ...
 }
@@ -39,6 +40,7 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 	m_pWorld = new b2World(gravity);
 
 	m_Box2DListener = new Box2DListener();
+	m_Box2DListener->Initialize(this);
 	m_pWorld->SetContactListener(m_Box2DListener);
 
 	m_levelIdentifier = levelIdentifier;
@@ -61,6 +63,7 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 	}
 
 	m_eGameState = STATE_PLAYING;
+	m_iClicCount = 0;
 }
 
 /**
@@ -69,6 +72,8 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
  */
 void PluginGGJ2017::OnPlayStop(const CShIdentifier & levelIdentifier)
 {
+	m_iClicCount = 0;
+
 	int iBlockCount = m_aBlockList.GetCount();
 	for (int i = 0; i < iBlockCount; ++i)
 	{
@@ -162,7 +167,8 @@ void PluginGGJ2017::OnPostUpdate(float dt)
 
 		case STATE_WIN:
 		{
-
+			//TODO - launch win state
+			SH_TRACE("%d\n", m_iClicCount);
 		}
 		break;
 	}
@@ -203,6 +209,8 @@ void PluginGGJ2017::OnTouchUp(int iTouch, float positionX, float positionY)
 		wave.time = 0.0f;
 
 		m_aShockWave.Add(wave);
+
+		++m_iClicCount;
 	}
 }
 
@@ -229,6 +237,11 @@ void PluginGGJ2017::SetPlayerOnArrival(bool playerOnArrival)
 	{
 		m_arrivalTimer = 0.0f;
 	}
+}
+
+int PluginGGJ2017::GetLevelClicCount(void)
+{
+	return(m_iClicCount);
 }
 
 /**
@@ -324,23 +337,17 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 	CShIdentifier idDataSetIdentifier = ShDataSet::GetDataSetIdentifier(pDataSet);
 
 	Block::EBlockType type = Block::STATIC;
-	if (CShIdentifier("sensor_obect") == idDataSetIdentifier)
+	if (CShIdentifier("sensor_object") == idDataSetIdentifier)
 	{
 		bodyFixture.isSensor = true;
-		bodyFixture.filter.categoryBits = 2;
-		bodyFixture.filter.maskBits = 16;
 	}
 	else if (CShIdentifier("block_object_player") == idDataSetIdentifier)
 	{
 		type = Block::PLAYER;
-		bodyFixture.filter.categoryBits = 1;
-		bodyFixture.filter.maskBits = 1;
 	}
 	else if (CShIdentifier("block_object_static") == idDataSetIdentifier)
 	{
 		type = Block::STATIC;
-		bodyFixture.filter.categoryBits = 1;
-		bodyFixture.filter.maskBits = 1;
 	}
 
 	if (ShObject::GetType(pObject) != ShObject::e_type_unknown)
@@ -351,24 +358,22 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 
 	b2Body * pBody = m_pWorld->CreateBody(&bodyDef);
 
-	if (!bodyFixture.isSensor)
+	Block * pBlock = new Block();
+	pBlock->Initialize(pBody, pAttachedSprite, type);
+	m_aBlockList.Add(pBlock);
+
+	pBody->SetUserData(pBlock);
+
+	b2Shape * pShape = GenerateBlockShape(pObject, pBody);
+	SH_ASSERT(shNULL != pShape);
+
+	if (shNULL != pShape)
 	{
-		Block * pBlock = new Block();
-		pBlock->Initialize(pBody, pAttachedSprite, type);
-		m_aBlockList.Add(pBlock);
+		bodyFixture.shape = pShape;
 
-		pBody->SetUserData(pBlock);
-
-		b2Shape * pShape = GenerateBlockShape(pObject, pBody);
-		SH_ASSERT(shNULL != pShape);
-
-		if (shNULL != pShape)
-		{
-			bodyFixture.shape = pShape;
-
-			b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
-		}
+		b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
 	}
+	
 }
 
 /**
@@ -410,7 +415,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::ConvertB2ToSh
+* @brief PluginGGJ2017::Convert_sh_b2
 * @param vec
 */
 /*static*/ CShVector2 PluginGGJ2017::Convert_sh_b2(b2Vec2 vec)
@@ -419,7 +424,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::ConvertShToB2
+* @brief PluginGGJ2017::Convert_sh_b2
 * @param vec
 */
 /*static*/ b2Vec2 PluginGGJ2017::Convert_sh_b2(CShVector2 vec)
@@ -429,8 +434,7 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 }
 
 /**
-* @brief PluginGGJ2017::ConvertShToB2
-* @param vec
+* @brief PluginGGJ2017::UpdateShineObjects
 */
 void PluginGGJ2017::UpdateShineObjects(void)
 {
@@ -444,7 +448,6 @@ void PluginGGJ2017::UpdateShineObjects(void)
 		{
 			if (b2_staticBody != m_aBlockList[nBody]->GetBody()->GetType())
 			{
-				// only movable can be moved
 				if (ShObject::IsMovable(pObject))
 				{
 					CShEulerAngles rotAngle(0.0f, 0.0f, m_aBlockList[nBody]->GetBody()->GetAngle());

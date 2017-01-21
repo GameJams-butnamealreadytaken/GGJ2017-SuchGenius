@@ -51,6 +51,8 @@ public:
 
 	void					SetPlayerOnArrival	(bool playerOnArrival);
 
+	int						GetLevelClicCount	(void);
+
 private:
 
 	void					UpdateShineObjects	(void);
@@ -71,6 +73,8 @@ private:
 
 	bool				m_playerOnArrival;
 	float				m_arrivalTimer;
+
+	int					m_iClicCount;
 
 	CShIdentifier m_levelIdentifier;
 
