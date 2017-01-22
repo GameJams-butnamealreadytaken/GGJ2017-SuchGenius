@@ -11,6 +11,13 @@
         <texture_list/>
         <animated_texture_list/>
         <sprite_texture_list>
+            <sprite_texture name="blocks.boxcrate.tga"/>
+            <sprite_texture name="blocks.boxcrate_double.tga"/>
+            <sprite_texture name="blocks.boxcrate_single.tga"/>
+            <sprite_texture name="blocks.boxcrate_warning.tga"/>
+            <sprite_texture name="blocks.grassleft.tga"/>
+            <sprite_texture name="blocks.grassright.tga"/>
+            <sprite_texture name="blocks.lockblue.tga"/>
             <sprite_texture name="blocks.slimeblock.tga"/>
             <sprite_texture name="ggj17.main_menu_button_home.tga"/>
             <sprite_texture name="ggj17.main_menu_button_restart.tga"/>
@@ -21,6 +28,11 @@
         <submesh_list/>
         <mesh_list/>
         <prefab_list>
+            <prefab_resource name="block_arrival_blue"/>
+            <prefab_resource name="block_box_1"/>
+            <prefab_resource name="block_box_2"/>
+            <prefab_resource name="block_box_3"/>
+            <prefab_resource name="block_box_4"/>
             <prefab_resource name="perfab_player_slime"/>
         </prefab_list>
     </preload>
@@ -86,11 +98,76 @@
         <entity2 name="button_home" position_x="-1000.000000" position_y="-650.000000" position_z="0.500000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha">
             <entity2 name="sprite_ggj17_main_menu_button_home_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="-0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_home" blend_function="alpha"/>
         </entity2>
+        <entity2 name="sprite_blocks_grassleft_001" position_x="-463.717529" position_y="-333.731262" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grassleft" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grassright_001" position_x="-208.539398" position_y="-332.960175" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grassright" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1136.000000" min_y="768.000000" max_x="1136.000000" max_y="-768.000000"/>
         <prefab name="prefab_perfab_player_slime_001" position_x="-347.672699" position_y="385.840057" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="perfab_player_slime" layer="layer_default">
             <entity2 name="sprite_blocks_slimeblock_001" prefab_child_resource_identifier="sprite_blocks_slimeblock_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_005" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
+        <prefab name="prefab_block_arrival_blue_001" position_x="-335.792480" position_y="-331.850098" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival_blue" layer="layer_default">
+            <entity2 name="sprite_blocks_lockblue_001" prefab_child_resource_identifier="sprite_blocks_lockblue_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_001" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_002" prefab_child_resource_identifier="sensor"/>
+        </prefab>
+        <prefab name="prefab_block_box_1_001" position_x="-512.395874" position_y="-173.725739" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_003" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_2_001" position_x="-352.257874" position_y="-187.650833" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_004" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_3_001" position_x="-431.166473" position_y="-22.871220" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_006" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_3_002" position_x="-247.820129" position_y="-34.475315" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_002" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_007" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_003" position_x="-208.365768" position_y="-213.180115" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_003" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_008" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_003"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_001" position_x="-498.470825" position_y="90.850067" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_009" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_4_002" position_x="-301.199432" position_y="121.020966" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_002" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_010" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <collision_shape name="collision_shape_auto_001" position_x="-462.562775" position_y="-333.158630" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" type="none" prohibited="0" closed="1">
+            <collision_shape_point name="collision_shape_auto_001.0" position_x="-62.642853" position_y="62.184509" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="0" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.1" position_x="62.642853" position_y="63.406830" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="1" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.2" position_x="63.253998" position_y="-62.490051" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="2" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.3" position_x="-63.253998" position_y="-63.101196" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="3" parent_point="collision_shape_auto_001"/>
+        </collision_shape>
+        <collision_shape name="collision_shape_auto_002" position_x="-208.018906" position_y="-333.616974" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" type="none" prohibited="0" closed="1">
+            <collision_shape_point name="collision_shape_auto_002.0" position_x="-62.948410" position_y="63.253998" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="0" parent_point="collision_shape_auto_002"/>
+            <collision_shape_point name="collision_shape_auto_002.1" position_x="62.948425" position_y="62.642853" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="1" parent_point="collision_shape_auto_002"/>
+            <collision_shape_point name="collision_shape_auto_002.2" position_x="65.393021" position_y="-63.865143" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="2" parent_point="collision_shape_auto_002"/>
+            <collision_shape_point name="collision_shape_auto_002.3" position_x="-65.393021" position_y="-62.031708" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="3" parent_point="collision_shape_auto_002"/>
+        </collision_shape>
     </object_list>
     <plugins>
         <plugin name="pluginggj2017"/>
@@ -105,6 +182,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="638.694824" position_y="161.976944" position_z="3185.912842" target_x="638.694824" target_y="161.977951" target_z="0.000042" znear="1.000000" zfar="40000.000000" zoom="3.185913" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-3185.912842" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="-363.862122" position_y="-430.179382" position_z="2320.840332" target_x="-363.862122" target_y="-430.178650" target_z="-0.000144" znear="1.000000" zfar="40000.000000" zoom="2.320841" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-2320.840576" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>
