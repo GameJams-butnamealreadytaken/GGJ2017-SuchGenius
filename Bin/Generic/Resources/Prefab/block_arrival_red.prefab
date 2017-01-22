@@ -19,7 +19,7 @@
         <dummy_aabb2 name="dummy_aabb2_auto_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="63.000000" scale_y="63.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
-                    <data type="object" sub_type="all" name="attachedobject" value="sprite_blocks_lockblue_001"/>
+                    <data type="object" sub_type="all" name="attachedobject" value="sprite_blocks_lockred_001"/>
                     <data type="bool" name="isstatic" value="true"/>
                     <data type="bool" name="allowsleep" value="true"/>
                     <data type="bool" name="awake" value="true"/>
