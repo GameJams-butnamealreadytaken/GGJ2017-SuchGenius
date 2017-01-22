@@ -56,11 +56,30 @@ void GameStateLevelSelection::init(void)
 		CShString strEntityName = CShString("sprite_ggj17_miniature_00") + CShString::FromInt(i+1);
 		m_apThumbnails[i] = ShEntity2::Find(levelIdentifier, CShIdentifier(strEntityName));
 		SH_ASSERT(shNULL != m_apThumbnails[i]);
+
+		CShVector3 pos = ShObject::GetWorldPosition(m_apThumbnails[i]);
+		++pos.m_z;
+		pos.m_y -= 10.0f;
+		pos.m_x -= 50.0f;
+
+		for (int j = 0; j < 3; ++j)
+		{
+			if (j == 1)
+			{
+				pos.m_y += 30.0f;
+			}
+
+			m_apLevelSars[i][j] = ShEntity2::Create(levelIdentifier, GID(NULL), GID(layer_default), CShIdentifier("ggj17"), CShIdentifier("star"), pos, CShEulerAngles_ZERO, CShVector3(0.5f, 0.5f, 1.0f), false);
+			SH_ASSERT(shNULL != m_apLevelSars[i][j]);
+			ShEntity2::SetColor(m_apLevelSars[i][j], CShRGBAf(1.0, 0.0f, 0.0f, 1.0f));
+
+			if (j == 1)
+			{
+				pos.m_y -= 30.0f;
+			}
+			pos.m_x += 50.0f;
+		}
 	}
-
-	// TODO create stars
-
-	DisplayCurrentPage();
 }
 
 /**
@@ -87,6 +106,7 @@ void GameStateLevelSelection::release(void)
 */
 void GameStateLevelSelection::entered(void)
 {
+	DisplayCurrentPage();
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
 
@@ -103,6 +123,14 @@ void GameStateLevelSelection::exiting(void)
 */
 void GameStateLevelSelection::obscuring(void)
 {
+	for (int i = 0; i < 9; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			ShEntity2::SetShow(m_apLevelSars[i][j], false);
+		}
+	}
+
 	ShEntity2::SetShow(m_pScreenObject, false);
 }
 
@@ -111,6 +139,8 @@ void GameStateLevelSelection::obscuring(void)
 */
 void GameStateLevelSelection::revealed(void)
 {
+	DisplayCurrentPage();
+
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
 
@@ -188,12 +218,16 @@ void GameStateLevelSelection::touchBegin(const CShVector2 & pos)
 	}
 	else
 	{
+		int lasLevelUnlocked = g_pGameSave->GetLastLevelUnlocked();
 		for (int i = 0; i < 9; ++i)
 		{
-			if (ShEntity2::Includes(m_apThumbnails[i], pos))
+			if ((i + (m_iCurrentPageID * 9) < lasLevelUnlocked))
 			{
-				m_pPressedButton = m_apThumbnails[i];
-				break;
+				if (ShEntity2::Includes(m_apThumbnails[i], pos))
+				{
+					m_pPressedButton = m_apThumbnails[i];
+					break;
+				}
 			}
 		}
 	}
@@ -234,6 +268,14 @@ void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
 			{
 				Game & game = Game::instance();
 				((GameStateMainMenu*)game.get(Game::MAIN_MENU))->prepareAnim(m_pScreenObject);
+
+				for (int i = 0; i < 9; ++i)
+				{
+					for (int j = 0; j < 3; ++j)
+					{
+						ShEntity2::SetShow(m_apLevelSars[i][j], false);
+					}
+				}
 
 				setState(ANIM_OUTRO_MAIN_MENU);
 			}
@@ -279,7 +321,21 @@ void GameStateLevelSelection::setState(EState eState)
 */
 void GameStateLevelSelection::DisplayCurrentPage(void)
 {
-	//displya stars
+	for (int i = 0; i < 9; ++i)
+	{
+		int levelResult = g_pGameSave->GetLevelResult((i + (9 * m_iCurrentPageID)) + 1);
+		for (int j = 0; j < 3; ++j)
+		{
+			float alpha = 1.0f;
+			if (j >= levelResult)
+			{
+				alpha = 0.2f;
+			}
+
+			ShEntity2::SetAlpha(m_apLevelSars[i][j], alpha);
+			ShEntity2::SetShow(m_apLevelSars[i][j], true);
+		}
+	}
 
 	if (0 == m_iCurrentPageID)
 	{
