@@ -72,6 +72,18 @@ void GameStateMainMenu::init(void)
 	m_pTitleEntity = ShEntity2::Find(levelIdentifier, CShIdentifier("title"));
 	SH_ASSERT(shNULL != m_pTitleEntity);
 
+
+	if (g_pGameSave->GetIsMuted())
+	{
+		ShEntity2::SetShow(m_pIconSoundOn, false);
+		ShEntity2::SetShow(m_pIconSoundOff, true);
+	}
+	else
+	{
+		ShEntity2::SetShow(m_pIconSoundOn, true);
+		ShEntity2::SetShow(m_pIconSoundOff, false);
+	}
+
 	setState(ANIM_INTRO_ENTERED);
 }
 

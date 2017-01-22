@@ -16,20 +16,24 @@ public:
 		SENSOR,
 	};
 
-						Block		(void);
-	virtual				~Block		(void);
+						Block			(void);
+	virtual				~Block			(void);
 
-	void				Initialize	(b2Body * pBody, ShObject * pObject, EBlockType type);
-	void				Release		(void);
+	void				Initialize		(b2Body * pBody, ShObject * pObject, EBlockType type);
+	void				Release			(void);
 
-	EBlockType			GetType		(void);
-	b2Body *			GetBody		(void);
-	ShObject *			GetSprite	(void);
+	EBlockType			GetType			(void);
+	b2Body *			GetBody			(void);
+	ShObject *			GetSprite		(void);
+	int					GetCptCollision	(void);
+
+	void				SetCptCollision	(bool inc);
 
 private:
 
-	ShObject * m_pSprite;
-	b2Body * m_pBody;
-	EBlockType m_type;
+	ShObject *	m_pSprite;
+	b2Body *	m_pBody;
+	EBlockType	m_type;
 	
+	int			m_cptCollision;
 };

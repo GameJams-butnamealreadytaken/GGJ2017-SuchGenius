@@ -48,6 +48,38 @@ void Box2DListener::BeginContact(b2Contact * contact)
 			m_pPlugin->SetPlayerOnSensor(true);
 		}
 	}
+	else
+	{
+		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
+		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+
+		if (Block::PLAYER == pBlockA->GetType())
+		{
+			if (0 == pBlockA->GetCptCollision())
+			{
+				ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
+				if (shNULL != pSoundResource)
+				{
+					ShSound::Handle soundInstanceHandle;
+					ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+				}
+			}
+			pBlockA->SetCptCollision(true);
+		}
+		else if (Block::PLAYER == pBlockB->GetType())
+		{
+			if (0 == pBlockB->GetCptCollision())
+			{
+				ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
+				if (shNULL != pSoundResource)
+				{
+					ShSound::Handle soundInstanceHandle;
+					ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+				}
+			}
+			pBlockB->SetCptCollision(true);
+		}
+	}
 }
 
 /**
@@ -75,6 +107,20 @@ void Box2DListener::EndContact(b2Contact * contact)
 		if (Block::PLAYER == pBlockA->GetType())
 		{
 			m_pPlugin->SetPlayerOnSensor(false);
+		}
+	}
+	else
+	{
+		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
+		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+
+		if (Block::PLAYER == pBlockA->GetType())
+		{
+			pBlockA->SetCptCollision(false);
+		}
+		else if (Block::PLAYER == pBlockB->GetType())
+		{
+			pBlockB->SetCptCollision(false);
 		}
 	}
 }

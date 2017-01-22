@@ -150,5 +150,7 @@ bool Game::toggleMute(void)
 		ShSound::SetGlobalVolume(1.0f);
 	}
 
+	g_pGameSave->SetMute(m_bMuted);
+
 	return(m_bMuted);
 }

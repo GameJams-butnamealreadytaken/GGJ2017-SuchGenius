@@ -284,13 +284,20 @@ void PluginGGJ2017::OnTouchUp(int iTouch, float positionX, float positionY)
 			CShVector2 pos(ray.GetOrigin().m_x, ray.GetOrigin().m_y);
 
 			ShockWave wave;
-			wave.pEntity = ShEntity2::Create(m_levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShIdentifier("ggj17"), CShIdentifier("shockwave"), CShVector3(pos.m_x, pos.m_y, 10.0f), CShEulerAngles(0.0f, 0.0f, 0.0f), CShVector3(0.0f, 0.0f, 1.0f));
+			wave.pEntity = ShEntity2::Create(m_levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShIdentifier("ggj17"), CShIdentifier("shockwave"), CShVector3(pos.m_x, pos.m_y, 5.0f), CShEulerAngles(0.0f, 0.0f, 0.0f), CShVector3(0.0f, 0.0f, 1.0f));
 			wave.initialPosition = pos;
 			wave.time = 0.0f;
 
 			m_aShockWave.Add(wave);
 
 			++m_iClicCount;
+
+			ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("explosion"));
+			if (shNULL != pSoundResource)
+			{
+				ShSound::Handle soundInstanceHandle;
+				ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+			}
 		}
 	}
 }
