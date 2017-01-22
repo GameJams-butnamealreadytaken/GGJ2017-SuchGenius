@@ -31,15 +31,6 @@ void GameSave::Save(void)
 			Reset();
 		}
 	}
-
-	if (m_saveData.mute)
-	{
-		ShSound::SetGlobalVolume(0.0f);
-	}
-	else
-	{
-		ShSound::SetGlobalVolume(1.0f);
-	}
 }
 
 /**
@@ -54,6 +45,12 @@ void GameSave::Load(void)
 		{
 			SH_TRACE("Load failed !");
 		}
+	}
+
+	if (m_saveData.mute)
+	{
+		Game & game = Game::instance();
+		game.toggleMute();
 	}
 }
 

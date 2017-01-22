@@ -15,7 +15,10 @@
 /**
  * @brief Constructor
  */
-GameStateMainMenu::GameStateMainMenu(void) : m_pPressedButton(shNULL), m_eCurrentState(IDLE), m_fStateTime(0.0f)
+GameStateMainMenu::GameStateMainMenu(void) 
+: m_pPressedButton(shNULL)
+, m_eCurrentState(IDLE)
+, m_fStateTime(0.0f)
 {
 	// ...
 }
@@ -72,7 +75,6 @@ void GameStateMainMenu::init(void)
 	m_pTitleEntity = ShEntity2::Find(levelIdentifier, CShIdentifier("title"));
 	SH_ASSERT(shNULL != m_pTitleEntity);
 
-
 	if (g_pGameSave->GetIsMuted())
 	{
 		ShEntity2::SetShow(m_pIconSoundOn, false);
@@ -117,6 +119,17 @@ void GameStateMainMenu::entered(void)
 	ShCamera::SetCurrent3D(m_pCamera);
 
 	ShEntity2::SetShow(m_pScreenObject, true);
+
+	if (g_pGameSave->GetIsMuted())
+	{
+		ShEntity2::SetShow(m_pIconSoundOn, false);
+		ShEntity2::SetShow(m_pIconSoundOff, true);
+	}
+	else
+	{
+		ShEntity2::SetShow(m_pIconSoundOn, true);
+		ShEntity2::SetShow(m_pIconSoundOff, false);
+	}
 }
 
 /**
@@ -144,6 +157,17 @@ void GameStateMainMenu::revealed(void)
 	ShCamera::SetCurrent3D(m_pCamera);
 
 	ShEntity2::SetShow(m_pScreenObject, true);
+
+	if (g_pGameSave->GetIsMuted())
+	{
+		ShEntity2::SetShow(m_pIconSoundOn, false);
+		ShEntity2::SetShow(m_pIconSoundOff, true);
+	}
+	else
+	{
+		ShEntity2::SetShow(m_pIconSoundOn, true);
+		ShEntity2::SetShow(m_pIconSoundOff, false);
+	}
 }
 
 /**

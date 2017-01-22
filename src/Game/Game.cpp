@@ -13,7 +13,9 @@ Game * Game::instance_ = shNULL;
 /**
  * @brief Game::Game
  */
-Game::Game(void) : m_iCurrentState(-1), m_bMuted(false)
+Game::Game(void) 
+: m_iCurrentState(-1)
+, m_bMuted(false)
 {
 	for (int i = 0; i < MAX_GAME_STATES; ++i)
 	{
