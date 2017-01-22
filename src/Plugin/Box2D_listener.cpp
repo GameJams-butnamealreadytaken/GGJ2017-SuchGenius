@@ -35,17 +35,25 @@ void Box2DListener::BeginContact(b2Contact * contact)
 	if (sensorA)
 	{
 		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
-		if (Block::PLAYER == pBlockB->GetType())
+
+		if (pBlockB)
 		{
-			m_pPlugin->SetPlayerOnSensor(true);
+			if (Block::PLAYER == pBlockB->GetType())
+			{
+				m_pPlugin->SetPlayerOnSensor(true);
+			}
 		}
 	}
 	else if (sensorB)
 	{
 		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
-		if (Block::PLAYER == pBlockA->GetType())
+
+		if (pBlockA)
 		{
-			m_pPlugin->SetPlayerOnSensor(true);
+			if (Block::PLAYER == pBlockA->GetType())
+			{
+				m_pPlugin->SetPlayerOnSensor(true);
+			}
 		}
 	}
 	else
@@ -53,31 +61,34 @@ void Box2DListener::BeginContact(b2Contact * contact)
 		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
 		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
 
-		if (Block::PLAYER == pBlockA->GetType())
+		if (pBlockA && pBlockB)
 		{
-			if (0 == pBlockA->GetCptCollision())
+			if (Block::PLAYER == pBlockA->GetType())
 			{
-				ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
-				if (shNULL != pSoundResource)
+				if (0 == pBlockA->GetCptCollision())
 				{
-					ShSound::Handle soundInstanceHandle;
-					ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+					ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
+					if (shNULL != pSoundResource)
+					{
+						ShSound::Handle soundInstanceHandle;
+						ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+					}
 				}
+				pBlockA->SetCptCollision(true);
 			}
-			pBlockA->SetCptCollision(true);
-		}
-		else if (Block::PLAYER == pBlockB->GetType())
-		{
-			if (0 == pBlockB->GetCptCollision())
+			else if (Block::PLAYER == pBlockB->GetType())
 			{
-				ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
-				if (shNULL != pSoundResource)
+				if (0 == pBlockB->GetCptCollision())
 				{
-					ShSound::Handle soundInstanceHandle;
-					ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+					ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
+					if (shNULL != pSoundResource)
+					{
+						ShSound::Handle soundInstanceHandle;
+						ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+					}
 				}
+				pBlockB->SetCptCollision(true);
 			}
-			pBlockB->SetCptCollision(true);
 		}
 	}
 }
