@@ -30,16 +30,12 @@ private:
 		{
 			lastLevelPlayed = 1;
 			lastLevelUnlocked = 1;
-
-			for (int i = 0; i < MAX_PAGE * 9 ; ++i)
-			{
-				levelResult[i] = 0;
-			}
+			ShMemClear(levelResult, sizeof(levelResult));
 		}
 
 		unsigned int	lastLevelPlayed;
 		unsigned int	lastLevelUnlocked;
-		unsigned int	levelResult[MAX_PAGE * 9];
+		unsigned int	levelResult[1024];
 	};
 
 	SaveData m_saveData;
