@@ -245,7 +245,6 @@ void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
 					{
 						// launch level i of page m_iCurrentPageID
 						SetCurrentLevel(1 + ((m_iCurrentPageID * 9) + i));
-						g_pGameSave->SetLastLevelPlayed(GetCurrentLevel());
 						game.push(Game::GAME_LEVEL);
 						break;
 					}

@@ -198,7 +198,7 @@ void GameStateWin::touchEnd(const CShVector2 & pos)
 			{
 				int nextLevel = GetCurrentLevel() + 1;
 				SetCurrentLevel(nextLevel);
-				g_pGameSave->SetLastLevelPlayed(nextLevel);
+				g_pGameSave->SetLastLevelUnlocked(nextLevel);
 				game.pop();
 			}
 		}

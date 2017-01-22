@@ -28,7 +28,7 @@ private:
 	{
 		SaveData(void)
 		{
-			lastLevelPlayed = 0;
+			lastLevelPlayed = 1;
 			lastLevelUnlocked = 1;
 
 			for (int i = 0; i < MAX_PAGE * 9 ; ++i)
