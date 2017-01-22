@@ -60,8 +60,9 @@ private:
 
 	void					UpdateShineObjects	(void);
 
-	void					DatasetParser		(ShObject * pObject, ShDataSet * pDataSet);
-	b2Shape *				GenerateBlockShape	(ShObject * pObject, b2Body * pBody);
+	void					DatasetParser				(ShObject * pObject, ShDataSet * pDataSet);
+	b2Shape *				GenerateBlockShape			(ShObject * pObject, b2Body * pBody);
+	b2Shape *				GenerateStaticBlockShape	(ShCollisionShape * pShape, b2Body * pBody);
 
 	static CShVector2		Convert_sh_b2		(b2Vec2 vec);
 	static b2Vec2			Convert_sh_b2		(CShVector2 vec);

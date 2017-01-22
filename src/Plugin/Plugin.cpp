@@ -77,13 +77,13 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 
 	//
 	// Load and parse all DummyAABB2 datasets
-	CShArray<ShDummyAABB2 *> dummyAABB2;
-	ShDummyAABB2::GetDummyAABB2Array(levelIdentifier, dummyAABB2);
-	int nDummyCount = dummyAABB2.GetCount();
+	CShArray<ShDummyAABB2 *> aDummyAABB2;
+	ShDummyAABB2::GetDummyAABB2Array(levelIdentifier, aDummyAABB2);
+	int nDummyCount = aDummyAABB2.GetCount();
 
 	for (int i = 0; i < nDummyCount; ++i)
 	{
-		ShObject * pObject = dummyAABB2[i];
+		ShObject * pObject = aDummyAABB2[i];
 		int iDataSetCount = ShObject::GetDataSetCount(pObject);
 		for (int j = 0; j < iDataSetCount; ++j)
 #if 0 // Don't remove this, made by a baby
@@ -92,6 +92,39 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 		{
 			ShDataSet * pDataSet = ShObject::GetDataSet(pObject, j);
 			DatasetParser(pObject, pDataSet);
+		}
+	}
+
+	//
+	// Load and parse all Collision Shape
+	CShArray<ShCollisionShape*> aCollisionShape;
+	ShCollisionShape::GetCollisionShapeArray(levelIdentifier, aCollisionShape);
+	int nShapeCount = aCollisionShape.GetCount();
+
+	for (int i = 0; i < nShapeCount; ++i)
+	{
+		const CShVector2 pos = ShObject::GetWorldPosition2((ShObject*)aCollisionShape[i]);
+		b2BodyDef bodyDef;
+		bodyDef.position = Convert_sh_b2(pos);
+
+		b2Body * pBody = m_pWorld->CreateBody(&bodyDef);
+/*
+		Block * pBlock = new Block();
+		pBlock->Initialize(pBody, pAttachedSprite, type);
+		m_aBlockList.Add(pBlock);
+
+		pBody->SetUserData(pBlock);
+*/
+
+		b2Shape * pShape = GenerateStaticBlockShape(aCollisionShape[i], pBody);
+		SH_ASSERT(shNULL != pShape);
+
+		if (shNULL != pShape)
+		{
+			b2FixtureDef bodyFixture;
+			bodyFixture.shape = pShape;
+
+			b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
 		}
 	}
 
@@ -445,11 +478,10 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 
 		b2Fixture * pFixture = pBody->CreateFixture(&bodyFixture);
 	}
-
 }
 
 /**
-* @brief DatasetParser
+* @brief GenerateBlockShape
 * @param pObject
 * @param pBody
 */
@@ -484,6 +516,31 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 	}
 
 	return(pPolygonShape);
+}
+
+/**
+* @brief GenerateStaticBlockShape
+* @param pObject
+* @param pBody
+*/
+b2Shape * PluginGGJ2017::GenerateStaticBlockShape(ShCollisionShape * pShape, b2Body * pBody)
+{
+	b2ChainShape * pChainShape = new b2ChainShape();
+
+	const int pointCount = ShCollisionShape::GetPointCount(pShape);
+
+	b2Vec2 aVertex [pointCount];
+
+	for (int i = 0; i < pointCount; ++i)
+	{
+		const CShVector2 & pos = ShCollisionShape::GetPoint(pShape, i);
+
+		aVertex[i] = Convert_sh_b2(pos);// - pBody->GetPosition();
+	}
+
+	pChainShape->CreateLoop(aVertex, pointCount);
+
+	return(pChainShape);
 }
 
 /**

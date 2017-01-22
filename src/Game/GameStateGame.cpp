@@ -75,7 +75,17 @@ void GameStateGame::revealed(void)
  */
 void GameStateGame::load(void)
 {
-	CShString strLevelName = CShString("level_0") + CShString::FromInt(GetCurrentLevel());
+	CShString strLevelName;
+
+	if (State::GetCurrentLevel() < 10)
+	{
+		strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
+	}
+	else
+	{
+		strLevelName = CShString("level_") + CShString::FromInt(State::GetCurrentLevel());
+	}
+
 	CShIdentifier levelIdentifier(strLevelName);
 	bool loading = ShLevel::Load(levelIdentifier);
 
@@ -111,11 +121,6 @@ void GameStateGame::unload(void)
 */
 void GameStateGame::update(float dt)
 {
-	if (g_pInputs->IsRestarting())
-	{
-		g_pInstance->Reset();
-	}
-
 	if (g_pInstance->IsWon())
 	{
 		Game & game = Game::instance();
