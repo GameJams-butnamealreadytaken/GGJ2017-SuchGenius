@@ -52,8 +52,9 @@ void GameStateWin::init(void)
 
 	for (int i = 0; i < 3; ++i)
 	{
-		m_aStarsEntities[i] = ShEntity2::Find(levelIdentifier, CShIdentifier("sprite_ggj17_star_00" + i));
-		SH_ASSERT(shNULL != m_pPopupEntity);
+		CShString strLevelName = CShString("sprite_ggj17_star_00") + CShString::FromInt(i + 1);
+		m_aStarsEntities[i] = ShEntity2::Find(levelIdentifier, CShIdentifier(strLevelName));
+		SH_ASSERT(shNULL != m_aStarsEntities[i]);
 	}
 }
 
@@ -83,6 +84,11 @@ void GameStateWin::entered(void)
 	ShEntity2::SetAlpha(m_pPopupBackgroundEntity, 0.0f);
 
 	m_fStateTime = 0.0f;
+
+	for (int i = 0; i < 3; ++i)
+	{
+		ShEntity2::SetAlpha(m_aStarsEntities[i], 0.3f);
+	}
 }
 
 /**
@@ -131,20 +137,21 @@ void GameStateWin::update(float dt)
 			{
 				ShObject::SetRelativePositionY(m_pPopupEntity, ANIM_INTRO_ENTERED_POPUP_BASE_Y);
 
-				int nbStarsWon = 0;
+				int nbStarsWon = 1;
 
-				if (m_iClicCount == g_nbMinPlay[GetCurrentLevel()])
+				int nbClickMin = g_nbMinPlay[GetCurrentLevel() - 1];
+				if (m_iClicCount == nbClickMin)
+				{
+					nbStarsWon = 3;
+				}
+				else if (m_iClicCount <= (nbClickMin + 2))
 				{
 					nbStarsWon = 2;
-				}
-				else if (m_iClicCount == g_nbMinPlay[GetCurrentLevel()] + 2)
-				{
-					nbStarsWon = 1;
 				}
 
 				for (int i = 0; i < 3; ++i)
 				{
-					if (nbStarsWon < i)
+					if (i < nbStarsWon)
 					{
 						ShEntity2::SetAlpha(m_aStarsEntities[i], 1.0f);
 					}
