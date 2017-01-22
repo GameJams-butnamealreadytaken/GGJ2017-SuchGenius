@@ -9,10 +9,10 @@
 
 #include "GameSave.h"
 
-extern PluginGGJ2017 * g_pInstance = shNULL;
-extern ShUser *	g_pCurrentUser = shNULL;
-extern Inputs * g_pInputs = shNULL;
-extern GameSave * g_pGameSave = shNULL;
+extern PluginGGJ2017 * g_pInstance;
+extern ShUser *	g_pCurrentUser;
+extern Inputs * g_pInputs;
+extern GameSave * g_pGameSave;
 
 class Game
 {

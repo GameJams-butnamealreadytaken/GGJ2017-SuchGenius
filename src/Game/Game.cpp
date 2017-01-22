@@ -2,6 +2,10 @@
 
 #include "ShSDK/ShSDK.h"
 
+ShUser * g_pCurrentUser = shNULL;
+Inputs * g_pInputs = shNULL;
+GameSave * g_pGameSave = shNULL;
+
 Game * Game::instance_ = shNULL;
 
 /**
