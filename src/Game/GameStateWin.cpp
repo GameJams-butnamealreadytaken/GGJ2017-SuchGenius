@@ -11,6 +11,7 @@
 */
 GameStateWin::GameStateWin(void)
 : m_fStateTime(0.0f)
+, m_pPressedButton(shNULL)
 {
 	// ...
 }
@@ -83,6 +84,7 @@ void GameStateWin::entered(void)
 */
 void GameStateWin::exiting(void)
 {
+	m_pPressedButton = shNULL;
 	ShEntity2::SetShow(m_pPopupEntity, false);
 	ShEntity2::SetShow(m_pPopupBackgroundEntity, false);
 }
@@ -92,6 +94,7 @@ void GameStateWin::exiting(void)
 */
 void GameStateWin::obscuring(void)
 {
+	m_pPressedButton = shNULL;
 	ShEntity2::SetShow(m_pPopupEntity, false);
 	ShEntity2::SetShow(m_pPopupBackgroundEntity, false);
 }
@@ -101,6 +104,7 @@ void GameStateWin::obscuring(void)
 */
 void GameStateWin::revealed(void)
 {
+	m_pPressedButton = shNULL;
 	ShEntity2::SetShow(m_pPopupEntity, true);
 	ShEntity2::SetShow(m_pPopupBackgroundEntity, true);
 	ShEntity2::SetAlpha(m_pPopupBackgroundEntity, 0.0f);

@@ -16,7 +16,7 @@
     </layer_list>
     <object_list>
         <entity2 name="sprite_ggj17_block_arrivee_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="block_arrivee" blend_function="alpha"/>
-        <dummy_aabb2 name="dummy_aabb2_auto_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="35.000000" scale_y="35.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
+        <dummy_aabb2 name="dummy_aabb2_auto_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="34.000000" scale_y="34.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1.000000" min_y="1.000000" max_x="1.000000" max_y="-1.000000">
             <data_set_list>
                 <data_set name="block_object_static" instance_name="block_object_static_0">
                     <data type="object" sub_type="all" name="attachedobject" value="sprite_ggj17_block_arrivee_001"/>
@@ -34,7 +34,7 @@
                 </data_set>
             </data_set_list>
         </dummy_aabb2>
-        <dummy_aabb2 name="dummy_aabb2_sensor" position_x="-0.015669" position_y="34.700005" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.980000" scale_y="0.629630" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-35.799995" min_y="7.500004" max_x="35.799995" max_y="-7.500000">
+        <dummy_aabb2 name="dummy_aabb2_sensor" position_x="-0.015669" position_y="34.700005" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="0.963105" scale_y="0.485107" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-35.799995" min_y="7.500004" max_x="35.799995" max_y="-7.500000">
             <data_set_list>
                 <data_set name="sensor_object" instance_name="sensor_object_0">
                     <data type="object" sub_type="all" name="attachedobject" value="dummy_aabb2_auto_001"/>

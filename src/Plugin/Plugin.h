@@ -43,7 +43,8 @@ public:
 	void					OnTouchUp			(int iTouch, float positionX, float positionY);
 	void					OnTouchMove			(int iTouch, float positionX, float positionY);
 
-	void					SetPlayerOnArrival	(bool playerOnArrival);
+	void					SetPlayerOnSensorA	(bool playerOnA);
+	void					SetPlayerOnSensorB	(bool playerOnB);
 
 	int						GetLevelClicCount	(void);
 
@@ -53,7 +54,7 @@ public:
 
 private:
 
-	void					CheckForAutorRetry	(void);
+	void					CheckForAutoRetry	(void);
 
 	void					CapBlockVelocity	(float velocityMax);
 
@@ -76,9 +77,13 @@ private:
 	Block *				m_pPlayerBlock;
 	b2Vec2				m_PlayerInitPos;
 
-	bool				m_playerOnArrival;
+	bool				m_isOnSensorA;
+	bool				m_isOnSensorB;
 	float				m_arrivalTimer;
 	bool				m_isWon;
+
+	bool				m_handleClick;
+	int					m_mouseClick;
 
 	int					m_iClicCount;
 
