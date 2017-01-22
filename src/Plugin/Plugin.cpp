@@ -603,12 +603,15 @@ void PluginGGJ2017::UpdateShineObjects(void)
 */
 void PluginGGJ2017::CheckForAutoRetry(void)
 {
-	b2Body * pBody = m_pPlayerBlock->GetBody();
-	CShVector2 bodyPos = Convert_sh_b2(pBody->GetPosition());
-	// 640 / 360
-	if (bodyPos.m_x >= 1136.0f || bodyPos.m_x <= -1136.0f || bodyPos.m_y <= -768.0f)
+	if (shNULL != m_pPlayerBlock)
 	{
-		Reset();
+		b2Body * pBody = m_pPlayerBlock->GetBody();
+		CShVector2 bodyPos = Convert_sh_b2(pBody->GetPosition());
+		// 640 / 360
+		if (bodyPos.m_x >= 1136.0f || bodyPos.m_x <= -1136.0f || bodyPos.m_y <= -768.0f)
+		{
+			Reset();
+		}
 	}
 }
 
