@@ -33,7 +33,7 @@ void Game::initialize(void)
 
 	for (int i = 0; i < MAX_GAME_STATES; ++i)
 	{
-		m_aStates[i]->init();
+		get(EState(i))->init();
 	}
 
 	push(MAIN_MENU);
@@ -48,7 +48,7 @@ void Game::release(void)
 
 	for (int i = 0; i < MAX_GAME_STATES; ++i)
 	{
-		m_aStates[i]->release();
+		get(EState(i))->release();
 	}
 
 	ShLevel::Release();
