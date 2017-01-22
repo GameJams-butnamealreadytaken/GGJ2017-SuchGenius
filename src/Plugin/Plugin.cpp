@@ -67,6 +67,11 @@ void PluginGGJ2017::Reset(void)
  */
 void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 {
+	ShCamera * pCurrentCamera = ShCamera::GetCamera2D();
+	const CShVector2 & viewport = ShCamera::GetViewport(pCurrentCamera);
+
+	m_fTouchRatio = viewport.m_x / ShDisplay::GetWidth();
+
 	m_pWorld = new b2World(gravity);
 
 	m_Box2DListener = new Box2DListener();
@@ -274,7 +279,7 @@ void PluginGGJ2017::OnTouchUp(int iTouch, float positionX, float positionY)
 
 			CShVector2 windowPos(ShDisplay::GetWidth()*0.5f + positionX, ShDisplay::GetHeight()*0.5f - positionY);
 
-			CShRay3 ray = ShCamera::Unproject(pCamera, windowPos);
+			CShRay3 ray = ShCamera::Unproject(pCamera, windowPos * m_fTouchRatio);
 
 			CShVector2 pos(ray.GetOrigin().m_x, ray.GetOrigin().m_y);
 
@@ -599,7 +604,7 @@ void PluginGGJ2017::CheckForAutoRetry(void)
 	b2Body * pBody = m_pPlayerBlock->GetBody();
 	CShVector2 bodyPos = Convert_sh_b2(pBody->GetPosition());
 	// 640 / 360
-	if (bodyPos.m_x >= 700.0f || bodyPos.m_x <= -700.0f || bodyPos.m_y <= -400.0f)
+	if (bodyPos.m_x >= 1136.0f || bodyPos.m_x <= -1136.0f || bodyPos.m_y <= -768.0f)
 	{
 		Reset();
 	}

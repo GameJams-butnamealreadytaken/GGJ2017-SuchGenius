@@ -99,4 +99,6 @@ private:
 
 	CShArray<ShockWave> m_aShockWave;
 
+	float m_fTouchRatio;
+
 };

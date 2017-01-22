@@ -62,10 +62,10 @@ void GameStateGame::release(void)
 */
 void GameStateGame::entered(void)
 {
-	load();
-
 	ShCamera::SetCurrent2D(m_pCamera);
 	ShCamera::SetCurrent3D(m_pCamera);
+
+	load();
 }
 
 /**
@@ -89,11 +89,11 @@ void GameStateGame::obscuring(void)
 */
 void GameStateGame::revealed(void)
 {
-	unload();
-	load();
-
 	ShCamera::SetCurrent2D(m_pCamera);
 	ShCamera::SetCurrent3D(m_pCamera);
+
+	unload();
+	load();
 }
 
 /**
