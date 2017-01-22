@@ -15,8 +15,6 @@
             <sprite_texture name="blocks.grasshalf_left.tga"/>
             <sprite_texture name="blocks.grasshalf_mid.tga"/>
             <sprite_texture name="blocks.grasshalf_right.tga"/>
-            <sprite_texture name="blocks.grassmid.tga"/>
-            <sprite_texture name="blocks.lockblue.tga"/>
             <sprite_texture name="blocks.slimeblock.tga"/>
             <sprite_texture name="ggj17.main_menu_button_home.tga"/>
             <sprite_texture name="ggj17.main_menu_button_restart.tga"/>
@@ -27,7 +25,6 @@
         <submesh_list/>
         <mesh_list/>
         <prefab_list>
-            <prefab_resource name="block_arrival_blue"/>
             <prefab_resource name="perfab_player_slime"/>
         </prefab_list>
     </preload>
@@ -93,18 +90,35 @@
         <entity2 name="button_home" position_x="-1000.000000" position_y="-650.000000" position_z="0.500000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha">
             <entity2 name="sprite_ggj17_main_menu_button_home_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="-0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_home" blend_function="alpha"/>
         </entity2>
-        <entity2 name="sprite_blocks_grasscenter_001" position_x="687.802246" position_y="-110.415726" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
-        <entity2 name="sprite_blocks_grasscenter_002" position_x="687.802246" position_y="18.920891" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
-        <entity2 name="sprite_blocks_grasscenter_003" position_x="688.017761" position_y="146.660202" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
-        <entity2 name="sprite_blocks_grasscenter_004" position_x="688.017761" position_y="274.315491" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
-        <entity2 name="sprite_blocks_grassmid_001" position_x="688.017700" position_y="401.970703" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grassmid" blend_function="alpha"/>
-        <entity2 name="sprite_blocks_grasshalf_left_001" position_x="-472.144165" position_y="255.552429" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_left" blend_function="alpha"/>
-        <entity2 name="sprite_blocks_grasshalf_mid_001" position_x="-345.437286" position_y="255.552429" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_mid" blend_function="alpha"/>
-        <entity2 name="sprite_blocks_grasshalf_right_001" position_x="-218.730423" position_y="255.552429" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_right" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshalf_left_001" position_x="-436.550781" position_y="292.441162" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshalf_mid_001" position_x="-308.963928" position_y="291.578186" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_mid" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshalf_right_001" position_x="-181.421204" position_y="291.578186" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_right" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscenter_001" position_x="132.636551" position_y="84.180992" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscenter_002" position_x="259.135040" position_y="84.180992" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscenter_003" position_x="385.633545" position_y="84.180992" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1136.000000" min_y="768.000000" max_x="1136.000000" max_y="-768.000000"/>
-        <prefab name="prefab_block_arrival_blue_001" position_x="558.222046" position_y="-112.723091" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival_blue" layer="layer_default">
-            <entity2 name="sprite_blocks_lockblue_001" prefab_child_resource_identifier="sprite_blocks_lockblue_001"/>
+        <prefab name="prefab_perfab_player_slime_001" position_x="-389.420654" position_y="546.000793" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="perfab_player_slime" layer="layer_default">
+            <entity2 name="sprite_blocks_slimeblock_001" prefab_child_resource_identifier="sprite_blocks_slimeblock_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_001" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+    </object_list>
+    <plugins>
+        <plugin name="pluginggj2017"/>
+    </plugins>
+    <editor_settings>
+        <snap_x enabled="false" value="100.000000"/>
+        <snap_y enabled="false" value="100.000000"/>
+        <snap_z enabled="false" value="100.000000"/>
+        <snap_rulers enabled="false" threshold="10.000000"/>
+        <translate_x enabled="true"/>
+        <translate_y enabled="true"/>
+        <translate_z enabled="true"/>
+        <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
+        <show_markers enabled="true"/>
+        <camera position_x="132.636536" position_y="141.405869" position_z="2007.911987" target_x="132.636536" target_y="141.406494" target_z="0.000036" znear="1.000000" zfar="40000.000000" zoom="2.007912" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-2007.911987" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+    </editor_settings>
+</level>
+1" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_002" prefab_child_resource_identifier="sensor"/>
         </prefab>
         <prefab name="prefab_block_arrival_blue_002" position_x="431.152405" position_y="-112.687134" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival_blue" layer="layer_default">
@@ -155,26 +169,5 @@
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
         <camera position_x="638.694824" position_y="161.976944" position_z="3185.912842" target_x="638.694824" target_y="161.977951" target_z="0.000042" znear="1.000000" zfar="40000.000000" zoom="3.185913" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-3185.912842" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
-    </editor_settings>
-</level>
-"/>
-            <collision_shape_point name="collision_shape_auto_002.2" position_x="64.407410" position_y="-318.670654" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="2" parent_point="collision_shape_auto_002"/>
-            <collision_shape_point name="collision_shape_auto_002.3" position_x="-62.163208" position_y="-319.568298" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="3" parent_point="collision_shape_auto_002"/>
-        </collision_shape>
-    </object_list>
-    <plugins>
-        <plugin name="pluginggj2017"/>
-    </plugins>
-    <editor_settings>
-        <snap_x enabled="false" value="100.000000"/>
-        <snap_y enabled="false" value="100.000000"/>
-        <snap_z enabled="false" value="100.000000"/>
-        <snap_rulers enabled="false" threshold="10.000000"/>
-        <translate_x enabled="true"/>
-        <translate_y enabled="true"/>
-        <translate_z enabled="true"/>
-        <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
-        <show_markers enabled="true"/>
-        <camera position_x="466.805634" position_y="-187.612686" position_z="2137.306641" target_x="466.805634" target_y="-187.612015" target_z="-0.000068" znear="1.000000" zfar="40000.000000" zoom="2.137307" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-2137.306641" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>
