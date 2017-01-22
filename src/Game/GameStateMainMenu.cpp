@@ -202,7 +202,7 @@ void GameStateMainMenu::update(float dt)
 		{
 			if (g_pInputs->IsPressEnter())
 			{
-				SetCurrentLevel(g_pGameSave->GetLastLevelPlayed());
+				SetCurrentLevel(g_pGameSave->GetLastLevelUnlocked());
 				Game & game = Game::instance();
 				game.push(Game::GAME_LEVEL);
 			}
@@ -328,7 +328,7 @@ void GameStateMainMenu::touchEnd(const CShVector2 & pos)
 
 			if (m_pPressedButton == m_pButtonPlay)
 			{
-				SetCurrentLevel(g_pGameSave->GetLastLevelPlayed());
+				SetCurrentLevel(g_pGameSave->GetLastLevelUnlocked());
 				game.push(Game::GAME_LEVEL);
 			}
 			else if (m_pPressedButton == m_pButtonSound)
