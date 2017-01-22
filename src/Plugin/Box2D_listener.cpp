@@ -61,7 +61,7 @@ void Box2DListener::BeginContact(b2Contact * contact)
 		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
 		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
 
-		if (pBlockA && pBlockB)
+		if (shNULL != pBlockA)
 		{
 			if (Block::PLAYER == pBlockA->GetType())
 			{
@@ -76,7 +76,10 @@ void Box2DListener::BeginContact(b2Contact * contact)
 				}
 				pBlockA->SetCptCollision(true);
 			}
-			else if (Block::PLAYER == pBlockB->GetType())
+		}
+		else if (shNULL != pBlockB)
+		{
+			if (Block::PLAYER == pBlockB->GetType())
 			{
 				if (0 == pBlockB->GetCptCollision())
 				{
@@ -133,13 +136,16 @@ void Box2DListener::EndContact(b2Contact * contact)
 		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
 		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
 
-		if (pBlockA && pBlockB)
+		if (shNULL != pBlockA)
 		{
 			if (Block::PLAYER == pBlockA->GetType())
 			{
 				pBlockA->SetCptCollision(false);
 			}
-			else if (Block::PLAYER == pBlockB->GetType())
+		}
+		else if (shNULL != pBlockB)
+		{
+			if (Block::PLAYER == pBlockB->GetType())
 			{
 				pBlockB->SetCptCollision(false);
 			}
