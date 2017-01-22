@@ -97,7 +97,10 @@ void GameSave::SetLastLevelPlayed(int level)
 */
 void GameSave::SetLastLevelUnlocked(int level)
 {
-	m_saveData.lastLevelUnlocked = level;
+	if (m_saveData.lastLevelUnlocked < level)
+	{
+		m_saveData.lastLevelUnlocked = level;
+	}
 }
 
 /**
@@ -108,5 +111,8 @@ void GameSave::SetLastLevelUnlocked(int level)
 */
 void GameSave::SetLevelResult(int level, int nbStars)
 {
-	m_saveData.levelResult[level] = nbStars;
+	if (m_saveData.levelResult[level] < nbStars)
+	{
+		m_saveData.levelResult[level] = nbStars;
+	}
 }

@@ -45,6 +45,8 @@ private:
 	ShEntity2 * m_pPopupBackgroundEntity;
 	ShEntity2 * m_pPopupEntity;
 
+	ShEntity2 * m_aStarsEntities[3];
+
 	int			m_iClicCount;
 
 };

@@ -16,8 +16,7 @@ PluginGGJ2017::PluginGGJ2017(void)
 : CShPlugin(plugin_identifier)
 , m_pWorld(shNULL)
 , m_Box2DListener(shNULL)
-, m_isOnSensorA(false)
-, m_isOnSensorB(false)
+, m_isOnSensor(0)
 , m_arrivalTimer(0.0f)
 , m_levelIdentifier(GID(NULL))
 , m_iClicCount(0)
@@ -55,8 +54,7 @@ void PluginGGJ2017::Reset(void)
 		}
 	}
 
-	m_isOnSensorA = false;
-	m_isOnSensorB = false;
+	m_isOnSensor = 0;
 	m_iClicCount = 0;
 	m_isWon = false;
 }
@@ -135,8 +133,7 @@ void PluginGGJ2017::OnPlayStart(const CShIdentifier & levelIdentifier)
 
 	m_iClicCount = 0;
 	m_arrivalTimer = 0.0f;
-	m_isOnSensorA = false;
-	m_isOnSensorB = false;
+	m_isOnSensor = 0;
 	m_isWon = false;
 	m_handleClick = true;
 	m_mouseClick = -1;
@@ -230,20 +227,23 @@ void PluginGGJ2017::OnPostUpdate(float dt)
 
 	UpdateShineObjects();
 
-	if (m_isOnSensorA || m_isOnSensorB)
+	if (!m_isWon)
 	{
-		m_arrivalTimer += dt;
-
-		if (m_arrivalTimer >= 2.0f)
+		if (m_isOnSensor != 0)
 		{
-			m_arrivalTimer = 0.0f;
-			m_isWon = true;
-			m_handleClick = false;
-			m_mouseClick = -1;
-		}
-	}
+			m_arrivalTimer += dt;
 
-	CheckForAutoRetry();
+			if (m_arrivalTimer >= 2.0f)
+			{
+				m_arrivalTimer = 0.0f;
+				m_isWon = true;
+				m_handleClick = false;
+				m_mouseClick = -1;
+			}
+		}
+
+		CheckForAutoRetry();
+	}
 }
 
 /**
@@ -309,25 +309,18 @@ void PluginGGJ2017::OnTouchMove(int iTouch, float positionX, float positionY)
 * @brief PluginGGJ2017::SetPlayerOnSensorA
 * @param playerOnA
 */
-void PluginGGJ2017::SetPlayerOnSensorA(bool playerOnA)
+void PluginGGJ2017::SetPlayerOnSensor(bool Inc)
 {
-	m_isOnSensorA = playerOnA;
-
-	if (!m_isOnSensorA && !m_isOnSensorB)
+	if (Inc)
 	{
-		m_arrivalTimer = 0.0f;
+		++m_isOnSensor;
 	}
-}
-
-/**
-* @brief PluginGGJ2017::SetPlayerOnSensorB
-* @param playerOnB
-*/
-void PluginGGJ2017::SetPlayerOnSensorB(bool playerOnB)
-{
-	m_isOnSensorB = playerOnB;
-
-	if (!m_isOnSensorB && !m_isOnSensorA)
+	else
+	{
+		--m_isOnSensor;
+	}
+	
+	if (m_isOnSensor == 0)
 	{
 		m_arrivalTimer = 0.0f;
 	}
@@ -532,7 +525,9 @@ b2Shape * PluginGGJ2017::GenerateStaticBlockShape(ShCollisionShape * pShape, b2B
 {
 	b2ChainShape * pChainShape = new b2ChainShape();
 
-	const int pointCount = ShCollisionShape::GetPointCount(pShape);
+	SH_ASSERT(64 > ShCollisionShape::GetPointCount(pShape));
+
+	const int pointCount = 64; // ShCollisionShape::GetPointCount(pShape);
 
 	b2Vec2 aVertex [pointCount];
 

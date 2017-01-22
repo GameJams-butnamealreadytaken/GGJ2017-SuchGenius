@@ -43,8 +43,7 @@ public:
 	void					OnTouchUp			(int iTouch, float positionX, float positionY);
 	void					OnTouchMove			(int iTouch, float positionX, float positionY);
 
-	void					SetPlayerOnSensorA	(bool playerOnA);
-	void					SetPlayerOnSensorB	(bool playerOnB);
+	void					SetPlayerOnSensor	(bool Inc);
 
 	int						GetLevelClicCount	(void);
 
@@ -78,8 +77,7 @@ private:
 	Block *				m_pPlayerBlock;
 	b2Vec2				m_PlayerInitPos;
 
-	bool				m_isOnSensorA;
-	bool				m_isOnSensorB;
+	int					m_isOnSensor;
 	float				m_arrivalTimer;
 	bool				m_isWon;
 

@@ -37,7 +37,7 @@ void Box2DListener::BeginContact(b2Contact * contact)
 		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
 		if (Block::PLAYER == pBlockB->GetType())
 		{
-			m_pPlugin->SetPlayerOnSensorA(true);
+			m_pPlugin->SetPlayerOnSensor(true);
 		}
 	}
 	else if (sensorB)
@@ -45,7 +45,7 @@ void Box2DListener::BeginContact(b2Contact * contact)
 		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
 		if (Block::PLAYER == pBlockA->GetType())
 		{
-			m_pPlugin->SetPlayerOnSensorB(true);
+			m_pPlugin->SetPlayerOnSensor(true);
 		}
 	}
 }
@@ -66,7 +66,7 @@ void Box2DListener::EndContact(b2Contact * contact)
 		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
 		if (Block::PLAYER == pBlockB->GetType())
 		{
-			m_pPlugin->SetPlayerOnSensorA(false);
+			m_pPlugin->SetPlayerOnSensor(false);
 		}
 	}
 	else if (sensorB)
@@ -74,7 +74,7 @@ void Box2DListener::EndContact(b2Contact * contact)
 		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
 		if (Block::PLAYER == pBlockA->GetType())
 		{
-			m_pPlugin->SetPlayerOnSensorB(false);
+			m_pPlugin->SetPlayerOnSensor(false);
 		}
 	}
 }
