@@ -55,19 +55,19 @@ void Box2DListener::BeginContact(b2Contact * contact)
 
 		if (Block::PLAYER == pBlockA->GetType())
 		{
-			pBlockA->SetCptCollision(true);
-			if (pBlockA->GetCptCollision())
+			if (0 == pBlockA->GetCptCollision())
 			{
 				// Play sound
 			}
+			pBlockA->SetCptCollision(true);
 		}
 		else if (Block::PLAYER == pBlockB->GetType())
 		{
-			pBlockB->SetCptCollision(true);
-			if (pBlockB->GetCptCollision())
+			if (0 == pBlockB->GetCptCollision())
 			{
 				// Play sound
 			}
+			pBlockB->SetCptCollision(true);
 		}
 	}
 }
