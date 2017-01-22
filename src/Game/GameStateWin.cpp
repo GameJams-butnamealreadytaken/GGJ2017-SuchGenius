@@ -165,7 +165,7 @@ void GameStateWin::update(float dt)
 				int nbStarsWon = 1;
 
 				int nbClickMin = g_nbMinPlay[GetCurrentLevel() - 1];
-				if (m_iClicCount == nbClickMin)
+				if (m_iClicCount <= nbClickMin)
 				{
 					nbStarsWon = 3;
 				}
@@ -183,6 +183,8 @@ void GameStateWin::update(float dt)
 				}
 
 				g_pGameSave->SetLevelResult(GetCurrentLevel(), nbStarsWon);
+				int nextLevel = GetCurrentLevel() + 1;
+				g_pGameSave->SetLastLevelUnlocked(nextLevel);
 				g_pGameSave->Save();
 				m_eCurrentState = IDLE;
 			}
@@ -251,7 +253,6 @@ void GameStateWin::touchEnd(const CShVector2 & pos)
 			{
 				int nextLevel = GetCurrentLevel() + 1;
 				SetCurrentLevel(nextLevel);
-				g_pGameSave->SetLastLevelUnlocked(nextLevel);
 				game.pop();
 			}
 		}

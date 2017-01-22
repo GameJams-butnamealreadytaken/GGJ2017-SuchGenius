@@ -2,7 +2,7 @@
 
 #include "ShSDK/ShSDK.h"
 
-int g_nbMinPlay[9] = {1, 3, 2, 3, 3, 3, 2, 2, 2};
+int g_nbMinPlay[9] = {1, 3, 2, 3, 2, 3, 2, 2, 2};
 
 ShUser * g_pCurrentUser = shNULL;
 Inputs * g_pInputs = shNULL;
