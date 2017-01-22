@@ -11,6 +11,17 @@
         <texture_list/>
         <animated_texture_list/>
         <sprite_texture_list>
+            <sprite_texture name="blocks.boxcrate.tga"/>
+            <sprite_texture name="blocks.boxcrate_double.tga"/>
+            <sprite_texture name="blocks.boxcrate_single.tga"/>
+            <sprite_texture name="blocks.boxcrate_warning.tga"/>
+            <sprite_texture name="blocks.grasscenter.tga"/>
+            <sprite_texture name="blocks.grasscorner_left.tga"/>
+            <sprite_texture name="blocks.grasshalf_left.tga"/>
+            <sprite_texture name="blocks.grasshalf_mid.tga"/>
+            <sprite_texture name="blocks.grasshalf_right.tga"/>
+            <sprite_texture name="blocks.grasshill_left.tga"/>
+            <sprite_texture name="blocks.lockblue.tga"/>
             <sprite_texture name="blocks.slimeblock.tga"/>
             <sprite_texture name="ggj17.main_menu_button_home.tga"/>
             <sprite_texture name="ggj17.main_menu_button_restart.tga"/>
@@ -21,6 +32,11 @@
         <submesh_list/>
         <mesh_list/>
         <prefab_list>
+            <prefab_resource name="block_arrival_blue"/>
+            <prefab_resource name="block_box_1"/>
+            <prefab_resource name="block_box_2"/>
+            <prefab_resource name="block_box_3"/>
+            <prefab_resource name="block_box_4"/>
             <prefab_resource name="perfab_player_slime"/>
         </prefab_list>
     </preload>
@@ -86,18 +102,1733 @@
         <entity2 name="button_home" position_x="-1000.000000" position_y="-650.000000" position_z="0.500000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_round_background" blend_function="alpha">
             <entity2 name="sprite_ggj17_main_menu_button_home_001" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="-0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="ggj17" sprite_name="main_menu_button_home" blend_function="alpha"/>
         </entity2>
+        <entity2 name="sprite_blocks_grasshalf_left_001" position_x="-448.249329" position_y="257.666168" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshalf_mid_001" position_x="-323.000122" position_y="257.545471" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_mid" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshalf_right_001" position_x="-195.075104" position_y="257.545471" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshalf_right" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshill_left_001" position_x="-640.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshill_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshill_left_002" position_x="-768.000000" position_y="128.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshill_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshill_left_003" position_x="-896.000000" position_y="256.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshill_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasshill_left_004" position_x="-1024.000000" position_y="384.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasshill_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscorner_left_001" position_x="-1024.000000" position_y="256.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscorner_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscorner_left_002" position_x="-896.000000" position_y="128.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscorner_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscorner_left_003" position_x="-768.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscorner_left" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscenter_001" position_x="-1024.000000" position_y="128.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscenter_002" position_x="-1024.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
+        <entity2 name="sprite_blocks_grasscenter_003" position_x="-896.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="grasscenter" blend_function="alpha"/>
         <dummy_aabb2 name="zone_screen" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1136.000000" min_y="768.000000" max_x="1136.000000" max_y="-768.000000"/>
         <prefab name="prefab_perfab_player_slime_001" position_x="-347.672699" position_y="385.840057" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="perfab_player_slime" layer="layer_default">
             <entity2 name="sprite_blocks_slimeblock_001" prefab_child_resource_identifier="sprite_blocks_slimeblock_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_005" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
         </prefab>
+        <prefab name="prefab_block_box_1_001" position_x="-817.952515" position_y="907.456116" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_001" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_1_002" position_x="-199.169418" position_y="877.635071" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_002" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_002" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_003" position_x="586.113586" position_y="862.724670" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_003" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_003" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_003"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_004" position_x="514.046631" position_y="1173.358643" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_004" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_004" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_004"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_005" position_x="-151.952942" position_y="1247.910889" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_005" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_006" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_005"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_006" position_x="-683.758545" position_y="1272.761719" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_006" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_007" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_006"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_007" position_x="-996.877808" position_y="1874.149414" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_007" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_008" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_007"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_008" position_x="-400.460297" position_y="1779.716553" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_008" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_009" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_008"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_009" position_x="598.539124" position_y="1638.067383" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_009" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_010" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_009"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_010" position_x="205.897507" position_y="1809.537354" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_010" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_011" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_010"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_011" position_x="-37.639660" position_y="1734.985352" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_011" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_012" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_011"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_012" position_x="-621.631714" position_y="1993.432861" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_012" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_013" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_012"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_001" position_x="-979.927979" position_y="1431.467285" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_014" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_2_002" position_x="-600.221436" position_y="1500.504761" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_002" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_015" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_003" position_x="-513.924561" position_y="1120.798218" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_003" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_016" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_003"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_004" position_x="107.413681" position_y="913.685364" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_004" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_017" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_004"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_005" position_x="256.995178" position_y="1247.367065" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_005" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_018" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_005"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_006" position_x="-13.401993" position_y="1442.973633" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_006" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_019" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_006"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_007" position_x="-203.255280" position_y="1983.767700" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_007" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_020" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_007"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_008" position_x="648.207764" position_y="2236.905518" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_008" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_021" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_008"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_009" position_x="239.735886" position_y="2495.796387" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_009" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_022" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_009"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_010" position_x="-646.246460" position_y="2576.340088" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_010" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_023" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_010"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_011" position_x="-1094.990601" position_y="2426.759033" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_011" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_024" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_011"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_012" position_x="-939.656128" position_y="2208.139893" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_012" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_025" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_012"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_013" position_x="297.266968" position_y="2225.399170" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_013" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_026" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_013"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_2_014" position_x="-387.355560" position_y="2415.252686" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_2" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_double_014" prefab_child_resource_identifier="sprite_blocks_boxcrate_double_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_027" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_double_014"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_001" position_x="-47.920792" position_y="2236.905518" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_028" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_3_002" position_x="-116.958405" position_y="2628.118408" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_002" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_029" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_003" position_x="-421.874359" position_y="2829.477783" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_003" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_030" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_003"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_004" position_x="-1422.919189" position_y="2910.021729" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_004" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_031" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_004"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_005" position_x="-1037.459351" position_y="3099.875000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_005" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_032" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_005"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_006" position_x="-882.124756" position_y="2777.699707" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_006" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_033" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_006"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_007" position_x="182.204300" position_y="2887.009277" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_007" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_034" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_007"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_008" position_x="579.170166" position_y="2674.143311" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_008" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_035" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_008"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_009" position_x="556.158081" position_y="3030.837646" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_009" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_036" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_009"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_010" position_x="-65.180328" position_y="3197.678467" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_010" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_037" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_010"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_011" position_x="-375.849304" position_y="3180.418945" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_011" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_038" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_011"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_001" position_x="-1261.831421" position_y="3611.903809" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_001" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_039" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+        </prefab>
+        <prefab name="prefab_block_box_4_002" position_x="-968.421753" position_y="3629.163086" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_002" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_040" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_003" position_x="-249.280304" position_y="3583.138184" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_003" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_041" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_003"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_004" position_x="268.501190" position_y="3485.334717" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_004" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_042" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_004"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_005" position_x="354.798340" position_y="3853.535400" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_005" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_043" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_005"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_006" position_x="-433.380585" position_y="4440.354492" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_006" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_044" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_006"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_007" position_x="-772.815430" position_y="4664.727051" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_007" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_045" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_007"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_008" position_x="-744.049561" position_y="3289.728516" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_008" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_046" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_008"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_009" position_x="-651.999512" position_y="2294.436768" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_009" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_047" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_009"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_010" position_x="-686.518311" position_y="1719.123657" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_010" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_048" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_010"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_011" position_x="-301.058685" position_y="1465.985962" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_011" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_049" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_011"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_012" position_x="308.773254" position_y="953.957336" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_012" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_050" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_012"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_013" position_x="-550.612915" position_y="3734.654297" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_013" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_051" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_013"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_014" position_x="-133.666595" position_y="3938.494629" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_014" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_052" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_014"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_012" position_x="-1125.072266" position_y="4049.680176" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_012" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_053" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_012"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_013" position_x="-717.391113" position_y="4049.680176" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_013" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_054" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_013"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_014" position_x="394.465546" position_y="4234.989746" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_014" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_055" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_014"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_015" position_x="-41.011810" position_y="4559.281250" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_015" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_056" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_015"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_016" position_x="-50.277069" position_y="4216.458984" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_016" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_057" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_016"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_017" position_x="-1347.443359" position_y="4457.361328" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_017" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_058" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_017"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_018" position_x="-939.762695" position_y="4290.583008" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_018" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_059" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_018"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_019" position_x="-1032.417480" position_y="4707.529297" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_019" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_060" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_019"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_020" position_x="-513.551025" position_y="5078.147949" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_020" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_061" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_020"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_021" position_x="-50.277069" position_y="4985.493164" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_021" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_062" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_021"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_022" position_x="246.217865" position_y="5096.679199" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_022" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_063" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_022"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_023" position_x="-3.949890" position_y="5606.280273" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_023" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_064" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_023"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_024" position_x="-569.143921" position_y="5606.280273" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_024" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_065" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_024"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_025" position_x="-1152.868530" position_y="5476.563477" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_025" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_066" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_025"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_026" position_x="-1078.744629" position_y="5152.271484" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_026" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_067" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_026"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_027" position_x="-856.373535" position_y="5068.882324" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_027" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_068" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_027"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_013" position_x="-708.125854" position_y="5309.785156" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_013" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_069" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_013"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_014" position_x="450.058411" position_y="5337.581055" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_014" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_070" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_014"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_015" position_x="-1421.567261" position_y="4883.573242" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_015" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_071" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_015"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_016" position_x="-976.824585" position_y="5819.385742" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_016" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_072" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_016"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_017" position_x="-189.259491" position_y="5939.836914" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_017" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_073" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_017"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_018" position_x="672.429932" position_y="5819.385742" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_018" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_074" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_018"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_019" position_x="255.483551" position_y="4855.776367" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_019" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_075" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_019"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_020" position_x="236.952591" position_y="4420.298828" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_020" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_076" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_020"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_021" position_x="190.624969" position_y="3540.079102" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_021" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_077" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_021"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_022" position_x="728.022400" position_y="3438.158691" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_022" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_078" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_022"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_023" position_x="941.128174" position_y="1594.329468" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_023" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_079" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_023"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_024" position_x="978.190125" position_y="1112.524902" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_024" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_080" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_024"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_025" position_x="959.659546" position_y="2752.513916" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_025" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_081" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_025"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_026" position_x="922.597656" position_y="3947.760254" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_026" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_082" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_026"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_027" position_x="829.943298" position_y="4512.954102" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_027" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_083" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_027"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_028" position_x="709.491821" position_y="4753.856445" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_028" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_084" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_028"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_029" position_x="598.306091" position_y="5031.820312" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_029" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_085" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_029"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_arrival_blue_001" position_x="-470.900665" position_y="-142.021591" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival_blue" layer="layer_default">
+            <entity2 name="sprite_blocks_lockblue_001" prefab_child_resource_identifier="sprite_blocks_lockblue_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_086" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_087" prefab_child_resource_identifier="sensor">
+                <data_set_list>
+                    <data_set name="sensor_object" instance_name="sensor_object_0">
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_086"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_arrival_blue_002" position_x="-343.691620" position_y="-142.021591" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival_blue" layer="layer_default">
+            <entity2 name="sprite_blocks_lockblue_002" prefab_child_resource_identifier="sprite_blocks_lockblue_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_088" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_lockblue_002"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <dummy_aabb2 name="dummy_aabb2_auto_089" prefab_child_resource_identifier="sensor">
+                <data_set_list>
+                    <data_set name="sensor_object" instance_name="sensor_object_0">
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_088"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_arrival_blue_003" position_x="-216.482635" position_y="-142.021591" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_arrival_blue" layer="layer_default">
+            <entity2 name="sprite_blocks_lockblue_003" prefab_child_resource_identifier="sprite_blocks_lockblue_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_090" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_static" instance_name="block_object_static_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_lockblue_003"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+            <dummy_aabb2 name="dummy_aabb2_auto_091" prefab_child_resource_identifier="sensor">
+                <data_set_list>
+                    <data_set name="sensor_object" instance_name="sensor_object_0">
+                        <data type="object" name="attachedobject" value="dummy_aabb2_auto_090"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_015" position_x="-1216.535156" position_y="6267.825684" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_015" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_092" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_015"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_016" position_x="217.561707" position_y="6081.196777" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_016" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_093" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_016"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_017" position_x="649.754944" position_y="6326.760742" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_017" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_094" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_017"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_018" position_x="60.400330" position_y="7191.147461" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_018" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_095" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_018"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_019" position_x="-155.696533" position_y="7613.518555" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_019" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_096" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_019"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_020" position_x="-509.309570" position_y="6965.228516" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_020" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_097" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_020"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_021" position_x="-568.244629" position_y="6444.631836" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_021" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_098" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_021"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_022" position_x="-37.825562" position_y="6591.970215" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_022" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_099" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_022"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_023" position_x="541.706726" position_y="6867.002441" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_023" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_100" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_023"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_024" position_x="767.625977" position_y="7309.019043" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_024" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_101" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_024"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_025" position_x="423.835754" position_y="8134.115234" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_025" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_102" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_025"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_026" position_x="-155.696533" position_y="8487.728516" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_026" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_103" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_026"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_027" position_x="-1010.260620" position_y="7584.051270" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_027" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_104" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_027"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_028" position_x="-1275.470703" position_y="6965.228516" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_028" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_105" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_028"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_029" position_x="-941.502808" position_y="6827.712402" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_029" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_106" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_029"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_030" position_x="-725.406006" position_y="7348.309082" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_030" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_107" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_030"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_031" position_x="-656.648071" position_y="7770.679688" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_031" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_108" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_031"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_032" position_x="-882.567261" position_y="8026.067383" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_032" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_109" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_032"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_033" position_x="492.593597" position_y="7947.486328" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_033" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_110" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_033"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_034" position_x="296.141907" position_y="7593.873047" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_034" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_111" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_034"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_035" position_x="-253.922363" position_y="8055.534668" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_035" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_112" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_035"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_030" position_x="-970.970337" position_y="8458.260742" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_030" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_113" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_030"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_031" position_x="-479.841553" position_y="8654.711914" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_031" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_114" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_031"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_032" position_x="414.012939" position_y="8910.098633" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_032" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_115" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_032"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_033" position_x="600.642212" position_y="8959.211914" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_033" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_116" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_033"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_034" position_x="-430.729126" position_y="8959.212891" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_034" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_117" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_034"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_035" position_x="-1393.341431" position_y="9283.358398" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_035" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_118" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_035"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_036" position_x="-450.374268" position_y="9332.471680" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_036" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_119" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_036"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_037" position_x="70.222473" position_y="9695.906250" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_037" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_120" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_037"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_038" position_x="-77.116089" position_y="10088.809570" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_038" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_121" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_038"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_039" position_x="-342.325684" position_y="10334.374023" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_039" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_122" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_039"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_040" position_x="-548.599731" position_y="10491.535156" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_040" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_123" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_040"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_041" position_x="-774.519287" position_y="10118.277344" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_041" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_124" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_041"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_042" position_x="-951.325439" position_y="9764.664062" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_042" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_125" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_042"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_043" position_x="-921.857910" position_y="9430.697266" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_043" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_126" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_043"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_044" position_x="40.754883" position_y="8939.567383" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_044" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_127" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_044"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_045" position_x="414.012695" position_y="9391.406250" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_045" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_128" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_045"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_046" position_x="698.867432" position_y="9872.712891" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_046" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_129" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_046"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_047" position_x="590.819214" position_y="10216.502930" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_047" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_130" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_047"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_048" position_x="414.012695" position_y="10687.987305" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_048" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_131" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_048"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_049" position_x="305.964478" position_y="10727.277344" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_049" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_132" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_049"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_050" position_x="-312.858032" position_y="9774.487305" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_050" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_133" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_050"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_051" position_x="-578.067627" position_y="9607.502930" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_051" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_134" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_051"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_052" position_x="-1236.180542" position_y="9990.583984" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_052" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_135" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_052"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_053" position_x="-1187.067505" position_y="10471.890625" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_053" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_136" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_053"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_054" position_x="-784.341675" position_y="10963.018555" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_054" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_137" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_054"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_055" position_x="-489.664185" position_y="11208.583008" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_055" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_138" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_055"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_056" position_x="-175.341919" position_y="11463.970703" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_056" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_139" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_056"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_057" position_x="21.109741" position_y="10992.486328" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_057" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_140" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_057"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_3_058" position_x="217.561462" position_y="10570.116211" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_3" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_single_058" prefab_child_resource_identifier="sprite_blocks_boxcrate_single_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_141" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_single_058"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_028" position_x="-2277.373535" position_y="10550.470703" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_028" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_142" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_028"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_029" position_x="-1000.438599" position_y="10992.486328" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_029" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_143" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_029"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_030" position_x="-862.922363" position_y="11326.454102" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_030" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_144" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_030"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_031" position_x="-892.389893" position_y="11719.357422" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_031" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_145" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_031"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_032" position_x="-853.099976" position_y="12072.969727" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_032" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_146" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_032"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_033" position_x="-637.003174" position_y="12259.599609" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_033" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_147" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_033"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_034" position_x="-312.858032" position_y="12338.179688" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_034" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_148" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_034"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_035" position_x="40.754883" position_y="12122.083008" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_035" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_149" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_035"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_036" position_x="482.770996" position_y="11660.421875" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_036" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_150" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_036"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_037" position_x="708.690186" position_y="11277.341797" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_037" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_151" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_037"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_038" position_x="865.851562" position_y="10825.502930" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_038" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_152" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_038"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_039" position_x="1032.835327" position_y="10187.035156" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_039" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_153" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_039"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_040" position_x="1003.367737" position_y="8811.874023" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_040" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_154" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_040"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_041" position_x="865.851562" position_y="8487.729492" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_041" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_155" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_041"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_042" position_x="531.883728" position_y="8438.616211" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_042" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_156" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_042"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_043" position_x="-1177.244995" position_y="8851.164062" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_043" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_157" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_043"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_044" position_x="-1462.099731" position_y="8301.100586" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_044" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_158" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_044"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_045" position_x="-1501.390015" position_y="7967.132812" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_045" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_159" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_045"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_1_046" position_x="-1471.922241" position_y="7741.213379" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_1" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_046" prefab_child_resource_identifier="sprite_blocks_boxcrate_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_160" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_046"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_036" position_x="-833.454834" position_y="10462.067383" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_036" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_161" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_036"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_037" position_x="-175.341919" position_y="10697.809570" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_037" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_162" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_037"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_038" position_x="70.222473" position_y="11503.260742" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_038" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_163" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_038"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_039" position_x="-332.503296" position_y="11837.228516" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_039" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_164" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_039"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_040" position_x="-587.890015" position_y="11896.164062" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_040" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_165" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_040"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_041" position_x="-1619.261108" position_y="11198.760742" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_041" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_166" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_041"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_042" position_x="-1373.696411" position_y="11630.954102" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_042" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_167" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_042"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_043" position_x="-1255.825317" position_y="12072.969727" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_043" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_168" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_043"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_044" position_x="-1118.309448" position_y="12495.340820" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_044" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_169" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_044"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_045" position_x="-970.970581" position_y="12770.374023" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_045" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_170" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_045"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_046" position_x="-244.099854" position_y="12750.730469" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_046" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_171" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_046"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_047" position_x="247.028931" position_y="12416.762695" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_047" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_172" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_047"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_048" position_x="561.351624" position_y="12014.037109" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_048" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_173" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_048"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <prefab name="prefab_block_box_4_049" position_x="924.787048" position_y="11434.504883" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_box_4" layer="layer_default">
+            <entity2 name="sprite_blocks_boxcrate_warning_049" prefab_child_resource_identifier="sprite_blocks_boxcrate_warning_001"/>
+            <dummy_aabb2 name="dummy_aabb2_auto_174" prefab_child_resource_identifier="dummy_aabb2_auto_001">
+                <data_set_list>
+                    <data_set name="block_object_dynamic" instance_name="block_object_dynamic_0">
+                        <data type="object" name="attachedobject" value="sprite_blocks_boxcrate_warning_049"/>
+                    </data_set>
+                </data_set_list>
+            </dummy_aabb2>
+        </prefab>
+        <collision_shape name="collision_shape_auto_001" position_x="-322.197418" position_y="285.165497" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" type="none" prohibited="0" closed="1">
+            <collision_shape_point name="collision_shape_auto_001.0" position_x="-188.453247" position_y="36.423737" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="0" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.1" position_x="187.661438" position_y="34.840088" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="1" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.2" position_x="190.828720" position_y="-36.423737" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="2" parent_point="collision_shape_auto_001"/>
+            <collision_shape_point name="collision_shape_auto_001.3" position_x="-190.036896" position_y="-34.840103" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="3" parent_point="collision_shape_auto_001"/>
+        </collision_shape>
+        <collision_shape name="collision_shape_auto_002" position_x="-916.936401" position_y="105.770279" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" type="none" prohibited="0" closed="1">
+            <collision_shape_point name="collision_shape_auto_002.0" position_x="-168.986450" position_y="339.854736" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="0" parent_point="collision_shape_auto_002"/>
+            <collision_shape_point name="collision_shape_auto_002.1" position_x="340.231018" position_y="-169.362823" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="1" parent_point="collision_shape_auto_002"/>
+            <collision_shape_point name="collision_shape_auto_002.2" position_x="-171.244629" position_y="-170.491913" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" index="2" parent_point="collision_shape_auto_002"/>
+        </collision_shape>
     </object_list>
     <plugins>
         <plugin name="pluginggj2017"/>
     </plugins>
     <editor_settings>
-        <snap_x enabled="false" value="100.000000"/>
-        <snap_y enabled="false" value="100.000000"/>
+        <snap_x enabled="false" value="128.000000"/>
+        <snap_y enabled="false" value="128.000000"/>
         <snap_z enabled="false" value="100.000000"/>
         <snap_rulers enabled="false" threshold="10.000000"/>
         <translate_x enabled="true"/>
@@ -105,6 +1836,6 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="638.694824" position_y="161.976944" position_z="3185.912842" target_x="638.694824" target_y="161.977951" target_z="0.000042" znear="1.000000" zfar="40000.000000" zoom="3.185913" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-3185.912842" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="-574.447144" position_y="159.401459" position_z="1129.085327" target_x="-574.447144" target_y="159.401810" target_z="0.000041" znear="1.000000" zfar="40000.000000" zoom="1.129085" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1129.085327" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>
