@@ -40,8 +40,12 @@ source_group("Inputs" FILES ${SOURCES_Inputs})
 set(SOURCES_Application application.cpp application.h)
 source_group("Application" FILES ${SOURCES_Application})
 
+# Game
+set(SOURCES_GameSave GameSave.cpp GameSave.h)
+source_group("State\\Save" FILES ${SOURCES_GameSave})
+
 # Put everything together before adding platform-specific files
-set(SOURCES ${SOURCES_main} ${SOURCES_Game} ${SOURCES_State} ${SOURCES_Inputs} ${SOURCES_Application} ${SOURCES_GameStateCredits} ${SOURCES_GameStateMainMenu} ${SOURCES_GameStateLevelSelection} ${SOURCES_GameStateGame} ${SOURCES_GameStateWin})
+set(SOURCES ${SOURCES_main} ${SOURCES_Game} ${SOURCES_State} ${SOURCES_Inputs} ${SOURCES_Application} ${SOURCES_GameStateCredits} ${SOURCES_GameStateMainMenu} ${SOURCES_GameStateLevelSelection} ${SOURCES_GameStateGame} ${SOURCES_GameStateWin} ${SOURCES_GameSave})
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 	add_executable(Game WIN32 ${SOURCES})

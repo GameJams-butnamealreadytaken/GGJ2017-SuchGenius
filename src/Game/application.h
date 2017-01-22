@@ -1,5 +1,7 @@
 #pragma once
 
+class ShUser;
+
 extern "C"
 {
 
@@ -12,4 +14,6 @@ extern "C"
 	void OnActivate			(void);
 	void OnDeactivate		(bool & bAllowBackgroundUpdates, bool & bAllowBackgroundInputs);
 
+	void OnLogin			(ShUser * pUser);
+	void OnLogout			(ShUser * pUser);
 }

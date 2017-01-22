@@ -49,3 +49,41 @@ void OnTouchMove(int iTouch, float positionX, float positionY)
 		game.touchMove(pos);
 	}
 }
+
+Inputs::Inputs(void)
+: m_isRestarting(false)
+, m_isPressEnter(false)
+{
+}
+
+Inputs::~Inputs(void)
+{
+}
+
+void Inputs::Initialize(ShUser * pUser)
+{
+	m_pUser = pUser;
+}
+
+void Inputs::Release(void)
+{
+}
+
+void Inputs::Update(void)
+{
+	if (shNULL != m_pUser)
+	{
+		m_isPressEnter = ShUser::HasTriggeredAction(m_pUser, CShIdentifier("validate"));
+		m_isRestarting = ShUser::HasTriggeredAction(m_pUser, CShIdentifier("reset"));
+	}
+}
+
+bool Inputs::IsRestarting(void)
+{
+	return(m_isRestarting);
+}
+
+bool Inputs::IsPressEnter(void)
+{
+	return(m_isPressEnter);
+}

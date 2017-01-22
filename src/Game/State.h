@@ -2,8 +2,9 @@
 
 #include "ShSDK/ShSDK.h"
 #include "../Plugin/Plugin.h"
+#include "inputs.h"
 
-extern PluginGGJ2017 * g_pInstance;
+#define MAX_PAGE 2
 
 inline float BounceEase(float t)
 {

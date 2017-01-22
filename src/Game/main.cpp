@@ -7,6 +7,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
 int main(int argc, char ** argv)
 #endif
 {
+	g_pInputs = new Inputs();
+	g_pGameSave = new GameSave();
+	
 	ShApplication::SetOnPreInitialize(OnPreInitialize);
 	ShApplication::SetOnPostInitialize(OnPostInitialize);
 	ShApplication::SetOnPreUpdate(OnPreUpdate);

@@ -2,8 +2,6 @@
 
 #include "State.h"
 
-#define MAX_PAGE 2
-
 class GameStateLevelSelection : public State
 {
 
@@ -57,7 +55,7 @@ private:
 	ShEntity2 * m_pButtonNext;
 
 	ShEntity2 * m_apThumbnails [9];
-	ShEntity2 * m_apLevelIcon  [MAX_PAGE][9];
+	ShEntity2 * m_apLevelSars  [9][3];
 
 	int			m_iLastPageID;
 	int			m_iCurrentPageID;

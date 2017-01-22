@@ -51,6 +51,7 @@ void Game::release(void)
  */
 void Game::update(float dt)
 {
+	g_pInputs->Update();
 	m_aStates[m_iCurrentState]->update(dt);
 }
 
