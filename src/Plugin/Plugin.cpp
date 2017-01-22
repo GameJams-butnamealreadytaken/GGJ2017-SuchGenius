@@ -525,25 +525,22 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 */
 b2Shape * PluginGGJ2017::GenerateStaticBlockShape(ShCollisionShape * pShape, b2Body * pBody)
 {
-	b2PolygonShape * pPolygonShape = new b2PolygonShape();
-
-//	CShVector3 vScale = ShObject::GetWorldScale(pShape);
-//	CShVector2 vTranslation = ShObject::GetWorldPosition2(pShape);
+	b2ChainShape * pChainShape = new b2ChainShape();
 
 	const int pointCount = ShCollisionShape::GetPointCount(pShape);
 
-	b2Vec2 aB2Point [pointCount];
+	b2Vec2 aVertex [pointCount];
 
 	for (int i = 0; i < pointCount; ++i)
 	{
 		const CShVector2 & pos = ShCollisionShape::GetPoint(pShape, i);
 
-		aB2Point[i] = Convert_sh_b2(pos);// - pBody->GetPosition();
+		aVertex[i] = Convert_sh_b2(pos);// - pBody->GetPosition();
 	}
 
-	pPolygonShape->Set(aB2Point, pointCount);
+	pChainShape->CreateLoop(aVertex, pointCount);
 
-	return(pPolygonShape);
+	return(pChainShape);
 }
 
 /**
