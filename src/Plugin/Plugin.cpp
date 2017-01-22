@@ -217,24 +217,27 @@ void PluginGGJ2017::OnTouchDown(int iTouch, float positionX, float positionY)
  */
 void PluginGGJ2017::OnTouchUp(int iTouch, float positionX, float positionY)
 {
-	if (GID(NULL) != m_levelIdentifier)
+	if (!m_isWon)
 	{
-		ShCamera * pCamera = ShCamera::GetCamera2D();
+		if (GID(NULL) != m_levelIdentifier)
+		{
+			ShCamera * pCamera = ShCamera::GetCamera2D();
 
-		CShVector2 windowPos(ShDisplay::GetWidth()*0.5f+positionX, ShDisplay::GetHeight()*0.5f-positionY);
+			CShVector2 windowPos(ShDisplay::GetWidth()*0.5f + positionX, ShDisplay::GetHeight()*0.5f - positionY);
 
-		CShRay3 ray = ShCamera::Unproject(pCamera, windowPos);
+			CShRay3 ray = ShCamera::Unproject(pCamera, windowPos);
 
-		CShVector2 pos(ray.GetOrigin().m_x, ray.GetOrigin().m_y);
+			CShVector2 pos(ray.GetOrigin().m_x, ray.GetOrigin().m_y);
 
-		ShockWave wave;
-		wave.pEntity = ShEntity2::Create(m_levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShIdentifier("ggj17"), CShIdentifier("shockwave"), CShVector3(pos.m_x, pos.m_y, 10.0f), CShEulerAngles(0.0f, 0.0f, 0.0f), CShVector3(0.0f, 0.0f, 1.0f));
-		wave.initialPosition = pos;
-		wave.time = 0.0f;
+			ShockWave wave;
+			wave.pEntity = ShEntity2::Create(m_levelIdentifier, GID(NULL), CShIdentifier("layer_default"), CShIdentifier("ggj17"), CShIdentifier("shockwave"), CShVector3(pos.m_x, pos.m_y, 10.0f), CShEulerAngles(0.0f, 0.0f, 0.0f), CShVector3(0.0f, 0.0f, 1.0f));
+			wave.initialPosition = pos;
+			wave.time = 0.0f;
 
-		m_aShockWave.Add(wave);
+			m_aShockWave.Add(wave);
 
-		++m_iClicCount;
+			++m_iClicCount;
+		}
 	}
 }
 
@@ -437,10 +440,10 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 		CShVector2 vDummyAABB2Translation = ShObject::GetWorldPosition2(pDummy);
 
 		const CShAABB2 & aabb2 = ShDummyAABB2::GetAABB(pDummy);
-		CShVector2 vPoint1(CShVector2(aabb2.m_min.m_x * scale.m_x, aabb2.m_min.m_y * scale.m_y) + vDummyAABB2Translation);
-		CShVector2 vPoint2(CShVector2(aabb2.m_min.m_x * scale.m_x, aabb2.m_max.m_y * scale.m_y) + vDummyAABB2Translation);
-		CShVector2 vPoint3(CShVector2(aabb2.m_max.m_x * scale.m_x, aabb2.m_max.m_y * scale.m_y) + vDummyAABB2Translation);
-		CShVector2 vPoint4(CShVector2(aabb2.m_max.m_x * scale.m_x, aabb2.m_min.m_y * scale.m_y) + vDummyAABB2Translation);
+		CShVector2 vPoint1(CShVector2(aabb2.m_min.m_x * scale.m_x - 1, aabb2.m_min.m_y * scale.m_y - 1) + vDummyAABB2Translation);
+		CShVector2 vPoint2(CShVector2(aabb2.m_min.m_x * scale.m_x - 1, aabb2.m_max.m_y * scale.m_y - 1) + vDummyAABB2Translation);
+		CShVector2 vPoint3(CShVector2(aabb2.m_max.m_x * scale.m_x - 1, aabb2.m_max.m_y * scale.m_y - 1) + vDummyAABB2Translation);
+		CShVector2 vPoint4(CShVector2(aabb2.m_max.m_x * scale.m_x - 1, aabb2.m_min.m_y * scale.m_y - 1) + vDummyAABB2Translation);
 
 		b2Vec2 aB2Point [4];
 		aB2Point[0] = Convert_sh_b2(vPoint1) - pBody->GetPosition();
