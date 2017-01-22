@@ -125,9 +125,16 @@ void GameStateWin::update(float dt)
 			{
 				ShObject::SetRelativePositionY(m_pPopupEntity, ANIM_INTRO_ENTERED_POPUP_BASE_Y);
 
-				int nbStarsWon = 0;
+				int nbStarsWon = 1;
 
-				//TODO evaluate nb stars won
+				if (m_iClicCount == g_nbMinPlay[GetCurrentLevel()])
+				{
+					nbStarsWon = 3;
+				}
+				else if (m_iClicCount == g_nbMinPlay[GetCurrentLevel()] + 2)
+				{
+					nbStarsWon = 2;
+				}
 
 				g_pGameSave->SetLevelResult(GetCurrentLevel(), nbStarsWon);
 				g_pGameSave->Save();
