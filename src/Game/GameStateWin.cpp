@@ -67,6 +67,8 @@ void GameStateWin::entered(void)
 {
 	m_eCurrentState = ANIM_INTRO_ENTERED;
 
+	ShObject::SetRelativePositionY(m_pPopupEntity, ANIM_INTRO_ENTERED_POPUP_LENGTH);
+
 	m_iClicCount = g_pInstance->GetLevelClicCount();
 
 	ShEntity2::SetShow(m_pPopupEntity, true);
