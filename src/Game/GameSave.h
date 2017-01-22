@@ -38,13 +38,16 @@ private:
 			}
 
 			mute = false;
+
+			ShMemClear(levelResult, sizeof(levelResult));
 		}
 
 		unsigned int	lastLevelPlayed;
 		unsigned int	lastLevelUnlocked;
-		unsigned int	levelResult[MAX_PAGE * 9];
 
 		bool			mute;
+
+		unsigned int	levelResult[1024];
 	};
 
 	SaveData m_saveData;

@@ -25,7 +25,7 @@ void GameSave::Save(void)
 {
 	if (shNULL != g_pCurrentUser)
 	{
-		bool bSaved = ShUser::Save(g_pCurrentUser, "ShockWave", ((SaveData *) &(this->m_saveData)), 2048);
+		bool bSaved = ShUser::Save(g_pCurrentUser, "ShockWave", (SaveData*)&m_saveData, sizeof(SaveData));
 		if (!bSaved)
 		{
 			Reset();
@@ -49,7 +49,7 @@ void GameSave::Load(void)
 {
 	if (shNULL != g_pCurrentUser)
 	{
-		bool bLoaded = ShUser::Load(g_pCurrentUser, "ShockWave", (SaveData *) &(this->m_saveData), sizeof(SaveData));
+		bool bLoaded = ShUser::Load(g_pCurrentUser, "ShockWave", (SaveData*)&m_saveData, sizeof(SaveData));
 		if (!bLoaded)
 		{
 			SH_TRACE("Load failed !");

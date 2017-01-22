@@ -68,7 +68,12 @@ void GameStateLevelSelection::init(void)
 		m_apThumbnails[i] = ShEntity2::Find(levelIdentifier, CShIdentifier(strEntityName));
 		SH_ASSERT(shNULL != m_apThumbnails[i]);
 
+		CShVector3 scale = ShObject::GetWorldScale(m_apThumbnails[i]);
+
 		CShVector3 pos = ShObject::GetWorldPosition(m_apThumbnails[i]);
+
+		m_apLocks[i] = ShEntity2::Create(levelIdentifier, GID(NULL), GID(layer_default), CShIdentifier("ggj17"), CShIdentifier("lock"), pos, CShEulerAngles_ZERO, CShVector3(scale.m_x, scale.m_y, 1.0f), false);
+
 		++pos.m_z;
 		pos.m_y -= 10.0f;
 		pos.m_x -= 60.0f;
@@ -104,9 +109,9 @@ void GameStateLevelSelection::release(void)
 
 	for (int i = 0; i < 9; ++i)
 	{
+		m_apLocks[i] = shNULL;
 		m_apThumbnails[i] = shNULL;
 	}
-
 
 	ShLevel::Release();
 }
@@ -116,10 +121,10 @@ void GameStateLevelSelection::release(void)
 */
 void GameStateLevelSelection::entered(void)
 {
-	DisplayCurrentPage();
-
 	ShCamera::SetCurrent2D(m_pCamera);
 	ShCamera::SetCurrent3D(m_pCamera);
+
+	DisplayCurrentPage();
 
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
@@ -139,6 +144,8 @@ void GameStateLevelSelection::obscuring(void)
 {
 	for (int i = 0; i < 9; ++i)
 	{
+		ShEntity2::SetShow(m_apLocks[i], false);
+
 		for (int j = 0; j < 3; ++j)
 		{
 			ShEntity2::SetShow(m_apLevelSars[i][j], false);
@@ -340,7 +347,10 @@ void GameStateLevelSelection::DisplayCurrentPage(void)
 {
 	for (int i = 0; i < 9; ++i)
 	{
-		int levelResult = g_pGameSave->GetLevelResult((i + (9 * m_iCurrentPageID)) + 1);
+		int level = (i + (9 * m_iCurrentPageID)) + 1;
+		int levelResult = g_pGameSave->GetLevelResult(level);
+		bool isUnlocked = (level > g_pGameSave->GetLastLevelUnlocked());
+
 		for (int j = 0; j < 3; ++j)
 		{
 			float alpha = 1.0f;
@@ -350,8 +360,10 @@ void GameStateLevelSelection::DisplayCurrentPage(void)
 			}
 
 			ShEntity2::SetAlpha(m_apLevelSars[i][j], alpha);
-			ShEntity2::SetShow(m_apLevelSars[i][j], true);
+			ShEntity2::SetShow(m_apLevelSars[i][j], !isUnlocked);
 		}
+
+		ShEntity2::SetShow(m_apLocks[i], isUnlocked);
 	}
 
 	if (0 == m_iCurrentPageID)

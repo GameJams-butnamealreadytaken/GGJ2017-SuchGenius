@@ -54,8 +54,9 @@ private:
 	ShEntity2 * m_pButtonPrevious;
 	ShEntity2 * m_pButtonNext;
 
-	ShEntity2 * m_apThumbnails [9];
-	ShEntity2 * m_apLevelSars  [9][3];
+	ShEntity2 * m_apThumbnails	[9];
+	ShEntity2 * m_apLevelSars	[9][3];
+	ShEntity2 * m_apLocks		[9];
 
 	int			m_iLastPageID;
 	int			m_iCurrentPageID;
