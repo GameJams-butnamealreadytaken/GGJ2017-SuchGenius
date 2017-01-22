@@ -7,7 +7,12 @@
 #include "GameStateGame.h"
 #include "GameStateWin.h"
 
+#include "GameSave.h"
+
+extern PluginGGJ2017 * g_pInstance = shNULL;
+extern ShUser *	g_pCurrentUser = shNULL;
 extern Inputs * g_pInputs = shNULL;
+extern GameSave * g_pGameSave = shNULL;
 
 class Game
 {

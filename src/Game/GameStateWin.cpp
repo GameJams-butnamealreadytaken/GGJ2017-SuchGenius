@@ -124,6 +124,13 @@ void GameStateWin::update(float dt)
 			if (m_fStateTime > ANIM_INTRO_ENTERED_DURATION)
 			{
 				ShObject::SetRelativePositionY(m_pPopupEntity, ANIM_INTRO_ENTERED_POPUP_BASE_Y);
+
+				int nbStarsWon = 0;
+
+				//TODO evaluate nb stars won
+
+				g_pGameSave->SetLevelResult(GetCurrentLevel(), nbStarsWon);
+				g_pGameSave->Save();
 				m_eCurrentState = IDLE;
 			}
 			else
@@ -189,7 +196,9 @@ void GameStateWin::touchEnd(const CShVector2 & pos)
 			}
 			else if (m_pPressedButton == m_pButtonNext)
 			{
-				SetCurrentLevel(GetCurrentLevel()+1);
+				int nextLevel = GetCurrentLevel() + 1;
+				SetCurrentLevel(nextLevel);
+				g_pGameSave->SetLastLevelPlayed(nextLevel);
 				game.pop();
 			}
 		}

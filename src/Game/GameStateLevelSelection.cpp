@@ -58,14 +58,7 @@ void GameStateLevelSelection::init(void)
 		SH_ASSERT(shNULL != m_apThumbnails[i]);
 	}
 
-	//for (int iPage = 0; iPage < MAX_PAGE; ++iPage)
-	//{
-	//	for (int i = 0; i < 9; ++i)
-	//	{
-	//		CShString strEntityName = CShString("TODO") + CShString::FromInt(i);
-	//		m_apLevelIcon[m_iCurrentPageID][i] = ShEntity2::Find(levelIdentifier, CShIdentifier(strEntityName));
-	//	}
-	//}
+	// TODO create stars
 
 	DisplayCurrentPage();
 }
@@ -79,14 +72,6 @@ void GameStateLevelSelection::release(void)
 	m_pButtonPrevious = shNULL;
 
 	m_pScreenObject = shNULL;
-
-	//for (int iPage = 0; iPage < MAX_PAGE; ++iPage)
-	//{
-	//	for (int i = 0; i < 9; ++i)
-	//	{
-	//		m_apLevelIcon[m_iCurrentPageID][i] = shNULL;
-	//	}
-	//}
 
 	for (int i = 0; i < 9; ++i)
 	{
@@ -259,7 +244,8 @@ void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
 					if (ShEntity2::Includes(m_apThumbnails[i], pos))
 					{
 						// launch level i of page m_iCurrentPageID
-						State::SetCurrentLevel(1 + ((m_iCurrentPageID * 9) + i));
+						SetCurrentLevel(1 + ((m_iCurrentPageID * 9) + i));
+						g_pGameSave->SetLastLevelPlayed(GetCurrentLevel());
 						game.push(Game::GAME_LEVEL);
 						break;
 					}
@@ -294,11 +280,7 @@ void GameStateLevelSelection::setState(EState eState)
 */
 void GameStateLevelSelection::DisplayCurrentPage(void)
 {
-	//for (int i = 0; i < 9; ++i)
-	//{
-	//	//ShEntity2::SetShow(m_apLevelIcon[m_iLastPageID][i], false);
-	//	//ShEntity2::SetShow(m_apLevelIcon[m_iCurrentPageID][i], true);
-	//}
+	//displya stars
 
 	if (0 == m_iCurrentPageID)
 	{

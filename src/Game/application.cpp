@@ -97,7 +97,8 @@ void OnLogin(ShUser * pUser)
 	SH_ASSERT(shNULL != pUser);
 	g_pCurrentUser = pUser;
 	g_pInputs->Initialize(g_pCurrentUser);
-	// TODO load save
+
+	g_pGameSave->Load();
 }
 
 /**

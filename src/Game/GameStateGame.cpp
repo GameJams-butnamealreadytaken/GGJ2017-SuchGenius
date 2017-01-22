@@ -75,7 +75,7 @@ void GameStateGame::revealed(void)
  */
 void GameStateGame::load(void)
 {
-	CShString strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
+	CShString strLevelName = CShString("level_0") + CShString::FromInt(GetCurrentLevel());
 	CShIdentifier levelIdentifier(strLevelName);
 	bool loading = ShLevel::Load(levelIdentifier);
 
