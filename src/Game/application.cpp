@@ -15,6 +15,9 @@ void OnPreInitialize(void)
 	ShInput::AddOnTouchDown(OnTouchDown);
 	ShInput::AddOnTouchUp(OnTouchUp);
 	ShInput::AddOnTouchMove(OnTouchMove);
+
+	ShUser::RegisterLoginCallback(OnLogin);
+	ShUser::RegisterLogoutCallback(OnLogout);
 }
 
 /**
@@ -83,6 +86,27 @@ void OnDeactivate(bool & bAllowBackgroundUpdates, bool & bAllowBackgroundInputs)
 {
 	bAllowBackgroundUpdates = false;
 	bAllowBackgroundInputs = false;
+}
+
+/**
+* @brief OnLogin
+* @param pUser
+*/
+void OnLogin(ShUser * pUser)
+{
+	SH_ASSERT(shNULL != pUser);
+	g_pCurrentUser = pUser;
+	g_pInputs->Initialize(g_pCurrentUser);
+	// TODO load save
+}
+
+/**
+* @brief OnLogout
+* @param pUser
+*/
+void OnLogout(ShUser * pUser)
+{
+	g_pCurrentUser = pUser;
 }
 
 }

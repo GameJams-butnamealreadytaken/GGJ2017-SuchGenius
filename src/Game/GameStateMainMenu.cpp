@@ -200,7 +200,11 @@ void GameStateMainMenu::update(float dt)
 
 		case IDLE:
 		{
-			// do nothing
+			if (g_pInputs->IsPressEnter())
+			{
+				Game & game = Game::instance();
+				game.push(Game::GAME_LEVEL);
+			}
 		}
 		break;
 

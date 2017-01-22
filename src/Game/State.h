@@ -2,8 +2,10 @@
 
 #include "ShSDK/ShSDK.h"
 #include "../Plugin/Plugin.h"
+#include "inputs.h"
 
-extern PluginGGJ2017 * g_pInstance;
+extern PluginGGJ2017 * g_pInstance = shNULL;
+extern ShUser *	g_pCurrentUser = shNULL;
 
 inline float BounceEase(float t)
 {

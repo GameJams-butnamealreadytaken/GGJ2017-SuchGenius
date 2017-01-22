@@ -7,6 +7,8 @@
 #include "GameStateGame.h"
 #include "GameStateWin.h"
 
+extern Inputs * g_pInputs = shNULL;
+
 class Game
 {
 
@@ -105,4 +107,5 @@ private:
 	GameStateWin			m_stateWin;
 
 	bool					m_bMuted;
+
 };
