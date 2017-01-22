@@ -12,7 +12,7 @@
 #define ORIGINAL_VIEWPORT_X 2272.0f
 #define ORIGINAL_VIEWPORT_Y 1536.0f
 
-extern int g_nbMinPlay[9];
+extern int g_nbMinPlay[MAX_PAGE*9];
 
 extern PluginGGJ2017 * g_pInstance;
 
