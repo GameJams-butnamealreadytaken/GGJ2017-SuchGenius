@@ -71,7 +71,7 @@ void GameStateLevelSelection::init(void)
 		CShVector3 pos = ShObject::GetWorldPosition(m_apThumbnails[i]);
 		++pos.m_z;
 		pos.m_y -= 10.0f;
-		pos.m_x -= 50.0f;
+		pos.m_x -= 60.0f;
 
 		for (int j = 0; j < 3; ++j)
 		{
@@ -80,15 +80,14 @@ void GameStateLevelSelection::init(void)
 				pos.m_y += 30.0f;
 			}
 
-			m_apLevelSars[i][j] = ShEntity2::Create(levelIdentifier, GID(NULL), GID(layer_default), CShIdentifier("ggj17"), CShIdentifier("star"), pos, CShEulerAngles_ZERO, CShVector3(0.5f, 0.5f, 1.0f), false);
+			m_apLevelSars[i][j] = ShEntity2::Create(levelIdentifier, GID(NULL), GID(layer_default), CShIdentifier("ggj17"), CShIdentifier("star"), pos, CShEulerAngles_ZERO, CShVector3(0.25f, 0.25f, 1.0f), false);
 			SH_ASSERT(shNULL != m_apLevelSars[i][j]);
-			ShEntity2::SetColor(m_apLevelSars[i][j], CShRGBAf(1.0, 0.0f, 0.0f, 1.0f));
 
 			if (j == 1)
 			{
 				pos.m_y -= 30.0f;
 			}
-			pos.m_x += 50.0f;
+			pos.m_x += 60.0f;
 		}
 	}
 }
