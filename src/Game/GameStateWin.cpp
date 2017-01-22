@@ -33,6 +33,14 @@ void GameStateWin::init(void)
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 
+	int display_width = ShDisplay::GetWidth();
+	int display_height = ShDisplay::GetHeight();
+
+	float ratio_x = ORIGINAL_VIEWPORT_X / display_width;
+	float ratio_y = ORIGINAL_VIEWPORT_Y / display_height;
+
+	m_fRatio = shMax(ratio_x, ratio_y, 2.0f);
+
 	m_pCamera = ShCamera::Create(levelIdentifier, CShIdentifier("camera_win"), false);
 	SH_ASSERT(shNULL != m_pCamera);
 
@@ -42,7 +50,7 @@ void GameStateWin::init(void)
 	ShCamera::SetProjectionOrtho(m_pCamera);
 	ShCamera::SetFarPlaneDistance(m_pCamera, 10.0f);
 	ShCamera::SetNearPlaneDistance(m_pCamera, 0.1f);
-	ShCamera::SetViewport(m_pCamera, 1280.0f, 720.0f);
+	ShCamera::SetViewport(m_pCamera, display_width * m_fRatio, display_height * m_fRatio);
 
 	m_pButtonMenu = ShEntity2::Find(levelIdentifier, CShIdentifier("button_menu"));
 	SH_ASSERT(shNULL != m_pButtonMenu);

@@ -2,9 +2,6 @@
 
 #include "Game.h"
 
-#define ORIGINAL_VIEWPORT_X 2272.0f
-#define ORIGINAL_VIEWPORT_Y 1536.0f
-
 /**
 * @brief GameStateGame::Constructor
 */
