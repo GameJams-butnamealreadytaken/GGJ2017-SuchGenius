@@ -112,15 +112,16 @@ void GameStateGame::load(void)
 	CShIdentifier levelIdentifier(strLevelName);
 	bool loading = ShLevel::Load(levelIdentifier);
 
-	g_pGameSave->SetLastLevelPlayed(GetCurrentLevel());
-
 	if (!loading)
 	{
 		Game & game = Game::instance();
 		game.pop();
 		game.push(Game::CREDITS);
+		g_pGameSave->SetLastLevelPlayed(1);
 		return;
 	}
+
+	g_pGameSave->SetLastLevelPlayed(GetCurrentLevel());
 
 	SH_ASSERT(loading);
 
