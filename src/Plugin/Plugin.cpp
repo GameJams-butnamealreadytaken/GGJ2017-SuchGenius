@@ -527,7 +527,9 @@ b2Shape * PluginGGJ2017::GenerateStaticBlockShape(ShCollisionShape * pShape, b2B
 {
 	b2ChainShape * pChainShape = new b2ChainShape();
 
-	const int pointCount = ShCollisionShape::GetPointCount(pShape);
+	SH_ASSERT(64 > ShCollisionShape::GetPointCount(pShape));
+
+	const int pointCount = 64; // ShCollisionShape::GetPointCount(pShape);
 
 	b2Vec2 aVertex [pointCount];
 
