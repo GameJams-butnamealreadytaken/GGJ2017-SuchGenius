@@ -13,7 +13,7 @@ Game * Game::instance_ = shNULL;
 /**
  * @brief Game::Game
  */
-Game::Game(void) 
+Game::Game(void)
 : m_iCurrentState(-1)
 , m_bMuted(false)
 {
@@ -31,10 +31,10 @@ void Game::initialize(void)
 	bool bLoaded = ShLevel::Load(CShIdentifier("background"));
 	SH_ASSERT(bLoaded);
 
-	get(MAIN_MENU)->init();
-	get(LEVEL_SELECTION)->init();
-	get(GAME_LEVEL)->init();
-	get(GAME_WIN)->init();
+	for (int i = 0; i < MAX_GAME_STATES; ++i)
+	{
+		get(EState(i))->init();
+	}
 
 	push(MAIN_MENU);
 }
@@ -46,10 +46,10 @@ void Game::release(void)
 {
 	pop();
 
-	get(GAME_LEVEL)->release();
-	get(LEVEL_SELECTION)->release();
-	get(MAIN_MENU)->release();
-	get(GAME_WIN)->release();
+	for (int i = 0; i < MAX_GAME_STATES; ++i)
+	{
+		get(EState(i))->release();
+	}
 
 	ShLevel::Release();
 }
