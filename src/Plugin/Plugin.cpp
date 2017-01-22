@@ -209,7 +209,7 @@ void PluginGGJ2017::OnPostUpdate(float dt)
 
 					if (distance < radius_b2)
 					{
-						b2Vec2 impulse(PointerToObject.x * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f, PointerToObject.y * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 5.0f);
+						b2Vec2 impulse(PointerToObject.x * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 6.0f, PointerToObject.y * (distance / (MAX_DISTANCE / ratio_sh_b2)) * 6.0f);
 						m_aBlockList[iBody]->GetBody()->ApplyLinearImpulseToCenter(impulse, true);
 					}
 				}
