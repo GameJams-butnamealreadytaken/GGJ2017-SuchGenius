@@ -213,8 +213,10 @@ void GameStateWin::update(float dt)
 /**
 * @brief Release
 */
-void GameStateWin::touchBegin(const CShVector2 & pos)
+void GameStateWin::touchBegin(const CShVector2 & pos_)
 {
+	CShVector2 pos = m_fRatio * pos_;
+
 	if (ShEntity2::Includes(m_pButtonMenu, pos))
 	{
 		m_pPressedButton = m_pButtonMenu;
@@ -232,8 +234,10 @@ void GameStateWin::touchBegin(const CShVector2 & pos)
 /**
 * @brief Release
 */
-void GameStateWin::touchEnd(const CShVector2 & pos)
+void GameStateWin::touchEnd(const CShVector2 & pos_)
 {
+	CShVector2 pos = m_fRatio * pos_;
+
 	if (shNULL != m_pPressedButton)
 	{
 		if (ShEntity2::Includes(m_pPressedButton, pos))
@@ -262,7 +266,9 @@ void GameStateWin::touchEnd(const CShVector2 & pos)
 /**
 * @brief Release
 */
-void GameStateWin::touchMove(const CShVector2 & pos)
+void GameStateWin::touchMove(const CShVector2 & pos_)
 {
+	CShVector2 pos = m_fRatio * pos_;
+
 	// ...
 }
