@@ -74,6 +74,8 @@ void GameStateLevelSelection::init(void)
 		pos.m_z += 1.0f;
 
 		m_apLocks[i] = ShEntity2::Create(levelIdentifier, GID(NULL), GID(layer_default), CShIdentifier("ggj17"), CShIdentifier("lock"), pos, CShEulerAngles_ZERO, CShVector3(scale.m_x, scale.m_y, 1.0f), false);
+		SH_ASSERT(shNULL != m_apLocks[i]);
+		ShEntity2::Link(m_apThumbnails[i], m_apLocks[i]);
 
 		++pos.m_z;
 		pos.m_y -= 10.0f;
@@ -88,6 +90,7 @@ void GameStateLevelSelection::init(void)
 
 			m_apLevelSars[i][j] = ShEntity2::Create(levelIdentifier, GID(NULL), GID(layer_default), CShIdentifier("ggj17"), CShIdentifier("star"), pos, CShEulerAngles_ZERO, CShVector3(0.25f, 0.25f, 1.0f), false);
 			SH_ASSERT(shNULL != m_apLevelSars[i][j]);
+			ShEntity2::Link(m_apThumbnails[i], m_apLevelSars[i][j]);
 
 			if (j == 1)
 			{
@@ -125,9 +128,9 @@ void GameStateLevelSelection::entered(void)
 	ShCamera::SetCurrent2D(m_pCamera);
 	ShCamera::SetCurrent3D(m_pCamera);
 
-	DisplayCurrentPage();
-
 	ShEntity2::SetShow(m_pScreenObject, true);
+
+	DisplayCurrentPage();
 }
 
 /**
@@ -136,13 +139,7 @@ void GameStateLevelSelection::entered(void)
 void GameStateLevelSelection::exiting(void)
 {
 	ShEntity2::SetShow(m_pScreenObject, false);
-}
 
-/**
-* @brief GameStateLevelSelection::obscuring
-*/
-void GameStateLevelSelection::obscuring(void)
-{
 	for (int i = 0; i < 9; ++i)
 	{
 		ShEntity2::SetShow(m_apLocks[i], false);
@@ -152,8 +149,24 @@ void GameStateLevelSelection::obscuring(void)
 			ShEntity2::SetShow(m_apLevelSars[i][j], false);
 		}
 	}
+}
 
+/**
+* @brief GameStateLevelSelection::obscuring
+*/
+void GameStateLevelSelection::obscuring(void)
+{
 	ShEntity2::SetShow(m_pScreenObject, false);
+
+	for (int i = 0; i < 9; ++i)
+	{
+		ShEntity2::SetShow(m_apLocks[i], false);
+
+		for (int j = 0; j < 3; ++j)
+		{
+			ShEntity2::SetShow(m_apLevelSars[i][j], false);
+		}
+	}
 }
 
 /**
@@ -164,9 +177,9 @@ void GameStateLevelSelection::revealed(void)
 	ShCamera::SetCurrent2D(m_pCamera);
 	ShCamera::SetCurrent3D(m_pCamera);
 
-	DisplayCurrentPage();
-
 	ShEntity2::SetShow(m_pScreenObject, true);
+
+	DisplayCurrentPage();
 }
 
 /**
@@ -222,6 +235,8 @@ void GameStateLevelSelection::prepareAnim(ShObject * pParent)
 	ShEntity2::SetShow(m_pScreenObject, true);
 
 	setState(ANIM_INTRO_ENTERED);
+
+	DisplayCurrentPage();
 }
 
 /**
@@ -293,15 +308,6 @@ void GameStateLevelSelection::touchEnd(const CShVector2 & pos)
 			{
 				Game & game = Game::instance();
 				((GameStateMainMenu*)game.get(Game::MAIN_MENU))->prepareAnim(m_pScreenObject);
-
-				for (int i = 0; i < 9; ++i)
-				{
-					for (int j = 0; j < 3; ++j)
-					{
-						ShEntity2::SetShow(m_apLevelSars[i][j], false);
-					}
-				}
-
 				setState(ANIM_OUTRO_MAIN_MENU);
 			}
 			else
