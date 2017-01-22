@@ -450,6 +450,7 @@ void PluginGGJ2017::DatasetParser(ShObject * pObject, ShDataSet * pDataSet)
 	if (CShIdentifier("sensor_object") == idDataSetIdentifier)
 	{
 		bodyFixture.isSensor = true;
+		bodyFixture.filter.maskBits = 65535;
 	}
 	else if (CShIdentifier("block_object_player") == idDataSetIdentifier)
 	{
