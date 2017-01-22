@@ -440,10 +440,10 @@ b2Shape * PluginGGJ2017::GenerateBlockShape(ShObject * pObject, b2Body * pBody)
 		CShVector2 vDummyAABB2Translation = ShObject::GetWorldPosition2(pDummy);
 
 		const CShAABB2 & aabb2 = ShDummyAABB2::GetAABB(pDummy);
-		CShVector2 vPoint1(CShVector2(aabb2.m_min.m_x * scale.m_x - 1, aabb2.m_min.m_y * scale.m_y - 1) + vDummyAABB2Translation);
-		CShVector2 vPoint2(CShVector2(aabb2.m_min.m_x * scale.m_x - 1, aabb2.m_max.m_y * scale.m_y - 1) + vDummyAABB2Translation);
-		CShVector2 vPoint3(CShVector2(aabb2.m_max.m_x * scale.m_x - 1, aabb2.m_max.m_y * scale.m_y - 1) + vDummyAABB2Translation);
-		CShVector2 vPoint4(CShVector2(aabb2.m_max.m_x * scale.m_x - 1, aabb2.m_min.m_y * scale.m_y - 1) + vDummyAABB2Translation);
+		CShVector2 vPoint1(CShVector2(aabb2.m_min.m_x * scale.m_x, aabb2.m_min.m_y * scale.m_y) + vDummyAABB2Translation);
+		CShVector2 vPoint2(CShVector2(aabb2.m_min.m_x * scale.m_x, aabb2.m_max.m_y * scale.m_y) + vDummyAABB2Translation);
+		CShVector2 vPoint3(CShVector2(aabb2.m_max.m_x * scale.m_x, aabb2.m_max.m_y * scale.m_y) + vDummyAABB2Translation);
+		CShVector2 vPoint4(CShVector2(aabb2.m_max.m_x * scale.m_x, aabb2.m_min.m_y * scale.m_y) + vDummyAABB2Translation);
 
 		b2Vec2 aB2Point [4];
 		aB2Point[0] = Convert_sh_b2(vPoint1) - pBody->GetPosition();
