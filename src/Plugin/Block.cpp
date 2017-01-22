@@ -6,6 +6,7 @@
 Block::Block(void)
 : m_pBody(shNULL)
 , m_pSprite(shNULL)
+, m_cptCollision(0)
 {
 	// ...
 }
@@ -59,5 +60,29 @@ b2Body * Block::GetBody(void)
 ShObject * Block::GetSprite(void)
 {
 	return(m_pSprite);
+}
+
+/**
+* @brief GetCptCollision
+*/
+int Block::GetCptCollision(void)
+{
+	return(m_cptCollision);
+}
+
+/**
+* @brief SetCptCollision
+* @param inc
+*/
+void Block::SetCptCollision(bool inc)
+{
+	if (inc)
+	{
+		++m_cptCollision;
+	}
+	else
+	{
+		--m_cptCollision;
+	}
 }
 

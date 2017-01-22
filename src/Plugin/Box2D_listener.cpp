@@ -48,6 +48,28 @@ void Box2DListener::BeginContact(b2Contact * contact)
 			m_pPlugin->SetPlayerOnSensor(true);
 		}
 	}
+	else
+	{
+		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
+		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+
+		if (Block::PLAYER == pBlockA->GetType())
+		{
+			pBlockA->SetCptCollision(true);
+			if (pBlockA->GetCptCollision())
+			{
+				// Play sound
+			}
+		}
+		else if (Block::PLAYER == pBlockB->GetType())
+		{
+			pBlockB->SetCptCollision(true);
+			if (pBlockB->GetCptCollision())
+			{
+				// Play sound
+			}
+		}
+	}
 }
 
 /**
@@ -75,6 +97,20 @@ void Box2DListener::EndContact(b2Contact * contact)
 		if (Block::PLAYER == pBlockA->GetType())
 		{
 			m_pPlugin->SetPlayerOnSensor(false);
+		}
+	}
+	else
+	{
+		Block * pBlockA = static_cast<Block *>(contact->GetFixtureA()->GetBody()->GetUserData());
+		Block * pBlockB = static_cast<Block *>(contact->GetFixtureB()->GetBody()->GetUserData());
+
+		if (Block::PLAYER == pBlockA->GetType())
+		{
+			pBlockA->SetCptCollision(false);
+		}
+		else if (Block::PLAYER == pBlockB->GetType())
+		{
+			pBlockB->SetCptCollision(false);
 		}
 	}
 }
