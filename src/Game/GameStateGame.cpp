@@ -121,6 +121,11 @@ void GameStateGame::unload(void)
 */
 void GameStateGame::update(float dt)
 {
+	if (g_pInputs->IsRestarting())
+	{
+		g_pInstance->Reset();
+	}
+
 	if (g_pInstance->IsWon())
 	{
 		Game & game = Game::instance();
