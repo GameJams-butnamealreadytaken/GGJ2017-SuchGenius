@@ -2,7 +2,13 @@
 
 #include "ShSDK/ShSDK.h"
 
-int g_nbMinPlay[9] = {1, 3, 2, 3, 2, 3, 2, 2, 2};
+int g_nbMinPlay[MAX_PAGE*9] =
+{
+1, 3, 2, 3, 2, 3, 2, 2, 2,
+4, 4, 4, 4, 4, 4, 4, 4, 4,
+4, 4, 4, 4, 4, 4, 4, 4, 4,
+4, 4, 4, 4, 4, 4, 4, 4, 4,
+};
 
 ShUser * g_pCurrentUser = shNULL;
 Inputs * g_pInputs = shNULL;
