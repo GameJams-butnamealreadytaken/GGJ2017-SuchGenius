@@ -30,7 +30,7 @@
         </prefab_list>
     </preload>
     <layer_list>
-        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-1133.844727" min_y="-650.000000" max_x="1138.155273" max_y="801.627502"/>
+        <layer name="layer_default" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="-1136.000000" min_y="-650.000000" max_x="1136.000000" max_y="801.627502"/>
         <layer name="layer_gui" show="true" position_x="0.000000" position_y="0.000000" position_z="0.000000" min_x="0.000000" min_y="0.000000" max_x="0.000000" max_y="0.000000"/>
     </layer_list>
     <object_list>
@@ -96,7 +96,7 @@
         <entity2 name="sprite_blocks_dirthalf_left_001" position_x="-507.825989" position_y="251.004608" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="dirthalf_left" blend_function="alpha"/>
         <entity2 name="sprite_blocks_dirthalf_mid_001" position_x="-379.191681" position_y="251.004608" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="dirthalf_mid" blend_function="alpha"/>
         <entity2 name="sprite_blocks_dirthalf_right_001" position_x="-250.557404" position_y="251.004608" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" pivot="center_center" pivot_custom_x="0.500000" pivot_custom_y="0.500000" sprite_library="blocks" sprite_name="dirthalf_right" blend_function="alpha"/>
-        <dummy_aabb2 name="zone_screen" position_x="2.155300" position_y="7.014700" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1136.000000" min_y="768.000000" max_x="1136.000000" max_y="-768.000000"/>
+        <dummy_aabb2 name="zone_screen" position_x="0.000000" position_y="0.000000" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" layer="layer_default" show="true" color_r="1.000000" color_g="1.000000" color_b="1.000000" color_a="1.000000" min_x="-1136.000000" min_y="768.000000" max_x="1136.000000" max_y="-768.000000"/>
         <prefab name="prefab_block_player_001" position_x="-477.298523" position_y="400.129761" position_z="0.000000" rotation_x="0.000000" rotation_y="0.000000" rotation_z="0.000000" scale_x="1.000000" scale_y="1.000000" scale_z="1.000000" prefab_resource_identifier="block_player" layer="layer_default">
             <entity2 name="sprite_ggj17_block_dynamic_001" prefab_child_resource_identifier="sprite_ggj17_block_dynamic_001"/>
             <dummy_aabb2 name="dummy_aabb2_auto_001" prefab_child_resource_identifier="dummy_aabb2_auto_001"/>
@@ -125,9 +125,10 @@
         <translate_z enabled="true"/>
         <grid enabled="false" position_x="0.000000" position_y="0.000000" position_z="0.000000" size_x="100.000000" size_y="100.000000" subdivision_x="10" subdivision_y="10"/>
         <show_markers enabled="true"/>
-        <camera position_x="-316.487183" position_y="373.639496" position_z="1015.130249" target_x="-316.487183" target_y="373.639801" target_z="0.000108" znear="1.000000" zfar="40000.000000" zoom="1.015130" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-1015.130188" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
+        <camera position_x="-433.337769" position_y="97.009933" position_z="2264.520752" target_x="-433.337769" target_y="97.010643" target_z="0.000022" znear="1.000000" zfar="40000.000000" zoom="2.264521" camera_angle_x="1.570796" camera_angle_z="0.000000" type="0" arcball_x="0.000000" arcball_y="-2264.520752" arcball_z="0.000000" camera_up_x="0.000000" camera_up_y="0.000000" camera_up_z="1.000000"/>
     </editor_settings>
 </level>
+>
 settings>
         <snap_x enabled="false" value="100.000000"/>
         <snap_y enabled="false" value="100.000000"/>
