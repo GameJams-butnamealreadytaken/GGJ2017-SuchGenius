@@ -4,7 +4,7 @@
 #include "../Plugin/Plugin.h"
 #include "inputs.h"
 
-#define MAX_PAGE 2
+#define MAX_PAGE 4
 
 inline float BounceEase(float t)
 {
