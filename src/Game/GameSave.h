@@ -17,11 +17,12 @@ public:
 	int			GetLastLevelPlayed		(void);
 	int			GetLastLevelUnlocked	(void);
 	int			GetLevelResult			(int level);
+	bool		GetIsMuted				(void);
 
 	void		SetLastLevelPlayed		(int level);
 	void		SetLastLevelUnlocked	(int level);
 	void		SetLevelResult			(int level, int nbStars);
-
+	void		SetMute					(bool mute);
 
 private:
 	struct SaveData
@@ -35,11 +36,15 @@ private:
 			{
 				levelResult[i] = 0;
 			}
+
+			mute = false;
 		}
 
 		unsigned int	lastLevelPlayed;
 		unsigned int	lastLevelUnlocked;
 		unsigned int	levelResult[MAX_PAGE * 9];
+
+		bool			mute;
 	};
 
 	SaveData m_saveData;

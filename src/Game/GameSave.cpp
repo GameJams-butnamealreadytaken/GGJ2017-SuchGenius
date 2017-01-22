@@ -31,6 +31,15 @@ void GameSave::Save(void)
 			Reset();
 		}
 	}
+
+	if (m_saveData.mute)
+	{
+		ShSound::SetGlobalVolume(0.0f);
+	}
+	else
+	{
+		ShSound::SetGlobalVolume(1.0f);
+	}
 }
 
 /**
@@ -83,6 +92,14 @@ int GameSave::GetLevelResult(int level)
 }
 
 /**
+* @brief GetIsMuted
+*/
+bool GameSave::GetIsMuted(void)
+{
+	return(m_saveData.mute);
+}
+
+/**
 * @brief Reset
 * @param level
 */
@@ -115,4 +132,14 @@ void GameSave::SetLevelResult(int level, int nbStars)
 	{
 		m_saveData.levelResult[level] = nbStars;
 	}
+}
+
+/**
+* @brief SetMute
+* @param mute
+*/
+void GameSave::SetMute(bool mute)
+{
+	m_saveData.mute = mute;
+	Save();
 }
