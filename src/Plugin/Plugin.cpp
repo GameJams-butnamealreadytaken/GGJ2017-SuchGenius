@@ -319,7 +319,7 @@ void PluginGGJ2017::SetPlayerOnSensor(bool Inc)
 	{
 		--m_isOnSensor;
 	}
-	
+
 	if (m_isOnSensor == 0)
 	{
 		m_arrivalTimer = 0.0f;
@@ -527,9 +527,9 @@ b2Shape * PluginGGJ2017::GenerateStaticBlockShape(ShCollisionShape * pShape, b2B
 
 	SH_ASSERT(64 > ShCollisionShape::GetPointCount(pShape));
 
-	const int pointCount = 64; // ShCollisionShape::GetPointCount(pShape);
+	b2Vec2 aVertex [64];
 
-	b2Vec2 aVertex [pointCount];
+	const int pointCount = ShCollisionShape::GetPointCount(pShape);
 
 	for (int i = 0; i < pointCount; ++i)
 	{
