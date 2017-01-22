@@ -57,7 +57,12 @@ void Box2DListener::BeginContact(b2Contact * contact)
 		{
 			if (0 == pBlockA->GetCptCollision())
 			{
-				// Play sound
+				ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
+				if (shNULL != pSoundResource)
+				{
+					ShSound::Handle soundInstanceHandle;
+					ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+				}
 			}
 			pBlockA->SetCptCollision(true);
 		}
@@ -65,7 +70,12 @@ void Box2DListener::BeginContact(b2Contact * contact)
 		{
 			if (0 == pBlockB->GetCptCollision())
 			{
-				// Play sound
+				ShSoundResource * pSoundResource = ShSoundResource::Find(CShIdentifier("collision"));
+				if (shNULL != pSoundResource)
+				{
+					ShSound::Handle soundInstanceHandle;
+					ShSound::PlaySFX(pSoundResource, soundInstanceHandle, false);
+				}
 			}
 			pBlockB->SetCptCollision(true);
 		}
