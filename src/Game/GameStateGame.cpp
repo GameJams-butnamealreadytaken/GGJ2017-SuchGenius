@@ -2,6 +2,9 @@
 
 #include "Game.h"
 
+#define ORIGINAL_VIEWPORT_X 2272.0f
+#define ORIGINAL_VIEWPORT_Y 1536.0f
+
 /**
 * @brief GameStateGame::Constructor
 */
@@ -26,7 +29,24 @@ GameStateGame::~GameStateGame(void)
 */
 void GameStateGame::init(void)
 {
-	// ...
+	int display_width = ShDisplay::GetWidth();
+	int display_height = ShDisplay::GetHeight();
+
+	float ratio_x = ORIGINAL_VIEWPORT_X / display_width;
+	float ratio_y = ORIGINAL_VIEWPORT_Y / display_height;
+
+	m_fRatio = shMax(ratio_x, ratio_y, 2.0f);
+
+	m_pCamera = ShCamera::Create(GID(global), CShIdentifier("camera_game"), false);
+	SH_ASSERT(shNULL != m_pCamera);
+
+	ShCamera::SetPosition(m_pCamera, CShVector3(0.0f, 0.0f, 5.0f));
+	ShCamera::SetTarget(m_pCamera, CShVector3(0.0f, 0.0f, 0.0f));
+	ShCamera::SetUp(m_pCamera, CShVector3(0.0f, 1.0f, 0.0f));
+	ShCamera::SetProjectionOrtho(m_pCamera);
+	ShCamera::SetFarPlaneDistance(m_pCamera, 10.0f);
+	ShCamera::SetNearPlaneDistance(m_pCamera, 0.1f);
+	ShCamera::SetViewport(m_pCamera, display_width * m_fRatio, display_height * m_fRatio);
 }
 
 /**
@@ -43,6 +63,9 @@ void GameStateGame::release(void)
 void GameStateGame::entered(void)
 {
 	load();
+
+	ShCamera::SetCurrent2D(m_pCamera);
+	ShCamera::SetCurrent3D(m_pCamera);
 }
 
 /**
@@ -68,6 +91,9 @@ void GameStateGame::revealed(void)
 {
 	unload();
 	load();
+
+	ShCamera::SetCurrent2D(m_pCamera);
+	ShCamera::SetCurrent3D(m_pCamera);
 }
 
 /**
@@ -131,8 +157,10 @@ void GameStateGame::update(float dt)
 /**
 * @brief GameStateGame::Release
 */
-void GameStateGame::touchBegin(const CShVector2 & pos)
+void GameStateGame::touchBegin(const CShVector2 & pos_)
 {
+	CShVector2 pos = m_fRatio * pos_;
+
 	if (ShEntity2::Includes(m_pRestartButton, pos))
 	{
 		m_pPressedButton = m_pRestartButton;
@@ -146,8 +174,10 @@ void GameStateGame::touchBegin(const CShVector2 & pos)
 /**
 * @brief GameStateGame::Release
 */
-void GameStateGame::touchEnd(const CShVector2 & pos)
+void GameStateGame::touchEnd(const CShVector2 & pos_)
 {
+	CShVector2 pos = m_fRatio * pos_;
+
 	if (shNULL != m_pPressedButton)
 	{
 		if (ShEntity2::Includes(m_pPressedButton, pos))
@@ -171,7 +201,9 @@ void GameStateGame::touchEnd(const CShVector2 & pos)
 /**
 * @brief GameStateGame::Release
 */
-void GameStateGame::touchMove(const CShVector2 & pos)
+void GameStateGame::touchMove(const CShVector2 & pos_)
 {
+	CShVector2 pos = m_fRatio * pos_;
+
 	// ...
 }

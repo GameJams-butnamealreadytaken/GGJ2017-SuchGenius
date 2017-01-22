@@ -23,7 +23,16 @@ GameStateCredits::~GameStateCredits(void)
 */
 void GameStateCredits::init(void)
 {
-	// ...
+	m_pCamera = ShCamera::Create(GID(global), CShIdentifier("camera_credits"), false);
+	SH_ASSERT(shNULL != m_pCamera);
+
+	ShCamera::SetPosition(m_pCamera, CShVector3(0.0f, 0.0f, 5.0f));
+	ShCamera::SetTarget(m_pCamera, CShVector3(0.0f, 0.0f, 0.0f));
+	ShCamera::SetUp(m_pCamera, CShVector3(0.0f, 1.0f, 0.0f));
+	ShCamera::SetProjectionOrtho(m_pCamera);
+	ShCamera::SetFarPlaneDistance(m_pCamera, 10.0f);
+	ShCamera::SetNearPlaneDistance(m_pCamera, 0.1f);
+	ShCamera::SetViewport(m_pCamera, 1280.0f, 720.0f);
 }
 
 /**
@@ -42,6 +51,9 @@ void GameStateCredits::entered(void)
 	CShIdentifier levelIdentifier("level_credits");
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
+
+	ShCamera::SetCurrent2D(m_pCamera);
+	ShCamera::SetCurrent3D(m_pCamera);
 
 	m_fTime = 0.0f;
 }
@@ -67,7 +79,8 @@ void GameStateCredits::obscuring(void)
 */
 void GameStateCredits::revealed(void)
 {
-	// ...
+	ShCamera::SetCurrent2D(m_pCamera);
+	ShCamera::SetCurrent3D(m_pCamera);
 }
 
 /**

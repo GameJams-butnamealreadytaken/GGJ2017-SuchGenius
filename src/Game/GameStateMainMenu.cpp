@@ -37,6 +37,17 @@ void GameStateMainMenu::init(void)
 	bool loading = ShLevel::Load(levelIdentifier);
 	SH_ASSERT(loading);
 
+	m_pCamera = ShCamera::Create(levelIdentifier, CShIdentifier("camera_menu"), false);
+	SH_ASSERT(shNULL != m_pCamera);
+
+	ShCamera::SetPosition(m_pCamera, CShVector3(0.0f, 0.0f, 5.0f));
+	ShCamera::SetTarget(m_pCamera, CShVector3(0.0f, 0.0f, 0.0f));
+	ShCamera::SetUp(m_pCamera, CShVector3(0.0f, 1.0f, 0.0f));
+	ShCamera::SetProjectionOrtho(m_pCamera);
+	ShCamera::SetFarPlaneDistance(m_pCamera, 10.0f);
+	ShCamera::SetNearPlaneDistance(m_pCamera, 0.1f);
+	ShCamera::SetViewport(m_pCamera, 1280.0f, 720.0f);
+
 	m_pScreenObject = ShDummyAABB2::Find(levelIdentifier, CShIdentifier("zone_screen"));
 	SH_ASSERT(shNULL != m_pScreenObject);
 
@@ -90,6 +101,9 @@ void GameStateMainMenu::release(void)
  */
 void GameStateMainMenu::entered(void)
 {
+	ShCamera::SetCurrent2D(m_pCamera);
+	ShCamera::SetCurrent3D(m_pCamera);
+
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
 
@@ -114,6 +128,9 @@ void GameStateMainMenu::obscuring(void)
  */
 void GameStateMainMenu::revealed(void)
 {
+	ShCamera::SetCurrent2D(m_pCamera);
+	ShCamera::SetCurrent3D(m_pCamera);
+
 	ShEntity2::SetShow(m_pScreenObject, true);
 }
 

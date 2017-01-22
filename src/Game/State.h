@@ -61,5 +61,10 @@ public:
 	virtual void touchMove	(const CShVector2 & pos);
 
 protected:
+
+	ShCamera *	m_pCamera;
+	float		m_fRatio;
+
+protected:
 	static int m_currentLevel;
 };
