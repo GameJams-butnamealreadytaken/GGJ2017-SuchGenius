@@ -102,11 +102,11 @@ void GameStateGame::load(void)
 
 	if (State::GetCurrentLevel() < 10)
 	{
-		strLevelName = CShString("level_0") + CShString::FromInt(State::GetCurrentLevel());
+		strLevelName = CShString("game_level_0") + CShString::FromInt(State::GetCurrentLevel());
 	}
 	else
 	{
-		strLevelName = CShString("level_") + CShString::FromInt(State::GetCurrentLevel());
+		strLevelName = CShString("game_level_") + CShString::FromInt(State::GetCurrentLevel());
 	}
 
 	CShIdentifier levelIdentifier(strLevelName);
