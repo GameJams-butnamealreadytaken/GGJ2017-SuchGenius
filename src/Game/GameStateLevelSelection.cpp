@@ -71,6 +71,7 @@ void GameStateLevelSelection::init(void)
 		CShVector3 scale = ShObject::GetWorldScale(m_apThumbnails[i]);
 
 		CShVector3 pos = ShObject::GetWorldPosition(m_apThumbnails[i]);
+		pos.m_z += 1.0f;
 
 		m_apLocks[i] = ShEntity2::Create(levelIdentifier, GID(NULL), GID(layer_default), CShIdentifier("ggj17"), CShIdentifier("lock"), pos, CShEulerAngles_ZERO, CShVector3(scale.m_x, scale.m_y, 1.0f), false);
 
